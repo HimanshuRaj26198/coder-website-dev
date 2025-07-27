@@ -1,0 +1,344 @@
+{
+  "courses": [
+    {
+      "id": "full-stack-web-dev",
+      "title": "Full Stack Web Development",
+      "subtitle": "Master MERN & MEAN Stack",
+      "description": "Comprehensive program covering frontend and backend technologies including React, Node.js, MongoDB, and Express.js",
+      "duration": "6 months",
+      "level": "Beginner to Advanced",
+      "price": 15999,
+      "originalPrice": 25999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 1250,
+      "students": 5420,
+      "lessons": 120,
+      "instructor": [
+        {
+          "name": "Priya Sharma",
+          "expertise": "Full Stack Development",
+          "experience": "8+ years",
+          "image": "/placeholder.svg?height=60&width=60"
+        }
+      ],
+      "image": "/placeholder.svg?height=300&width=400",
+      "category": "Web Development",
+      "skills": ["React", "Node.js", "MongoDB", "Express.js", "JavaScript", "HTML/CSS"],
+      "jobRoles": ["Full Stack Developer", "Frontend Developer", "Backend Developer", "Web Developer"],
+      "topCompanies": ["Google", "Microsoft", "Amazon", "Flipkart", "Zomato", "Paytm", "Swiggy", "Ola"],
+      "syllabus": [
+        "HTML5 & CSS3 Fundamentals",
+        "JavaScript ES6+",
+        "React.js & Redux",
+        "Node.js & Express.js",
+        "MongoDB & Mongoose",
+        "RESTful APIs",
+        "Authentication & Security",
+        "Deployment & DevOps"
+      ],
+      "highlights": [
+        "Build 5+ real-world projects",
+        "100% job assistance program",
+        "Live coding sessions with instructor",
+        "MERN stack certification",
+        "Lifetime access to course materials",
+        "Dedicated mentor support"
+      ],
+      "faq": [
+        {
+          "question": "Is this course suitable for beginners?",
+          "answer": "Yes, this course is designed for complete beginners. We start with HTML/CSS basics and gradually progress to advanced topics."
+        },
+        {
+          "question": "What kind of projects will I build?",
+          "answer": "You'll build 5+ real-world projects including an e-commerce website, social media app, and portfolio website."
+        },
+        {
+          "question": "Do you provide job assistance?",
+          "answer": "Yes, we provide 100% job assistance including resume building, interview preparation, and direct company referrals."
+        }
+      ]
+    },
+    {
+      "id": "devops-mastery",
+      "title": "DevOps Engineering Mastery",
+      "subtitle": "CI/CD, Docker, Kubernetes & Cloud",
+      "description": "Complete DevOps program covering containerization, orchestration, CI/CD pipelines, and cloud platforms",
+      "duration": "5 months",
+      "level": "Intermediate to Advanced",
+      "price": 18999,
+      "originalPrice": 29999,
+      "discount": 37,
+      "rating": 4.9,
+      "reviews": 890,
+      "students": 3200,
+      "lessons": 95,
+      "instructor": [
+        {
+          "name": "Rajesh Kumar",
+          "expertise": "DevOps & Cloud Architecture",
+          "experience": "10+ years",
+          "image": "/placeholder.svg?height=60&width=60"
+        }
+      ],
+      "image": "/placeholder.svg?height=300&width=400",
+      "category": "DevOps",
+      "skills": ["Docker", "Kubernetes", "Jenkins", "AWS", "Terraform", "Ansible", "Git", "Linux"],
+      "jobRoles": ["DevOps Engineer", "Site Reliability Engineer", "Cloud Engineer", "Infrastructure Engineer"],
+      "topCompanies": ["Netflix", "Uber", "Airbnb", "Spotify", "LinkedIn", "Atlassian", "Red Hat", "HashiCorp"],
+      "syllabus": [
+        "Linux Administration",
+        "Git & Version Control",
+        "Docker Containerization",
+        "Kubernetes Orchestration",
+        "CI/CD with Jenkins",
+        "AWS Cloud Services",
+        "Infrastructure as Code",
+        "Monitoring & Logging"
+      ],
+      "highlights": [
+        "Hands-on cloud labs with AWS credits",
+        "Real-world CI/CD pipeline projects",
+        "Certification preparation included",
+        "Industry-standard tooling practice",
+        "Live troubleshooting sessions",
+        "Career transition guidance"
+      ],
+      "faq": [
+        {
+          "question": "Do I need prior experience in system administration?",
+          "answer": "Basic knowledge of Linux and command line is recommended, but we cover fundamentals in the course."
+        },
+        {
+          "question": "Which cloud platform is covered?",
+          "answer": "We primarily focus on AWS, but also cover Azure and GCP concepts for multi-cloud understanding."
+        }
+      ]
+    },
+    {
+      "id": "python-data-science",
+      "title": "Python for Data Science & AI",
+      "subtitle": "Machine Learning & Deep Learning",
+      "description": "Master Python programming for data science, machine learning, and artificial intelligence applications",
+      "duration": "4 months",
+      "level": "Beginner to Intermediate",
+      "price": 12999,
+      "originalPrice": 19999,
+      "discount": 35,
+      "rating": 4.7,
+      "reviews": 2100,
+      "students": 7800,
+      "lessons": 85,
+      "instructor": [
+        {
+          "name": "Dr. Anita Verma",
+          "expertise": "Data Science & AI",
+          "experience": "12+ years",
+          "image": "/placeholder.svg?height=60&width=60"
+        }
+      ],
+      "image": "/placeholder.svg?height=300&width=400",
+      "category": "Data Science",
+      "skills": ["Python", "Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Matplotlib", "SQL", "Statistics"],
+      "jobRoles": ["Data Scientist", "ML Engineer", "Data Analyst", "AI Researcher"],
+      "topCompanies": ["Google", "Facebook", "Tesla", "OpenAI", "Nvidia", "IBM", "Intel", "Adobe"],
+      "syllabus": [
+        "Python Programming Basics",
+        "Data Manipulation with Pandas",
+        "Data Visualization",
+        "Statistical Analysis",
+        "Machine Learning Algorithms",
+        "Deep Learning with TensorFlow",
+        "Natural Language Processing",
+        "Computer Vision"
+      ],
+      "highlights": [
+        "Work with real industry datasets",
+        "Build 3+ ML models from scratch",
+        "Kaggle competition participation",
+        "TensorFlow certification prep",
+        "AI ethics and bias discussions",
+        "Capstone project with mentorship"
+      ],
+      "faq": [
+        {
+          "question": "Do I need a mathematics background?",
+          "answer": "Basic mathematics knowledge is helpful, but we cover all necessary statistical concepts in the course."
+        },
+        {
+          "question": "What datasets will we work with?",
+          "answer": "We use real-world datasets from various domains including finance, healthcare, and e-commerce."
+        }
+      ]
+    },
+    {
+      "id": "android-development",
+      "title": "Android App Development",
+      "subtitle": "Kotlin & Java for Mobile Apps",
+      "description": "Build professional Android applications using Kotlin and Java with modern development practices",
+      "duration": "4 months",
+      "level": "Beginner to Advanced",
+      "price": 13999,
+      "originalPrice": 21999,
+      "discount": 36,
+      "rating": 4.6,
+      "reviews": 1580,
+      "students": 4200,
+      "lessons": 100,
+      "instructor": [
+        {
+          "name": "Vikram Singh",
+          "expertise": "Mobile App Development",
+          "experience": "7+ years",
+          "image": "/placeholder.svg?height=60&width=60"
+        }
+      ],
+      "image": "/placeholder.svg?height=300&width=400",
+      "category": "Mobile Development",
+      "skills": ["Kotlin", "Java", "Android SDK", "Firebase", "SQLite", "REST APIs", "Material Design", "Git"],
+      "jobRoles": ["Android Developer", "Mobile App Developer", "Software Engineer"],
+      "topCompanies": ["Google", "Samsung", "Xiaomi", "OnePlus", "Flipkart", "PhonePe", "Razorpay", "BYJU'S"],
+      "syllabus": [
+        "Kotlin Programming",
+        "Android Fundamentals",
+        "UI/UX Design",
+        "Data Storage",
+        "Networking & APIs",
+        "Firebase Integration",
+        "Testing & Debugging",
+        "Play Store Publishing"
+      ],
+      "highlights": [
+        "Publish 2 apps to Play Store",
+        "Learn Jetpack Compose",
+        "Firebase backend integration",
+        "Material Design 3 implementation",
+        "Android Studio mastery",
+        "Google Developer certification"
+      ],
+      "faq": [
+        {
+          "question": "Should I learn Kotlin or Java?",
+          "answer": "We focus primarily on Kotlin as it's Google's preferred language, but also cover Java fundamentals."
+        },
+        {
+          "question": "Will I publish apps to Play Store?",
+          "answer": "Yes, you'll learn the complete process of publishing apps to Google Play Store."
+        }
+      ]
+    },
+    {
+      "id": "ios-development",
+      "title": "iOS App Development",
+      "subtitle": "Swift & SwiftUI for iPhone Apps",
+      "description": "Create stunning iOS applications using Swift and SwiftUI for iPhone and iPad platforms",
+      "duration": "4 months",
+      "level": "Beginner to Advanced",
+      "price": 16999,
+      "originalPrice": 26999,
+      "discount": 37,
+      "rating": 4.8,
+      "reviews": 920,
+      "students": 2800,
+      "lessons": 90,
+      "instructor": [
+        {
+          "name": "Sarah Johnson",
+          "expertise": "iOS Development",
+          "experience": "9+ years",
+          "image": "/placeholder.svg?height=60&width=60"
+        }
+      ],
+      "image": "/placeholder.svg?height=300&width=400",
+      "category": "Mobile Development",
+      "skills": ["Swift", "SwiftUI", "UIKit", "Core Data", "CloudKit", "Xcode", "App Store Connect"],
+      "jobRoles": ["iOS Developer", "Mobile App Developer", "Swift Developer"],
+      "topCompanies": ["Apple", "Uber", "Airbnb", "Instagram", "WhatsApp", "Spotify", "Netflix", "Zomato"],
+      "syllabus": [
+        "Swift Programming",
+        "iOS Fundamentals",
+        "SwiftUI Framework",
+        "Data Persistence",
+        "Networking",
+        "Core Location & Maps",
+        "Push Notifications",
+        "App Store Submission"
+      ],
+      "highlights": [
+        "Publish app to App Store",
+        "Master SwiftUI declarative syntax",
+        "Work with Apple frameworks",
+        "Xcode debugging techniques",
+        "Apple Developer certification",
+        "Widget and App Clip development"
+      ],
+      "faq": [
+        {
+          "question": "Do I need a Mac for iOS development?",
+          "answer": "Yes, iOS development requires Xcode which only runs on macOS. We provide cloud-based Mac access."
+        },
+        {
+          "question": "What's the difference between UIKit and SwiftUI?",
+          "answer": "SwiftUI is Apple's modern framework. We teach both, focusing more on SwiftUI for new projects."
+        }
+      ]
+    },
+    {
+      "id": "frontend-mastery",
+      "title": "Frontend Development Mastery",
+      "subtitle": "React, Vue, Angular & Modern CSS",
+      "description": "Master modern frontend technologies including React, Vue.js, Angular, and advanced CSS techniques",
+      "duration": "5 months",
+      "level": "Beginner to Advanced",
+      "price": 14999,
+      "originalPrice": 23999,
+      "discount": 37,
+      "rating": 4.7,
+      "reviews": 1890,
+      "students": 6200,
+      "lessons": 110,
+      "instructor": [
+        {
+          "name": "Alex Chen",
+          "expertise": "Frontend Architecture",
+          "experience": "8+ years",
+          "image": "/placeholder.svg?height=60&width=60"
+        }
+      ],
+      "image": "/placeholder.svg?height=300&width=400",
+      "category": "Frontend Development",
+      "skills": ["React", "Vue.js", "Angular", "TypeScript", "Sass", "Webpack", "Jest", "Cypress"],
+      "jobRoles": ["Frontend Developer", "UI Developer", "JavaScript Developer", "React Developer"],
+      "topCompanies": ["Facebook", "Netflix", "Airbnb", "Shopify", "Atlassian", "Slack", "Discord", "Figma"],
+      "syllabus": [
+        "HTML5 & CSS3 Advanced",
+        "JavaScript ES6+",
+        "React.js Ecosystem",
+        "Vue.js Framework",
+        "Angular Framework",
+        "TypeScript",
+        "Testing & Debugging",
+        "Performance Optimization"
+      ],
+      "highlights": [
+        "Build responsive web apps",
+        "Master 3 major frameworks",
+        "Accessibility best practices",
+        "State management patterns",
+        "Performance optimization drills",
+        "Portfolio-ready projects"
+      ],
+      "faq": [
+        {
+          "question": "Which framework should I focus on?",
+          "answer": "We cover all three major frameworks, but you can specialize in one based on your career goals."
+        },
+        {
+          "question": "Is TypeScript necessary?",
+          "answer": "TypeScript is increasingly important in modern development. We cover it extensively in the course."
+        }
+      ]
+    }
+  ]
+}

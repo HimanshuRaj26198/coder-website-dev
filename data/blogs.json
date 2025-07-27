@@ -1,0 +1,148 @@
+{
+  "blogs": [
+    {
+      "id": "full-stack-career-2024",
+      "title": "Complete Guide to Full Stack Developer Career in 2024",
+      "slug": "full-stack-career-2024",
+      "excerpt": "Everything you need to know about becoming a full stack developer in 2024, including skills, salary expectations, and career paths.",
+      "content": "Full stack development has become one of the most sought-after skills in the tech industry...",
+      "author": {
+        "name": "Priya Sharma",
+        "role": "Senior Full Stack Developer",
+        "image": "/placeholder.svg?height=60&width=60"
+      },
+      "category": "Web Development",
+      "tags": ["Full Stack", "Career", "Web Development", "React", "Node.js"],
+      "publishedAt": "2024-01-15",
+      "readTime": "8 min read",
+      "image": "/placeholder.svg?height=400&width=600",
+      "featured": true
+    },
+    {
+      "id": "devops-vs-sre",
+      "title": "DevOps vs SRE: Which Career Path Should You Choose?",
+      "slug": "devops-vs-sre",
+      "excerpt": "Understanding the differences between DevOps and Site Reliability Engineering roles to make an informed career decision.",
+      "content": "The tech industry offers numerous career paths, and two that often confuse aspiring professionals are DevOps and SRE...",
+      "author": {
+        "name": "Rajesh Kumar",
+        "role": "DevOps Architect",
+        "image": "/placeholder.svg?height=60&width=60"
+      },
+      "category": "DevOps",
+      "tags": ["DevOps", "SRE", "Career", "Cloud", "Infrastructure"],
+      "publishedAt": "2024-01-12",
+      "readTime": "6 min read",
+      "image": "/placeholder.svg?height=400&width=600",
+      "featured": true
+    },
+    {
+      "id": "data-science-roadmap",
+      "title": "Data Science Learning Roadmap for Beginners in 2024",
+      "slug": "data-science-roadmap",
+      "excerpt": "A comprehensive roadmap for beginners to start their data science journey with Python, statistics, and machine learning.",
+      "content": "Data science has emerged as one of the most lucrative career options in recent years...",
+      "author": {
+        "name": "Dr. Anita Verma",
+        "role": "Data Science Lead",
+        "image": "/placeholder.svg?height=60&width=60"
+      },
+      "category": "Data Science",
+      "tags": ["Data Science", "Python", "Machine Learning", "Statistics", "Career"],
+      "publishedAt": "2024-01-10",
+      "readTime": "10 min read",
+      "image": "/placeholder.svg?height=400&width=600",
+      "featured": false
+    },
+    {
+      "id": "react-vs-angular-2024",
+      "title": "React vs Angular: Which Frontend Framework to Choose in 2024?",
+      "slug": "react-vs-angular-2024",
+      "excerpt": "Detailed comparison of React and Angular frameworks to help you choose the right one for your frontend development career.",
+      "content": "Choosing the right frontend framework is crucial for your development career...",
+      "author": {
+        "name": "Alex Chen",
+        "role": "Frontend Architect",
+        "image": "/placeholder.svg?height=60&width=60"
+      },
+      "category": "Frontend Development",
+      "tags": ["React", "Angular", "Frontend", "JavaScript", "Framework"],
+      "publishedAt": "2024-01-08",
+      "readTime": "7 min read",
+      "image": "/placeholder.svg?height=400&width=600",
+      "featured": false
+    },
+    {
+      "id": "mobile-app-development-trends",
+      "title": "Top Mobile App Development Trends to Watch in 2024",
+      "slug": "mobile-app-development-trends",
+      "excerpt": "Explore the latest trends in mobile app development including Flutter, React Native, and native development approaches.",
+      "content": "The mobile app development landscape is constantly evolving...",
+      "author": {
+        "name": "Vikram Singh",
+        "role": "Mobile App Developer",
+        "image": "/placeholder.svg?height=60&width=60"
+      },
+      "category": "Mobile Development",
+      "tags": ["Mobile", "Flutter", "React Native", "iOS", "Android"],
+      "publishedAt": "2024-01-05",
+      "readTime": "9 min read",
+      "image": "/placeholder.svg?height=400&width=600",
+      "featured": false
+    },
+    {
+      "id": "cloud-computing-career",
+      "title": "How to Start a Career in Cloud Computing: AWS vs Azure vs GCP",
+      "slug": "cloud-computing-career",
+      "excerpt": "Complete guide to starting your cloud computing career with comparison of major cloud platforms and certification paths.",
+      "content": "Cloud computing has revolutionized how businesses operate...",
+      "author": {
+        "name": "Sarah Johnson",
+        "role": "Cloud Solutions Architect",
+        "image": "/placeholder.svg?height=60&width=60"
+      },
+      "category": "Cloud Computing",
+      "tags": ["Cloud", "AWS", "Azure", "GCP", "Career", "Certification"],
+      "publishedAt": "2024-01-03",
+      "readTime": "12 min read",
+      "image": "/placeholder.svg?height=400&width=600",
+      "featured": true
+    },
+    {
+      "id": "python-vs-java-beginners",
+      "title": "Python vs Java: Which Programming Language Should Beginners Learn First?",
+      "slug": "python-vs-java-beginners",
+      "excerpt": "Comprehensive comparison of Python and Java for beginners, covering syntax, career opportunities, and learning curve.",
+      "content": "Choosing your first programming language is a crucial decision...",
+      "author": {
+        "name": "Meera Joshi",
+        "role": "Programming Instructor",
+        "image": "/placeholder.svg?height=60&width=60"
+      },
+      "category": "Programming",
+      "tags": ["Python", "Java", "Beginners", "Programming", "Career"],
+      "publishedAt": "2024-01-01",
+      "readTime": "8 min read",
+      "image": "/placeholder.svg?height=400&width=600",
+      "featured": false
+    },
+    {
+      "id": "tech-interview-preparation",
+      "title": "Ultimate Tech Interview Preparation Guide: From Coding to System Design",
+      "slug": "tech-interview-preparation",
+      "excerpt": "Complete guide to preparing for technical interviews including coding challenges, system design, and behavioral questions.",
+      "content": "Technical interviews can be daunting, but with proper preparation...",
+      "author": {
+        "name": "Amit Patel",
+        "role": "Technical Interview Coach",
+        "image": "/placeholder.svg?height=60&width=60"
+      },
+      "category": "Career",
+      "tags": ["Interview", "Coding", "System Design", "Career", "Preparation"],
+      "publishedAt": "2023-12-28",
+      "readTime": "15 min read",
+      "image": "/placeholder.svg?height=400&width=600",
+      "featured": false
+    }
+  ]
+}

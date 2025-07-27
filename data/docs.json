@@ -1,0 +1,124 @@
+{
+  "documents": [
+    {
+      "id": "full-stack-syllabus",
+      "title": "Full Stack Web Development - Complete Syllabus",
+      "description": "Comprehensive curriculum covering MERN & MEAN stack development",
+      "category": "Web Development",
+      "courseId": "full-stack-web-dev",
+      "type": "syllabus",
+      "downloadUrl": "https://example.com/downloads/full-stack-syllabus.pdf",
+      "fileSize": "2.5 MB",
+      "pages": 45,
+      "lastUpdated": "2024-01-15"
+    },
+    {
+      "id": "full-stack-roadmap",
+      "title": "Full Stack Developer Career Roadmap 2024",
+      "description": "Step-by-step guide to becoming a full stack developer",
+      "category": "Web Development",
+      "courseId": "full-stack-web-dev",
+      "type": "roadmap",
+      "downloadUrl": "https://example.com/downloads/full-stack-roadmap.pdf",
+      "fileSize": "1.8 MB",
+      "pages": 25,
+      "lastUpdated": "2024-01-10"
+    },
+    {
+      "id": "devops-syllabus",
+      "title": "DevOps Engineering Mastery - Syllabus",
+      "description": "Complete DevOps curriculum with hands-on projects",
+      "category": "DevOps",
+      "courseId": "devops-mastery",
+      "type": "syllabus",
+      "downloadUrl": "https://example.com/downloads/devops-syllabus.pdf",
+      "fileSize": "3.2 MB",
+      "pages": 52,
+      "lastUpdated": "2024-01-12"
+    },
+    {
+      "id": "devops-tools-guide",
+      "title": "DevOps Tools & Technologies Guide",
+      "description": "Comprehensive guide to Docker, Kubernetes, Jenkins, and AWS",
+      "category": "DevOps",
+      "courseId": "devops-mastery",
+      "type": "guide",
+      "downloadUrl": "https://example.com/downloads/devops-tools.pdf",
+      "fileSize": "4.1 MB",
+      "pages": 68,
+      "lastUpdated": "2024-01-08"
+    },
+    {
+      "id": "data-science-syllabus",
+      "title": "Python Data Science & AI - Complete Syllabus",
+      "description": "Machine learning and AI curriculum with Python",
+      "category": "Data Science",
+      "courseId": "python-data-science",
+      "type": "syllabus",
+      "downloadUrl": "https://example.com/downloads/data-science-syllabus.pdf",
+      "fileSize": "2.9 MB",
+      "pages": 38,
+      "lastUpdated": "2024-01-14"
+    },
+    {
+      "id": "ml-algorithms-cheatsheet",
+      "title": "Machine Learning Algorithms Cheat Sheet",
+      "description": "Quick reference for all major ML algorithms",
+      "category": "Data Science",
+      "courseId": "python-data-science",
+      "type": "cheatsheet",
+      "downloadUrl": "https://example.com/downloads/ml-cheatsheet.pdf",
+      "fileSize": "1.2 MB",
+      "pages": 15,
+      "lastUpdated": "2024-01-05"
+    },
+    {
+      "id": "android-syllabus",
+      "title": "Android Development with Kotlin - Syllabus",
+      "description": "Complete Android app development curriculum",
+      "category": "Mobile Development",
+      "courseId": "android-development",
+      "type": "syllabus",
+      "downloadUrl": "https://example.com/downloads/android-syllabus.pdf",
+      "fileSize": "2.7 MB",
+      "pages": 42,
+      "lastUpdated": "2024-01-11"
+    },
+    {
+      "id": "mobile-ui-patterns",
+      "title": "Mobile UI Design Patterns Guide",
+      "description": "Best practices for mobile app user interface design",
+      "category": "Mobile Development",
+      "courseId": "android-development",
+      "type": "guide",
+      "downloadUrl": "https://example.com/downloads/mobile-ui-patterns.pdf",
+      "fileSize": "3.5 MB",
+      "pages": 55,
+      "lastUpdated": "2024-01-07"
+    },
+    {
+      "id": "frontend-syllabus",
+      "title": "Frontend Development Mastery - Syllabus",
+      "description": "React, Vue, Angular and modern frontend technologies",
+      "category": "Frontend Development",
+      "courseId": "frontend-mastery",
+      "type": "syllabus",
+      "downloadUrl": "https://example.com/downloads/frontend-syllabus.pdf",
+      "fileSize": "2.4 MB",
+      "pages": 35,
+      "lastUpdated": "2024-01-13"
+    },
+    {
+      "id": "javascript-es6-guide",
+      "title": "Modern JavaScript ES6+ Complete Guide",
+      "description": "Everything you need to know about modern JavaScript",
+      "category": "Frontend Development",
+      "courseId": "frontend-mastery",
+      "type": "guide",
+      "downloadUrl": "https://example.com/downloads/javascript-es6.pdf",
+      "fileSize": "2.1 MB",
+      "pages": 48,
+      "lastUpdated": "2024-01-09"
+    }
+  ]
+}
