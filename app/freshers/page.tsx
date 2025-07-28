@@ -38,7 +38,7 @@ const successStories = [
     salary: "₹12 LPA",
     image: "/placeholder.svg?height=80&width=80",
     story:
-      "From a mechanical engineering student to a software engineer at Flipkart. VikaraX made my career transition seamless.",
+      "From a mechanical engineering student to a software engineer at Flipkart. CoderCrafter made my career transition seamless.",
   },
   {
     name: "Sneha Patel",
@@ -54,7 +54,7 @@ const successStories = [
     role: "Data Scientist at Microsoft",
     salary: "₹18 LPA",
     image: "/placeholder.svg?height=80&width=80",
-    story: "VikaraX helped me specialize in Data Science and land my dream job at Microsoft right after graduation.",
+    story: "CoderCrafter helped me specialize in Data Science and land my dream job at Microsoft right after graduation.",
   },
 ]
 
@@ -93,7 +93,7 @@ export default function FreshersPage() {
                 </h1>
                 <p className="text-xl text-gray-600 max-w-lg">
                   Transform your academic knowledge into industry-ready skills. Join thousands of students who landed
-                  their first tech job with VikaraX.
+                  their first tech job with CoderCrafter.
                 </p>
               </div>
 
@@ -164,7 +164,7 @@ export default function FreshersPage() {
               <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
                 Students Choose
               </span>{" "}
-              VikaraX?
+              CoderCrafter?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We understand the unique challenges students face when transitioning from academics to industry

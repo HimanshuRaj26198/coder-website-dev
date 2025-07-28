@@ -34,7 +34,7 @@ export function StatsSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Trusted by Thousands of Students</h2>
           <p className="text-xl text-purple-100 max-w-3xl mx-auto">
-            Join the community of successful developers who transformed their careers with VikaraX
+            Join the community of successful developers who transformed their careers with CoderCrafter
           </p>
         </div>
 

@@ -148,7 +148,7 @@ export function DownloadPopup({ isOpen, onClose, documentTitle, onDownload }: Do
         </form>
 
         <p className="text-xs text-gray-500 text-center mt-4">
-          By downloading, you agree to receive course information and updates from VikaraX.
+          By downloading, you agree to receive course information and updates from CoderCrafter.
         </p>
       </div>
     </div>

@@ -44,7 +44,7 @@ export default function ContactPage() {
             </div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Message Sent Successfully!</h2>
             <p className="text-gray-600 mb-4">
-              Thank you for contacting VikaraX. Our team will get back to you within 24 hours.
+              Thank you for contacting CoderCrafter. Our team will get back to you within 24 hours.
             </p>
             <Button
               onClick={() => setIsSubmitted(false)}
@@ -110,15 +110,15 @@ export default function ContactPage() {
                 <div className="space-y-3">
                   <div>
                     <p className="font-semibold text-gray-900">General</p>
-                    <p className="text-blue-600">info@vikarax.com</p>
+                    <p className="text-blue-600">info@CoderCrafter.com</p>
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Admissions</p>
-                    <p className="text-blue-600">admissions@vikarax.com</p>
+                    <p className="text-blue-600">admissions@CoderCrafter.com</p>
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Support</p>
-                    <p className="text-blue-600">support@vikarax.com</p>
+                    <p className="text-blue-600">support@CoderCrafter.com</p>
                   </div>
                 </div>
               </CardContent>
@@ -133,7 +133,7 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent className="p-6">
                 <div className="space-y-2">
-                  <p className="font-semibold text-gray-900">VikaraX Training Institute</p>
+                  <p className="font-semibold text-gray-900">CoderCrafter Training Institute</p>
                   <p className="text-gray-700">
                     123 Tech Park, Innovation Hub
                     <br />

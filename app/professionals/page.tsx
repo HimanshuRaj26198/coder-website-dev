@@ -41,7 +41,7 @@ const transitionStories = [
     experience: "5 years",
     image: "/placeholder.svg?height=80&width=80",
     story:
-      "From designing machines to managing cloud infrastructure. VikaraX helped me transition smoothly while working full-time.",
+      "From designing machines to managing cloud infrastructure. CoderCrafter helped me transition smoothly while working full-time.",
   },
   {
     name: "Priya Sharma",
@@ -50,7 +50,7 @@ const transitionStories = [
     salaryIncrease: "180%",
     experience: "7 years",
     image: "/placeholder.svg?height=80&width=80",
-    story: "My marketing background combined with tech skills from VikaraX opened doors I never imagined possible.",
+    story: "My marketing background combined with tech skills from CoderCrafter opened doors I never imagined possible.",
   },
   {
     name: "Amit Patel",
@@ -169,7 +169,7 @@ export default function ProfessionalsPage() {
               <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
                 Professionals Choose
               </span>{" "}
-              VikaraX?
+              CoderCrafter?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We understand the challenges of career transition while managing professional responsibilities

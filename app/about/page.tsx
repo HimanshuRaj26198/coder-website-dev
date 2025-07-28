@@ -61,7 +61,7 @@ const team = [
 const milestones = [
   {
     year: "2019",
-    title: "VikaraX Founded",
+    title: "CoderCrafter Founded",
     description: "Started with a vision to bridge the gap between academic learning and industry requirements.",
   },
   {
@@ -101,7 +101,7 @@ export default function AboutPage() {
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               About{" "}
               <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                VikaraX
+                CoderCrafter
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -196,7 +196,7 @@ export default function AboutPage() {
               <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Values</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The principles that guide everything we do at VikaraX
+              The principles that guide everything we do at CoderCrafter
             </p>
           </div>
 
@@ -225,7 +225,7 @@ export default function AboutPage() {
               <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Team</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet the experienced professionals leading VikaraX's mission
+              Meet the experienced professionals leading CoderCrafter's mission
             </p>
           </div>
 
@@ -297,7 +297,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Start Your Tech Journey?</h2>
           <p className="text-xl text-purple-100 mb-8">
-            Join thousands of successful students who transformed their careers with VikaraX
+            Join thousands of successful students who transformed their careers with CoderCrafter
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

@@ -7,7 +7,7 @@ const testimonials = [
     role: "Full Stack Developer at Google",
     image: "/placeholder.svg?height=60&width=60",
     content:
-      "VikaraX transformed my career completely. From a non-IT background to landing a job at Google - the journey was incredible with their expert guidance.",
+      "CoderCrafter transformed my career completely. From a non-IT background to landing a job at Google - the journey was incredible with their expert guidance.",
     rating: 5,
     course: "Full Stack Web Development",
   },
@@ -16,7 +16,7 @@ const testimonials = [
     role: "DevOps Engineer at Microsoft",
     image: "/placeholder.svg?height=60&width=60",
     content:
-      "The DevOps course at VikaraX is outstanding. Real-world projects and industry mentorship helped me secure my dream job at Microsoft.",
+      "The DevOps course at CoderCrafter is outstanding. Real-world projects and industry mentorship helped me secure my dream job at Microsoft.",
     rating: 5,
     course: "DevOps Engineering Mastery",
   },
@@ -47,7 +47,7 @@ export function TestimonialsSection() {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Real stories from real students who transformed their careers with VikaraX
+            Real stories from real students who transformed their careers with CoderCrafter
           </p>
         </div>
 

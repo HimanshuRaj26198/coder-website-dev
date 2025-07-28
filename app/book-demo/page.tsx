@@ -292,7 +292,7 @@ export default function BookDemoPage() {
                 </Button>
 
                 <p className="text-sm text-gray-500 text-center">
-                  By booking this demo, you agree to receive communications from VikaraX. We respect your privacy and
+                  By booking this demo, you agree to receive communications from CoderCrafter. We respect your privacy and
                   will never share your information.
                 </p>
               </form>

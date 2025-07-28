@@ -47,7 +47,7 @@ export function LeadForm() {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Get Started with{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">VikaraX</span>
+            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">CoderCrafter</span>
           </h2>
           <p className="text-xl text-gray-600">
             Fill out the form below and our career counselor will contact you within 24 hours
@@ -169,7 +169,7 @@ export function LeadForm() {
               </Button>
 
               <p className="text-sm text-gray-500 text-center">
-                By submitting this form, you agree to receive communications from VikaraX. We respect your privacy and
+                By submitting this form, you agree to receive communications from CoderCrafter. We respect your privacy and
                 will never share your information.
               </p>
             </form>

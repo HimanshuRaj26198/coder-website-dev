@@ -45,7 +45,7 @@ export function HeroSection() {
                 <span className="text-gray-900">in Minutes with</span>
                 <br />
                 <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                  VikaraX
+                  CoderCrafter
                 </span>
               </h1>
               <p className="text-xl text-gray-600 max-w-lg">

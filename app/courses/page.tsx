@@ -6,7 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Star, Users, Clock, BookOpen, Search } from "lucide-react"
+import { Star, Users, Clock, BookOpen, Search, Zap, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import coursesData from "@/data/courses.json"
 
@@ -139,149 +139,174 @@ export default function CoursesPage() {
 
       {/* Courses Grid */}
       <section className="pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredCourses.map((course) => (
-              <Card
-                key={course.id}
-                className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden bg-white"
-              >
-                <CardHeader className="p-0">
-                  <div className="relative">
-                    <img
-                      src={course.image || "/placeholder.svg"}
-                      alt={course.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {filteredCourses.length > 0 ? (
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredCourses.map((course) => (
+          <Card
+            key={course.id}
+            className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden bg-white relative"
+          >
+            {/* Discount Ribbon */}
+            {course.discount > 0 && (
+              <div className="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xs font-bold px-3 py-1 transform rotate-45 translate-x-8 translate-y-4 w-32 text-center z-10">
+                {course.discount}% OFF
+              </div>
+            )}
+
+            <CardHeader className="p-0">
+              <div className="relative overflow-hidden">
+                <img
+                  src={course.image || "/placeholder.svg"}
+                  alt={course.title}
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute top-4 left-4">
+                  <Badge
+                    className={`${
+                      course.level.includes("Beginner")
+                        ? "bg-green-100 text-green-600"
+                        : course.level.includes("Intermediate")
+                          ? "bg-yellow-100 text-yellow-600"
+                          : "bg-red-100 text-red-600"
+                    } shadow-sm`}
+                  >
+                    {course.level.split(" ")[0]}
+                  </Badge>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-white font-medium">View Course Details</span>
+                </div>
+              </div>
+            </CardHeader>
+
+            <CardContent className="p-6">
+              <div className="flex items-center space-x-1 mb-2">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`w-4 h-4 ${i < Math.floor(course.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}`}
                     />
-                    <div className="absolute top-4 left-4">
-                      <Badge
-                        className={`${
-                          course.level.includes("Beginner")
-                            ? "bg-green-100 text-green-600"
-                            : course.level.includes("Intermediate")
-                              ? "bg-yellow-100 text-yellow-600"
-                              : "bg-red-100 text-red-600"
-                        }`}
-                      >
-                        {course.level.split(" ")[0]}
-                      </Badge>
-                    </div>
-                    <div className="absolute top-4 right-4">
-                      <Badge className="bg-red-500 text-white">{course.discount}% OFF</Badge>
-                    </div>
-                  </div>
-                </CardHeader>
+                  ))}
+                </div>
+                <span className="text-sm text-gray-600">({course.reviews} Reviews)</span>
+              </div>
 
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-1 mb-2">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`w-4 h-4 ${i < Math.floor(course.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}`}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-600">({course.reviews} Reviews)</span>
-                  </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                {course.title}
+              </h3>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
-                    {course.title}
-                  </h3>
+              <p className="text-gray-600 text-sm mb-4 line-clamp-2">{course.description}</p>
 
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">{course.description}</p>
+              <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <div className="flex items-center space-x-1">
+                  <BookOpen className="w-4 h-4" />
+                  <span>{course.lessons} Lessons</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <Users className="w-4 h-4" />
+                  <span>{course.students.toLocaleString()} Students</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <Clock className="w-4 h-4" />
+                  <span>{course.duration}</span>
+                </div>
+              </div>
 
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center space-x-1">
-                      <BookOpen className="w-4 h-4" />
-                      <span>{course.lessons} Lessons</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Users className="w-4 h-4" />
-                      <span>{course.students.toLocaleString()}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{course.duration}</span>
-                    </div>
-                  </div>
+              <div className="flex items-center space-x-2 mb-4">
+                <img
+                  src={course.instructor.image || "/placeholder.svg"}
+                  alt={course.instructor.name}
+                  className="w-8 h-8 rounded-full object-cover"
+                />
+                <div>
+                  <p className="text-sm font-medium text-gray-900">By {course.instructor.name}</p>
+                  <p className="text-xs text-gray-500">{course.instructor.expertise}</p>
+                </div>
+              </div>
 
-                  <div className="flex items-center space-x-2 mb-4">
-                    <img
-                      src={course.instructor.image || "/placeholder.svg"}
-                      alt={course.instructor.name}
-                      className="w-8 h-8 rounded-full"
-                    />
-                    <div>
-                      <p className="text-sm font-medium text-gray-900">By {course.instructor.name}</p>
-                      <p className="text-xs text-gray-500">{course.instructor.expertise}</p>
-                    </div>
-                  </div>
+              {/* Skills Tags */}
+              <div className="flex flex-wrap gap-1 mb-4">
+                {course.skills.slice(0, 3).map((skill, index) => (
+                  <Badge key={index} variant="outline" className="text-xs border-gray-200">
+                    {skill}
+                  </Badge>
+                ))}
+                {course.skills.length > 3 && (
+                  <Badge variant="outline" className="text-xs border-gray-200">
+                    +{course.skills.length - 3} more
+                  </Badge>
+                )}
+              </div>
+            </CardContent>
 
-                  {/* Skills Tags */}
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {course.skills.slice(0, 3).map((skill, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
-                        {skill}
-                      </Badge>
-                    ))}
-                    {course.skills.length > 3 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{course.skills.length - 3} more
-                      </Badge>
+            <CardFooter className="p-6 pt-0 flex flex-col gap-3">
+              <div className="flex items-center justify-between w-full">
+                <div className="flex flex-col">
+                  <span className="text-xs text-gray-500">Starting at</span>
+                  <div className="flex items-end gap-2">
+                    <span className="text-2xl font-bold text-gray-900">₹{course.price.toLocaleString()}</span>
+                    {course.discount > 0 && (
+                      <span className="text-lg text-gray-500 line-through mb-0.5">
+                        ₹{course.originalPrice.toLocaleString()}
+                      </span>
                     )}
                   </div>
-                </CardContent>
-
-                <CardFooter className="p-6 pt-0 flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-2xl font-bold text-gray-900">₹{course.price.toLocaleString()}</span>
-                    <span className="text-lg text-gray-500 line-through">₹{course.originalPrice.toLocaleString()}</span>
-                  </div>
-                  <div className="flex space-x-2">
-                    <Button
-                      asChild
-                      variant="outline"
-                      size="sm"
-                      className="border-purple-600 text-purple-600 hover:bg-purple-50 bg-transparent"
-                    >
-                      <Link href={`/courses/${course.id}`}>Details</Link>
-                    </Button>
-                    <Button
-                      asChild
-                      size="sm"
-                      className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
-                    >
-                      <Link href={`/enroll/${course.id}`}>Enroll</Link>
-                    </Button>
-                  </div>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-
-          {filteredCourses.length === 0 && (
-            <div className="text-center py-16">
-              <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="w-12 h-12 text-gray-400" />
+                </div>
+                <Badge variant="secondary" className="bg-green-100 text-green-800 hover:bg-green-100">
+                  EMI available
+                </Badge>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No courses found</h3>
-              <p className="text-gray-600 mb-4">Try adjusting your search criteria or filters</p>
-              <Button
-                onClick={() => {
-                  setSearchTerm("")
-                  setSelectedCategory("all")
-                  setSelectedLevel("all")
-                  setPriceRange("all")
-                }}
-                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white"
-              >
-                Clear All Filters
-              </Button>
-            </div>
-          )}
+
+              <div className="flex gap-2 w-full">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className="border-purple-600 text-purple-600 hover:bg-purple-50 hover:text-purple-700 flex-1 transition-all"
+                >
+                  <Link href={`/courses/${course.id}`} className="flex items-center gap-1">
+                    Details <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="sm"
+                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-purple-500/30 flex-1 transition-all group"
+                >
+                  <Link href={`/enroll/${course.id}`} className="flex items-center gap-1">
+                    <Zap className="w-4 h-4 fill-white group-hover:animate-pulse" /> 
+                    <span>Enroll Now</span>
+                  </Link>
+                </Button>
+              </div>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
+    ) : (
+      <div className="text-center py-16">
+        <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <Search className="w-12 h-12 text-gray-400" />
         </div>
-      </section>
+        <h3 className="text-xl font-semibold text-gray-900 mb-2">No courses found</h3>
+        <p className="text-gray-600 mb-4">Try adjusting your search criteria or filters</p>
+        <Button
+          onClick={() => {
+            setSearchTerm("")
+            setSelectedCategory("all")
+            setSelectedLevel("all")
+            setPriceRange("all")
+          }}
+          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all"
+        >
+          Clear All Filters
+        </Button>
+      </div>
+    )}
+  </div>
+</section>
     </main>
   )
 }

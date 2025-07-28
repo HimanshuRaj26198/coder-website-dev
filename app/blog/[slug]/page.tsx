@@ -94,7 +94,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
               </p>
 
               <p>
-                At VikaraX, we've designed our courses to bridge this gap effectively. Our industry-expert instructors
+                At CoderCrafter, we've designed our courses to bridge this gap effectively. Our industry-expert instructors
                 and hands-on approach ensure that you're not just learning theory, but gaining practical skills that
                 employers value.
               </p>
