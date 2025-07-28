@@ -5,7 +5,7 @@ import { StatsSection } from "@/components/stats-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { CTASection } from "@/components/cta-section"
 import { LeadForm } from "@/components/lead-form"
-
+//comment
 export default function HomePage() {
   return (
     <main className="min-h-screen">
