@@ -111,6 +111,7 @@ export function HeroSection() {
                   <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
                     <Users className="w-4 h-4 text-green-600" />
                   </div>
+                  {/* COmment */}
                   <div>
                     <div className="text-xs text-gray-500">University</div>
                     <div className="text-sm font-semibold">50K+ Students</div>
