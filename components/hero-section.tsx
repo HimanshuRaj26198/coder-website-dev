@@ -102,7 +102,7 @@ export function HeroSection() {
             <div className="relative w-full h-96 lg:h-[500px]">
               {/* Central logo */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                <span className="text-white font-bold text-4xl">V</span>
+                <span className="text-white font-bold text-4xl">CC</span>
               </div>
 
               {/* Floating elements */}

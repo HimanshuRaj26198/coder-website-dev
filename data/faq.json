@@ -1,0 +1,211 @@
+{
+  "categories": [
+    {
+      "id": "general",
+      "name": "General Questions",
+      "icon": "HelpCircle",
+      "questions": [
+        {
+          "id": "general-1",
+          "question": "What is CoderCrafter and how does it work?",
+          "answer": "CoderCrafter is an online learning platform that offers comprehensive programming and technology courses. We provide video lectures, hands-on projects, assignments, and career support to help you master in-demand tech skills. Our courses are designed by industry experts and updated regularly to match current market demands."
+        },
+        {
+          "id": "general-2",
+          "question": "Do I need any prior experience to start learning?",
+          "answer": "No prior experience is required for our beginner courses. We offer courses for all skill levels - from complete beginners to advanced professionals. Each course clearly mentions its difficulty level and prerequisites, so you can choose the right starting point for your learning journey."
+        },
+        {
+          "id": "general-3",
+          "question": "How long do I have access to the course materials?",
+          "answer": "Once you enroll in a course, you get lifetime access to all course materials, including videos, assignments, and resources. You can learn at your own pace and revisit the content anytime. We also provide updates to course content at no additional cost."
+        },
+        {
+          "id": "general-4",
+          "question": "Can I get a refund if I'm not satisfied with the course?",
+          "answer": "Yes, we offer a 30-day money-back guarantee for all our courses. If you're not satisfied with the course content or quality within 30 days of enrollment, you can request a full refund. The refund process typically takes 5-7 business days."
+        },
+        {
+          "id": "general-5",
+          "question": "Are the courses updated regularly?",
+          "answer": "Yes, we regularly update our courses to keep up with the latest industry trends and technologies. When significant updates are made, all enrolled students get access to the new content automatically at no extra cost. We also notify students about major updates via email."
+        }
+      ]
+    },
+    {
+      "id": "courses",
+      "name": "Courses & Learning",
+      "icon": "BookOpen",
+      "questions": [
+        {
+          "id": "courses-1",
+          "question": "How are the courses structured?",
+          "answer": "Our courses are structured in a progressive manner with modules and lessons. Each course includes video lectures, practical exercises, assignments, quizzes, and projects. You'll also get downloadable resources, code files, and access to our community forum for discussions and doubt resolution."
+        },
+        {
+          "id": "courses-2",
+          "question": "Can I download the course videos for offline viewing?",
+          "answer": "Yes, you can download course videos for offline viewing using our mobile app. This feature is available for all enrolled students and allows you to learn even without an internet connection. However, downloaded videos are encrypted and can only be viewed within our app."
+        },
+        {
+          "id": "courses-3",
+          "question": "Do you provide certificates upon course completion?",
+          "answer": "Yes, we provide industry-recognized certificates upon successful completion of courses. To earn a certificate, you need to complete all lessons, submit assignments, and pass the final assessment with a minimum score of 70%. Certificates are digitally verifiable and can be shared on LinkedIn and other platforms."
+        },
+        {
+          "id": "courses-4",
+          "question": "Can I switch between different courses?",
+          "answer": "Yes, if you have enrolled in multiple courses, you can switch between them anytime. Your progress in each course is saved automatically, so you can continue from where you left off. We recommend focusing on one course at a time for better learning outcomes."
+        },
+        {
+          "id": "courses-5",
+          "question": "Are there any live sessions or webinars?",
+          "answer": "Yes, we conduct regular live Q&A sessions, webinars, and masterclasses with industry experts. These sessions are scheduled weekly and cover various topics related to the courses. Recordings of live sessions are also made available to all students."
+        },
+        {
+          "id": "courses-6",
+          "question": "How do I track my learning progress?",
+          "answer": "You can track your progress through your student dashboard, which shows completion percentage, time spent, assignments submitted, and upcoming deadlines. We also provide detailed analytics about your learning patterns and suggest areas for improvement."
+        }
+      ]
+    },
+    {
+      "id": "technical",
+      "name": "Technical Support",
+      "icon": "Monitor",
+      "questions": [
+        {
+          "id": "technical-1",
+          "question": "What are the system requirements for accessing courses?",
+          "answer": "You need a computer or mobile device with a stable internet connection (minimum 5 Mbps recommended). Supported browsers include Chrome 90+, Firefox 88+, Safari 14+, and Edge 90+. For the best experience, we recommend using the latest version of Chrome or Firefox with at least 4GB RAM."
+        },
+        {
+          "id": "technical-2",
+          "question": "I'm having trouble with video playback. What should I do?",
+          "answer": "First, check your internet connection and try refreshing the page. Clear your browser cache and cookies, disable browser extensions temporarily, and try using a different browser. If the problem persists, try lowering the video quality or contact our technical support team."
+        },
+        {
+          "id": "technical-3",
+          "question": "Can I access courses on mobile devices?",
+          "answer": "Yes, all our courses are mobile-friendly and can be accessed through web browsers on smartphones and tablets. We also have dedicated mobile apps for iOS and Android that provide a better learning experience with offline video downloads and push notifications."
+        },
+        {
+          "id": "technical-4",
+          "question": "I forgot my password. How can I reset it?",
+          "answer": "Click on the 'Forgot Password' link on the login page and enter your registered email address. You'll receive a password reset link within a few minutes. If you don't receive the email, check your spam folder or contact support for assistance."
+        },
+        {
+          "id": "technical-5",
+          "question": "Why can't I access my course after payment?",
+          "answer": "Course access is usually activated within 5-10 minutes of successful payment. If you still can't access your course after 15 minutes, please check your email for payment confirmation and course access details. Contact our support team if the issue persists."
+        }
+      ]
+    },
+    {
+      "id": "billing",
+      "name": "Billing & Payments",
+      "icon": "CreditCard",
+      "questions": [
+        {
+          "id": "billing-1",
+          "question": "What payment methods do you accept?",
+          "answer": "We accept all major credit cards (Visa, MasterCard, American Express), debit cards, net banking, UPI, and digital wallets like Paytm, PhonePe, and Google Pay. We also offer EMI options for courses above ₹25,000 through select banks and financial partners."
+        },
+        {
+          "id": "billing-2",
+          "question": "Is it safe to make payments on your platform?",
+          "answer": "Yes, all payments are processed through secure, PCI-DSS compliant payment gateways. We use SSL encryption to protect your financial information and never store your complete card details on our servers. Your payment information is handled by trusted payment processors like Razorpay and PayU."
+        },
+        {
+          "id": "billing-3",
+          "question": "Can I pay in installments (EMI)?",
+          "answer": "Yes, we offer EMI options for courses priced above ₹25,000. You can choose from 3, 6, 9, or 12-month EMI plans with select banks and credit cards. EMI options are available at checkout, and processing fees may apply depending on your bank and chosen tenure."
+        },
+        {
+          "id": "billing-4",
+          "question": "Do you offer any discounts or scholarships?",
+          "answer": "Yes, we regularly offer discounts during festivals, special events, and for early bird enrollments. We also provide scholarships for students from economically disadvantaged backgrounds and have special pricing for bulk enrollments from educational institutions."
+        },
+        {
+          "id": "billing-5",
+          "question": "How do I get my invoice or receipt?",
+          "answer": "You'll receive an invoice via email immediately after successful payment. You can also download invoices from your account dashboard under the 'Billing' section. All invoices are GST compliant and can be used for tax purposes or reimbursements."
+        },
+        {
+          "id": "billing-6",
+          "question": "What is your refund policy?",
+          "answer": "We offer a 30-day money-back guarantee for all courses. If you're not satisfied, you can request a refund within 30 days of enrollment. Refunds are processed within 5-7 business days to the original payment method. Partial course completion doesn't affect your eligibility for a refund."
+        }
+      ]
+    },
+    {
+      "id": "career",
+      "name": "Career Support",
+      "icon": "Briefcase",
+      "questions": [
+        {
+          "id": "career-1",
+          "question": "Do you provide job placement assistance?",
+          "answer": "Yes, we provide comprehensive placement assistance including resume building, portfolio development, mock interviews, and job referrals. Our placement team works with 500+ hiring partners and has achieved a 95% placement rate. Placement support is available for 6 months after course completion."
+        },
+        {
+          "id": "career-2",
+          "question": "What kind of career support do you offer?",
+          "answer": "Our career support includes one-on-one career counseling, resume and LinkedIn profile optimization, portfolio development guidance, mock interviews with industry experts, soft skills training, and direct job referrals to our hiring partners. We also conduct regular career guidance webinars."
+        },
+        {
+          "id": "career-3",
+          "question": "How do you help with interview preparation?",
+          "answer": "We provide comprehensive interview preparation including technical mock interviews, HR round practice, behavioral question training, and coding challenge practice. Our industry expert mentors conduct personalized mock interviews and provide detailed feedback to help you improve."
+        },
+        {
+          "id": "career-4",
+          "question": "Do you have partnerships with companies for job placements?",
+          "answer": "Yes, we have partnerships with 500+ companies including startups, mid-size companies, and Fortune 500 corporations. Our hiring partners regularly source candidates from our talent pool, and we facilitate direct interviews and job referrals based on your skills and preferences."
+        },
+        {
+          "id": "career-5",
+          "question": "What is the average salary package for your graduates?",
+          "answer": "The average starting salary for our graduates is ₹8.5 LPA, with packages ranging from ₹4 LPA to ₹25 LPA depending on the course, experience level, and company. Our Full Stack Development and Data Science graduates typically receive higher packages, with many securing positions in top tech companies."
+        },
+        {
+          "id": "career-6",
+          "question": "How long does it take to get placed after course completion?",
+          "answer": "Most of our students get placed within 3-6 months of course completion. However, the timeline depends on various factors including your skill level, interview performance, market conditions, and job preferences. We provide continuous support until you secure a suitable position."
+        }
+      ]
+    },
+    {
+      "id": "account",
+      "name": "Account & Profile",
+      "icon": "User",
+      "questions": [
+        {
+          "id": "account-1",
+          "question": "How do I create an account?",
+          "answer": "You can create an account by clicking the 'Sign Up' button on our homepage. You'll need to provide your name, email address, and create a password. After registration, you'll receive a verification email to activate your account. You can also sign up using your Google or LinkedIn account for faster registration."
+        },
+        {
+          "id": "account-2",
+          "question": "Can I change my email address or personal information?",
+          "answer": "Yes, you can update your personal information including email address, phone number, and profile details from your account settings. For email changes, you'll need to verify the new email address. Some information like name on certificates may require additional verification."
+        },
+        {
+          "id": "account-3",
+          "question": "How do I delete my account?",
+          "answer": "You can request account deletion by contacting our support team or using the account deletion option in your profile settings. Please note that deleting your account will permanently remove all your course progress, certificates, and personal data. This action cannot be undone."
+        },
+        {
+          "id": "account-4",
+          "question": "Can I have multiple accounts?",
+          "answer": "We recommend using only one account per person for the best learning experience and to avoid confusion with course progress and certificates. If you have multiple accounts, please contact our support team to help merge them or deactivate duplicate accounts."
+        },
+        {
+          "id": "account-5",
+          "question": "How do I update my profile picture?",
+          "answer": "Go to your profile settings and click on the profile picture area. You can upload a new image (JPG, PNG formats, max 5MB) or choose from available avatars. The new profile picture will be updated across all your course interactions and certificates."
+        }
+      ]
+    }
+  ]
+}

@@ -134,9 +134,9 @@ export default function FreshersPage() {
             <div className="relative">
               <div className="relative w-full h-96 lg:h-[500px]">
                 <img
-                  src="/placeholder.svg?height=500&width=600"
+                  src="/assets/images/studen-page-hero.png"
                   alt="Students learning coding"
-                  className="w-full h-full object-cover rounded-3xl shadow-2xl"
+                  className="w-full h-full object-cover rounded-3xl"
                 />
                 <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-lg">
                   <div className="flex items-center space-x-2">

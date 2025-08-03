@@ -208,7 +208,7 @@ export default function CoursePage({ params }: CoursePageProps) {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-3">Job Roles After Completion</h4>
                     <div className="flex flex-wrap gap-2">
-                      {jobRoles.map((role, index) => (
+                      {course.jobRoles.map((role, index) => (
                         <Badge key={index} variant="outline" className="text-xs">
                           {role}
                         </Badge>
@@ -226,7 +226,7 @@ export default function CoursePage({ params }: CoursePageProps) {
               </CardHeader>
               <CardContent>
                 <Accordion type="single" collapsible className="w-full">
-                  {syllabus.map((module, index) => (
+                  {course.syllabus.map((module, index) => (
                     <AccordionItem key={index} value={`module-${index}`}>
                       <AccordionTrigger className="text-left">
                         <div className="flex items-center justify-between w-full mr-4">
@@ -284,7 +284,7 @@ export default function CoursePage({ params }: CoursePageProps) {
               </CardHeader>
               <CardContent>
                 <Accordion type="single" collapsible className="w-full">
-                  {faqs.map((faq, index) => (
+                  {course.faq.map((faq, index) => (
                     <AccordionItem key={index} value={`faq-${index}`}>
                       <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
                       <AccordionContent>

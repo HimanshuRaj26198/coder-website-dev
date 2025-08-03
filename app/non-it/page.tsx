@@ -104,7 +104,7 @@ const successStories = [
 export default function NonItPage() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section - Updated with full image display */}
       <section className="relative min-h-screen bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-20 h-20 bg-teal-200 rounded-full opacity-50 animate-pulse"></div>
@@ -112,9 +112,10 @@ export default function NonItPage() {
           <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-200 rounded-full opacity-50 animate-pulse delay-2000"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 h-full">
+          <div className="flex flex-col lg:flex-row items-center h-full gap-8">
+            {/* Text Content - Left Side (50% width) */}
+            <div className="lg:w-1/2 space-y-8">
               <div className="inline-flex items-center space-x-2 bg-teal-100 text-teal-600 px-4 py-2 rounded-full text-sm font-medium">
                 <BookOpen className="w-4 h-4" />
                 <span>Perfect for Non-IT Backgrounds</span>
@@ -176,12 +177,15 @@ export default function NonItPage() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="relative w-full h-96 lg:h-[500px]">
+            {/* Image - Right Side (50% width) */}
+            <div className="lg:w-1/2 relative h-full flex items-center justify-center">
+              <div className="relative w-full h-full min-h-[500px]">
                 <img
-                  src="/placeholder.svg?height=500&width=600"
+                  width="100%"
+                  height="auto"
+                  src="/assets/images/non-it-landing-hero.png"
                   alt="Diverse professionals learning technology"
-                  className="w-full h-full object-cover rounded-3xl shadow-2xl"
+                  className="w-full h-full object-contain"
                 />
                 <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-lg">
                   <div className="flex items-center space-x-2">

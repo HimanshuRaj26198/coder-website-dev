@@ -1,22 +1,30 @@
-import { Zap, Monitor, Headphones, CreditCard } from "lucide-react"
+// import { Zap, Monitor, Headphones, CreditCard } from "lucide-react"
+
+import { 
+  GraduationCap, 
+  Briefcase, 
+  Clock, 
+  CreditCard,
+  Zap 
+} from "lucide-react";
 
 const features = [
   {
-    icon: Zap,
-    title: "Fast Performance",
-    description: "Optimized for a smaller build size, faster dev compilation and dozens of other improvements.",
+    icon: GraduationCap,
+    title: "Professional Trainers",
+    description: "Learn from industry experts with years of practical experience and teaching expertise.",
     color: "from-blue-500 to-purple-600",
   },
   {
-    icon: Monitor,
-    title: "Perfect Responsive",
-    description: "Our template is full perfect for all device. You can visit our template all device easily.",
+    icon: Briefcase,
+    title: "100% Placement Support",
+    description: "Dedicated career services including resume prep, mock interviews, and job referrals.",
     color: "from-green-500 to-blue-500",
   },
   {
-    icon: Headphones,
-    title: "Fast & Friendly Support",
-    description: "We provide 24 hours support for all clients. You can purchase without hesitation.",
+    icon: Clock,
+    title: "24/7 Support",
+    description: "Round-the-clock assistance from instructors and technical support teams when you need it.",
     color: "from-gray-700 to-gray-900",
     dark: true,
   },
