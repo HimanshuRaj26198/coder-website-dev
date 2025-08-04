@@ -175,7 +175,7 @@ export default function TechnicalSupport() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Support Channels */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Get Help Now</h2>
+          {/* <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Get Help Now</h2> */}
           <div className="grid md:grid-cols-3 gap-6">
             {supportChannels.map((channel, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 text-center">

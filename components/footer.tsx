@@ -14,8 +14,7 @@ const footerLinks = {
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Our Instructors", href: "/instructors" },
-    { name: "Success Stories", href: "/success-stories" },
+    { name: "Resources", href: "/Resources" },
     { name: "Blog", href: "/blog" },
     { name: "Careers", href: "/careers" },
     { name: "Contact Us", href: "/contact" },
@@ -23,7 +22,6 @@ const footerLinks = {
   support: [
     { name: "Help Center", href: "/help" },
     { name: "Student Portal", href: "/student-portal" },
-    { name: "Course Catalog", href: "/catalog" },
     { name: "Placement Assistance", href: "/placement" },
     { name: "Technical Support", href: "/support" },
     { name: "FAQ", href: "/faq" },
@@ -44,7 +42,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <Link href="/" className="flex items-center gap-3 group">
+              <Link href="/" className="flex items-center gap-2 group">
                 <Image
                   src={logo}
                   alt="CoderCrafter Logo"
@@ -68,7 +66,7 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span className="text-gray-300">hello@codercrafter.in</span>
+                <span className="text-gray-300">info@codercrafter.in</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-purple-400 flex-shrink-0" />

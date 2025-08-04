@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
+import { Mail, Phone, MapPin } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
 
 export default function RefundPolicy() {
   const [selectedRefundType, setSelectedRefundType] = useState<string>("standard")
@@ -118,80 +121,144 @@ export default function RefundPolicy() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-blue-600 opacity-10"></div>
-        <div className="container mx-auto max-w-4xl relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
-              <RefreshCw className="w-10 h-10 text-green-600" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Refund Policy</h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Our straightforward 15-day refund policy ensures risk-free enrollment in all CoderCrafter programs.
-            </p>
-            <div className="mt-6 inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
-              <CheckCircle className="w-4 h-4 mr-2" />
-              15-Day Money-Back Guarantee
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Refund Policy Summary */}
-      <section className="py-12 px-4 bg-white max-w-4xl mx-auto rounded-xl shadow-sm mb-16">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold mb-6">Key Policy Terms</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="border-r border-gray-200 pr-6">
-              <div className="text-3xl font-bold text-green-600 mb-2">15</div>
-              <p className="text-gray-600">Days from purchase</p>
-            </div>
-            <div className="border-r border-gray-200 pr-6">
-              <div className="text-3xl font-bold text-green-600 mb-2">25%</div>
-              <p className="text-gray-600">Max course completion</p>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
-              <p className="text-gray-600">Refund amount</p>
-            </div>
-          </div>
-          <p className="text-sm text-gray-500 mt-8 italic">
-            Refunds exclude any transaction fees. See full terms below.
-          </p>
-        </div>
-      </section>
-
-      {/* Refund Types */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Refund Policy</h2>
-          <div className="flex justify-center mb-16">
-            <Card className="w-full max-w-md hover:shadow-lg transition-shadow">
-              <CardHeader className="text-center">
-                <div className={`w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4`}>
-                  <span className="text-white font-bold text-xl">100%</span>
+    <div className="">
+     <div className="bg-white text-gray-600 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-12">
+                    <h1 className="mt-6 text-3xl font-bold text-gray-900 sm:text-4xl">
+                        Refund Policy
+                    </h1>
+                    <p className="mt-4 text-lg text-gray-600">
+                        Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                    </p>
                 </div>
-                <CardTitle className="text-xl">Standard Refund</CardTitle>
-                <CardDescription>Applies to all CoderCrafter courses</CardDescription>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="space-y-4">
-                  <div>
-                    <div className="text-2xl font-bold text-gray-900">15 Days</div>
-                    <div className="text-sm text-gray-500">Refund window</div>
-                  </div>
-                  <Progress value={100} className="h-2" />
-                  <p className="text-sm text-gray-600 px-4">
-                    Eligible if requested within 15 days of purchase and course completion &lt;25%
-                  </p>
+
+                <div className="prose prose-blue prose-lg mx-auto">
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Overview</h2>
+                        <p>
+                            At CoderCrafter, we strive to provide the highest quality technical education. If you're not satisfied with your purchase, we offer refunds under the conditions outlined in this policy.
+                        </p>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Course Enrollment Refunds</h2>
+
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2">2.1 Standard Courses</h3>
+                        <p>
+                            You may request a full refund within <strong>7 days</strong> of your enrollment date, provided you have not:
+                        </p>
+                        <ul className="list-disc pl-6 mt-2">
+                            <li>Accessed more than 20% of the course content</li>
+                            <li>Downloaded any course materials</li>
+                            <li>Submitted any assignments or projects</li>
+                        </ul>
+
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-4">2.2 Bootcamps & Intensive Programs</h3>
+                        <p>
+                            For our intensive programs (4+ weeks duration), refunds are available as follows:
+                        </p>
+                        <ul className="list-disc pl-6 mt-2">
+                            <li><strong>100% refund</strong> if requested before the program start date</li>
+                            <li><strong>50% refund</strong> if requested within the first 3 days</li>
+                            <li><strong>No refund</strong> after 3 days into the program</li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Subscription Refunds</h2>
+                        <p>
+                            For monthly/annual subscriptions:
+                        </p>
+                        <ul className="list-disc pl-6 mt-2">
+                            <li>You may cancel within <strong>3 days</strong> of initial purchase for a full refund</li>
+                            <li>After 3 days, refunds are prorated based on unused time</li>
+                            <li>No refunds for partial months of usage</li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Non-Refundable Items</h2>
+                        <p>
+                            The following are not eligible for refunds:
+                        </p>
+                        <ul className="list-disc pl-6 mt-2">
+                            <li>Certification exam fees</li>
+                            <li>Any purchased course materials (books, software licenses, etc.)</li>
+                            <li>Services already rendered (tutoring sessions, career coaching)</li>
+                            <li>Courses purchased during promotional periods unless otherwise stated</li>
+                        </ul>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Processing Refunds</h2>
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2">5.1 How to Request</h3>
+                        <p>
+                            To request a refund, email us at <Link href="mailto:refunds@codercrafter.com" className="text-blue-600 hover:text-blue-800">refunds@codercrafter.com</Link> with:
+                        </p>
+                        <ul className="list-disc pl-6 mt-2">
+                            <li>Your full name</li>
+                            <li>Order/receipt number</li>
+                            <li>Course/program name</li>
+                            <li>Reason for refund request</li>
+                        </ul>
+
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-4">5.2 Processing Time</h3>
+                        <p>
+                            Approved refunds will be processed within <strong>7-10 business days</strong>. The refund will be issued to the original payment method.
+                        </p>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Special Circumstances</h2>
+
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2">6.1 Technical Issues</h3>
+                        <p>
+                            If you experience technical difficulties preventing course access, we will first attempt to resolve the issue. If unresolved after 48 hours, a refund may be issued.
+                        </p>
+
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-4">6.2 Course Cancellation</h3>
+                        <p>
+                            If CoderCrafter cancels a course before completion, you will receive a full refund or option to transfer to another course.
+                        </p>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Dispute Resolution</h2>
+                        <p>
+                            If you disagree with our refund decision, you may request a review by our academic committee within 14 days of the original decision. Email <Link href="mailto:disputes@codercrafter.com" className="text-blue-600 hover:text-blue-800">disputes@codercrafter.com</Link> with:
+                        </p>
+                        <ul className="list-disc pl-6 mt-2">
+                            <li>Original refund request details</li>
+                            <li>Evidence supporting your claim</li>
+                            <li>Desired resolution</li>
+                        </ul>
+                        <p className="mt-4">
+                            The committee will respond within 10 business days with a final determination.
+                        </p>
+                    </section>
+
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Contact Information</h2>
+                        <p>For refund-related inquiries:</p>
+                        <div className="mt-6 space-y-4">
+                            <div className="flex items-start">
+                                <Mail className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                                <span>Email: <Link href="mailto:refunds@codercrafter.com" className="text-blue-600 hover:text-blue-800">refunds@codercrafter.com</Link></span>
+                            </div>
+                            <div className="flex items-center">
+                                <Phone className="h-5 w-5 text-gray-500 mr-3" />
+                                <span>Phone: <Link href="tel:+911234567890" className="text-blue-600 hover:text-blue-800">+91 12345 67890</Link> (Mon-Fri, 9AM-5PM IST)</span>
+                            </div>
+                            <div className="flex items-start">
+                                <MapPin className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
+                                <span>Mailing Address: CoderCrafter Refunds, 123 Tech Park, Bangalore, Karnataka 560001, India</span>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+            </div>
         </div>
-      </section>
 
       {/* Refund Process */}
       <section className="py-16 px-4 bg-white">
@@ -297,7 +364,8 @@ export default function RefundPolicy() {
       </section>
 
       {/* Legal Disclaimers */}
-      <section className="py-12 px-4 bg-gray-100 max-w-6xl mx-auto rounded-lg">
+      <div className="pb-12">
+        <section className="py-10 px-4 bg-gray-100 max-w-6xl mx-auto rounded-lg">
         <h3 className="text-xl font-semibold mb-4 text-center">Important Legal Notes</h3>
         <div className="prose prose-sm text-gray-600 max-w-4xl mx-auto">
           <ul className="list-disc pl-5 space-y-2">
@@ -313,27 +381,7 @@ export default function RefundPolicy() {
           </p>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 shadow-xl text-white">
-            <RefreshCw className="w-12 h-12 text-white mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-4">Need to Initiate a Refund?</h3>
-            <p className="text-blue-100 mb-6">
-              We aim to make the process simple and transparent while protecting all parties.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100">
-                Begin Refund Request
-              </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                Policy Questions
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   )
 }
