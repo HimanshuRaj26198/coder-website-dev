@@ -79,11 +79,27 @@ export function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link href="/about" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
-              About
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700 hover:text-purple-600 transition-colors focus:outline-none group">
+                <span className="font-medium">Internship</span>
+                <ChevronDown className="w-4 h-4 transition-transform group-data-[state=open]:rotate-180" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="min-w-[220px] rounded-lg shadow-lg border border-gray-100 mt-2">
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/paid-internship" className="w-full px-3 py-2">Paid Internship</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/courses?category=Web Development" className="w-full px-3 py-2">Internship</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+
             <Link href="/docs" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               Resources
+            </Link>
+            <Link href="/about" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+              About
             </Link>
             <Link href="/blog" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               Blog

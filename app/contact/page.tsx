@@ -85,15 +85,15 @@ export default function ContactPage() {
                 <div className="space-y-3">
                   <div>
                     <p className="font-semibold text-gray-900">General Inquiries</p>
-                    <p className="text-purple-600 font-medium">+91 98765 43210</p>
+                    <p className="text-purple-600 font-medium">+91 86048 46317</p>
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Admissions</p>
-                    <p className="text-purple-600 font-medium">+91 98765 43211</p>
+                    <p className="text-purple-600 font-medium">+91 89203 19125</p>
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">WhatsApp Support</p>
-                    <p className="text-green-600 font-medium">+91 98765 43212</p>
+                    <p className="text-green-600 font-medium">+91 89203 19125</p>
                   </div>
                 </div>
               </CardContent>
@@ -138,6 +138,18 @@ export default function ContactPage() {
                     123 Tech Park, Innovation Hub
                     <br />
                     Bangalore, Karnataka 560001
+                    <br />
+                    India
+                  </p>
+                </div>
+              </CardContent>
+              <CardContent className="p-6">
+                <div className="space-y-2">
+                  <p className="font-semibold text-gray-900">CoderCrafter Head Quarter</p>
+                  <p className="text-gray-700">
+                    A-1, Housing Colony, Lohiya Nagar
+                    <br />
+                    Kankarbagh, Patna, Bihar 800020
                     <br />
                     India
                   </p>

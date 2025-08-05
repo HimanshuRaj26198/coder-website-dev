@@ -346,10 +346,10 @@ export default function EnrollPage({ params }: EnrollPageProps) {
                       <Clock className="w-4 h-4 text-purple-600" />
                       <span>{course.duration}</span>
                     </div>
-                    <div className="flex items-center space-x-2">
+                    {/* <div className="flex items-center space-x-2">
                       <Users className="w-4 h-4 text-blue-600" />
                       <span>{course.students.toLocaleString()} students</span>
-                    </div>
+                    </div> */}
                     <div className="flex items-center space-x-2">
                       <Award className="w-4 h-4 text-green-600" />
                       <span>Certificate included</span>
@@ -389,7 +389,7 @@ export default function EnrollPage({ params }: EnrollPageProps) {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span>{course.lessons} video lessons</span>
+                    <span>Recorded live classes</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
@@ -417,7 +417,7 @@ export default function EnrollPage({ params }: EnrollPageProps) {
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span>30-day money-back guarantee</span>
+                    <span>15-day money-back guarantee</span>
                   </div>
                 </div>
               </CardContent>
