@@ -16,7 +16,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center gap-3 group">
+            <a href="/" className="flex items-center gap-2 group">
               <Image
                 src={logo}
                 alt="CoderCrafter Logo"
