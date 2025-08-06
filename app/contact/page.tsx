@@ -110,15 +110,19 @@ export default function ContactPage() {
                 <div className="space-y-3">
                   <div>
                     <p className="font-semibold text-gray-900">General</p>
-                    <p className="text-blue-600">info@CoderCrafter.com</p>
+                    <p className="text-blue-600">info@codercrafter.in</p>
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Admissions</p>
-                    <p className="text-blue-600">admissions@CoderCrafter.com</p>
+                    <p className="text-blue-600">admissions@codercrafter.in</p>
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Support</p>
-                    <p className="text-blue-600">support@CoderCrafter.com</p>
+                    <p className="text-blue-600">support@codercrafter.in</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Gmail</p>
+                    <p className="text-blue-600">nayansigupta29@gmail.com</p>
                   </div>
                 </div>
               </CardContent>
