@@ -10,7 +10,7 @@ const EnquirySchema = new Schema(
   },
   { timestamps: true, strict: false }
 );
-
+// comment
 const Enquiry = models.Enquiry || model("Enquiry", EnquirySchema);
 
 export default Enquiry;
