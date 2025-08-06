@@ -6,7 +6,7 @@ export async function PUT(request, { params }) {
   try {
     const { id } = params;
     const userData = await request.json();
-    
+    // comment
     const updatedUser = await User.findByIdAndUpdate(
       id,
       { ...userData, updatedAt: new Date() },
