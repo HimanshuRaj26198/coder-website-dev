@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -17,6 +16,7 @@ export default function FreeResourcePopup({ isOpen, onClose, courseCategory = ""
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     resource: "",
   })
   const [submitted, setSubmitted] = useState(false)
@@ -44,7 +44,7 @@ export default function FreeResourcePopup({ isOpen, onClose, courseCategory = ""
   if (submitted) {
     return (
       <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-2xl p-8 max-w-md w-full text-center">
+        <div className="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full text-center">
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <Download className="w-8 h-8 text-green-600" />
           </div>
@@ -59,9 +59,13 @@ export default function FreeResourcePopup({ isOpen, onClose, courseCategory = ""
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl p-8 max-w-lg w-full relative">
-        <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+    <div className="fixed inset-0 bg-black/50 flex items-start justify-center z-50 p-4 overflow-y-auto">
+      <div className="bg-white rounded-2xl p-6 sm:p-8 max-w-lg w-full relative my-8">
+        <button 
+          onClick={onClose} 
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+          aria-label="Close"
+        >
           <X className="w-6 h-6" />
         </button>
 
@@ -69,12 +73,12 @@ export default function FreeResourcePopup({ isOpen, onClose, courseCategory = ""
           <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
             <Download className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Free Learning Resources</h2>
-          <p className="text-gray-600">Download premium resources to accelerate your learning</p>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Free Learning Resources</h2>
+          <p className="text-sm sm:text-base text-gray-600">Download premium resources to accelerate your learning</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-2 gap-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-4">
             <Input
               type="text"
               placeholder="Your Name"
@@ -91,27 +95,37 @@ export default function FreeResourcePopup({ isOpen, onClose, courseCategory = ""
               required
               className="h-12"
             />
+            <Input
+              type="tel"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={(e) => handleChange("phone", e.target.value)}
+              required
+              className="h-12"
+              pattern="[0-9]{10}"
+              title="Please enter a valid 10-digit phone number"
+            />
           </div>
 
           <div className="space-y-3">
             <p className="font-medium text-gray-900">Choose Your Free Resource:</p>
-            <div className="space-y-3">
+            <div className="space-y-3 max-h-[300px] overflow-y-auto pr-2">
               {resources.map((resource) => (
                 <button
                   key={resource.id}
                   type="button"
                   onClick={() => handleChange("resource", resource.id)}
-                  className={`w-full p-4 rounded-lg border-2 transition-colors text-left ${
+                  className={`w-full p-3 sm:p-4 rounded-lg border-2 transition-colors text-left ${
                     formData.resource === resource.id
                       ? "border-green-500 bg-green-50"
                       : "border-gray-200 hover:border-gray-300"
                   }`}
                 >
                   <div className="flex items-center space-x-3">
-                    <resource.icon className="w-6 h-6 text-green-600" />
+                    <resource.icon className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                     <div>
-                      <p className="font-medium text-gray-900">{resource.name}</p>
-                      <p className="text-sm text-gray-600">{resource.description}</p>
+                      <p className="font-medium text-sm sm:text-base text-gray-900">{resource.name}</p>
+                      <p className="text-xs sm:text-sm text-gray-600">{resource.description}</p>
                     </div>
                   </div>
                 </button>
@@ -121,8 +135,8 @@ export default function FreeResourcePopup({ isOpen, onClose, courseCategory = ""
 
           <Button
             type="submit"
-            disabled={!formData.name || !formData.email || !formData.resource}
-            className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white h-12 text-lg"
+            disabled={!formData.name || !formData.email || !formData.phone || !formData.resource}
+            className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white h-12 text-base sm:text-lg"
           >
             Download Free Resource
           </Button>

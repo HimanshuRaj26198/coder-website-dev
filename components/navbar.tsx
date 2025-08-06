@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -17,7 +16,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-3 group">
+            <a href="/" className="flex items-center gap-3 group">
               <Image
                 src={logo}
                 alt="CoderCrafter Logo"
@@ -29,7 +28,7 @@ export function Navbar() {
               <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 CoderCrafter
               </h2>
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -40,17 +39,17 @@ export function Navbar() {
                 <ChevronDown className="w-4 h-4 transition-transform group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[180px] rounded-lg shadow-lg border border-gray-100 mt-2">
-                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/" className="w-full px-3 py-2">Main Landing</Link>
+                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
+                  <a href="/" className="w-full px-3 py-2 block">Main Landing</a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/freshers" className="w-full px-3 py-2">For Freshers</Link>
+                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
+                  <a href="/freshers" className="w-full px-3 py-2 block">For Freshers</a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/professionals" className="w-full px-3 py-2">For Professionals</Link>
+                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
+                  <a href="/professionals" className="w-full px-3 py-2 block">For Professionals</a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/non-it" className="w-full px-3 py-2">For Non-IT</Link>
+                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
+                  <a href="/non-it" className="w-full px-3 py-2 block">For Non-IT</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -61,20 +60,20 @@ export function Navbar() {
                 <ChevronDown className="w-4 h-4 transition-transform group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[220px] rounded-lg shadow-lg border border-gray-100 mt-2">
-                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/courses" className="w-full px-3 py-2">All Courses</Link>
+                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
+                  <a href="/courses" className="w-full px-3 py-2 block">All Courses</a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/courses?category=Web Development" className="w-full px-3 py-2">Web Development</Link>
+                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
+                  <a href="/courses?category=Web Development" className="w-full px-3 py-2 block">Web Development</a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/courses?category=Mobile Development" className="w-full px-3 py-2">Mobile Development</Link>
+                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
+                  <a href="/courses?category=Mobile Development" className="w-full px-3 py-2 block">Mobile Development</a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/courses?category=DevOps" className="w-full px-3 py-2">DevOps</Link>
+                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
+                  <a href="/courses?category=DevOps" className="w-full px-3 py-2 block">DevOps</a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/courses?category=Data Science" className="w-full px-3 py-2">Data Science</Link>
+                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
+                  <a href="/courses?category=Data Science" className="w-full px-3 py-2 block">Data Science</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -85,28 +84,27 @@ export function Navbar() {
                 <ChevronDown className="w-4 h-4 transition-transform group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[220px] rounded-lg shadow-lg border border-gray-100 mt-2">
-                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/paid-internship" className="w-full px-3 py-2">Paid Internship</Link>
+                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
+                  <a href="/paid-internship" className="w-full px-3 py-2 block">Paid Internship</a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/courses?category=Web Development" className="w-full px-3 py-2">Internship</Link>
+                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
+                  <a href="/courses?category=Web Development" className="w-full px-3 py-2 block">Internship</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-
-            <Link href="/docs" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+            <a href="/docs" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               Resources
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+            </a>
+            <a href="/about" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               About
-            </Link>
-            <Link href="/blog" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+            </a>
+            <a href="/blog" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               Blog
-            </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+            </a>
+            <a href="/contact" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               Contact
-            </Link>
+            </a>
           </div>
 
           {/* CTA Button */}
@@ -115,7 +113,7 @@ export function Navbar() {
               asChild
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
             >
-              <Link href="/book-demo">Book a Demo</Link>
+              <a href="/book-demo">Book a Demo</a>
             </Button>
           </div>
 
@@ -141,57 +139,57 @@ export function Navbar() {
             <div className="flex flex-col space-y-4 px-2">
               <div className="space-y-2">
                 <h3 className="text-sm font-medium text-gray-500 px-3">Home</h3>
-                <Link href="/" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+                <a href="/" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                   Main Landing
-                </Link>
-                <Link href="/freshers" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+                </a>
+                <a href="/freshers" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                   For Freshers
-                </Link>
-                <Link href="/professionals" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+                </a>
+                <a href="/professionals" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                   For Professionals
-                </Link>
-                <Link href="/non-it" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+                </a>
+                <a href="/non-it" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                   For Non-IT
-                </Link>
+                </a>
               </div>
 
               <div className="space-y-2">
                 <h3 className="text-sm font-medium text-gray-500 px-3">Courses</h3>
-                <Link href="/courses" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+                <a href="/courses" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                   All Courses
-                </Link>
-                <Link href="/courses?category=Web Development" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+                </a>
+                <a href="/courses?category=Web Development" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                   Web Development
-                </Link>
-                <Link href="/courses?category=Mobile Development" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+                </a>
+                <a href="/courses?category=Mobile Development" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                   Mobile Development
-                </Link>
-                <Link href="/courses?category=DevOps" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+                </a>
+                <a href="/courses?category=DevOps" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                   DevOps
-                </Link>
-                <Link href="/courses?category=Data Science" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+                </a>
+                <a href="/courses?category=Data Science" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                   Data Science
-                </Link>
+                </a>
               </div>
 
-              <Link href="/about" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+              <a href="/about" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                 About
-              </Link>
-              <Link href="/docs" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+              </a>
+              <a href="/docs" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                 Resources
-              </Link>
-              <Link href="/blog" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+              </a>
+              <a href="/blog" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                 Blog
-              </Link>
-              <Link href="/contact" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
+              </a>
+              <a href="/contact" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
                 Contact
-              </Link>
+              </a>
 
               <Button
                 asChild
                 className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-md hover:shadow-lg transition-all mt-4"
               >
-                <Link href="/book-demo" className="w-full">Book a Demo</Link>
+                <a href="/book-demo" className="w-full block text-center">Book a Demo</a>
               </Button>
             </div>
           </div>

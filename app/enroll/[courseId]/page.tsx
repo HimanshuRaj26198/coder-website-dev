@@ -23,7 +23,9 @@ export default function EnrollPage({ params }: EnrollPageProps) {
   const [courseId, setCourseId] = useState<string>("")
   const [paymentMethod, setPaymentMethod] = useState("full")
   const [showEmiPopup, setShowEmiPopup] = useState(false)
-  const [showPartPaymentPopup, setShowPartPaymentPopup] = useState(false)
+  const [showPartPaymentPopup, setShowPartPaymentPopup] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,11 +46,92 @@ export default function EnrollPage({ params }: EnrollPageProps) {
     return <div>Loading...</div>
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Enrollment:", { course: course.id, paymentMethod, formData })
-    alert("Enrollment submitted successfully! We will contact you shortly.")
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitError(null);
+
+  try {
+    // Calculate payment amounts based on selected method
+    let paymentPlan = [];
+    if (paymentMethod === "full") {
+      paymentPlan.push({
+        amount: course.price,
+        dueDate: new Date().toISOString(),
+        status: "pending"
+      });
+    } else if (paymentMethod === "part-payment") {
+      paymentPlan = [
+        {
+          amount: Math.ceil(course.price * 0.5),
+          dueDate: new Date().toISOString(),
+          status: "pending"
+        },
+        {
+          amount: Math.ceil(course.price * 0.25),
+          dueDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(), // 30 days from now
+          status: "pending"
+        },
+        {
+          amount: Math.ceil(course.price * 0.25),
+          dueDate: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000).toISOString(), // 60 days from now
+          status: "pending"
+        }
+      ];
+    } else if (paymentMethod === "monthly") {
+      const monthlyAmount = Math.ceil(course.price / parseInt(course.duration.split(" ")[0]));
+      for (let i = 0; i < parseInt(course.duration.split(" ")[0]); i++) {
+        paymentPlan.push({
+          amount: monthlyAmount,
+          dueDate: new Date(Date.now() + i * 30 * 24 * 60 * 60 * 1000).toISOString(), // Each month
+          status: "pending"
+        });
+      }
+    }
+
+    // Prepare enrollment data
+    const enrollmentData = {
+      firstName: formData.name.split(' ')[0],
+      lastName: formData.name.split(' ').slice(1).join(' ') || '',
+      email: formData.email,
+      phone: formData.phone,
+      courseId: course.id,
+      price: course.price,
+      paidAmount: paymentPlan[0].amount, // First payment amount
+      paymentMethod,
+      paymentPlan,
+      experience: formData.experience,
+      preferredSchedule: formData.preferredSchedule,
+      motivation: formData.motivation
+    };
+
+    // Call the API
+    const response = await fetch('/api/enrollments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(enrollmentData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to submit enrollment');
+    }
+
+    const result = await response.json();
+    
+    // Redirect to success page or show success message
+    alert("Enrollment submitted successfully! We will contact you shortly.");
+    console.log("Enrollment created:", result);
+
+  } catch (err:any) {
+    console.error("Enrollment error:", err);
+    setSubmitError(err.message || "Failed to submit enrollment. Please try again.");
+  } finally {
+    setIsSubmitting(false);
   }
+};
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
@@ -58,10 +141,10 @@ export default function EnrollPage({ params }: EnrollPageProps) {
     switch (paymentMethod) {
       case "full":
         return course.price
-      case "installment":
-        return Math.ceil(course.price / 3)
+      case "part-payment":
+        return Math.ceil(course.price * 0.5)
       case "monthly":
-        return Math.ceil(course.price / 6)
+        return Math.ceil(course.price / parseInt(course.duration.split(" ")[0]))
       default:
         return course.price
     }
@@ -228,36 +311,59 @@ export default function EnrollPage({ params }: EnrollPageProps) {
 
                       {/* Installment Payment */}
                       <div
-                        className={`border-2 rounded-lg p-4 cursor-pointer transition-colors ${
-                          paymentMethod === "installment"
-                            ? "border-purple-500 bg-purple-50"
-                            : "border-gray-200 hover:border-gray-300"
-                        }`}
-                        onClick={() => setPaymentMethod("installment")}
-                      >
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-3">
-                            <input
-                              type="radio"
-                              name="payment"
-                              value="installment"
-                              checked={paymentMethod === "installment"}
-                              onChange={() => setPaymentMethod("installment")}
-                              className="text-purple-600"
-                            />
-                            <div>
-                              <h4 className="font-semibold text-gray-900">3 Installments</h4>
-                              <p className="text-sm text-gray-600">Pay in 3 equal parts</p>
-                            </div>
-                          </div>
-                          <div className="text-right">
-                            <div className="text-2xl font-bold text-gray-900">
-                              ₹{Math.ceil(course.price / 3).toLocaleString()}
-                            </div>
-                            <div className="text-sm text-gray-600">x 3 payments</div>
-                          </div>
-                        </div>
-                      </div>
+  className={`border-2 rounded-lg p-4 cursor-pointer transition-colors ${
+    paymentMethod === "part-payment"
+      ? "border-purple-500 bg-purple-50"
+      : "border-gray-200 hover:border-gray-300"
+  }`}
+  onClick={() => setPaymentMethod("part-payment")}
+>
+  <div className="flex items-start justify-between">
+    <div className="flex items-start space-x-3">
+      <input
+        type="radio"
+        name="payment"
+        value="part-payment"
+        checked={paymentMethod === "part-payment"}
+        onChange={() => setPaymentMethod("part-payment")}
+        className="text-purple-600 mt-1"
+      />
+      <div>
+        <h4 className="font-semibold text-gray-900">Part Payment Plan</h4>
+        <p className="text-sm text-gray-600 mb-2">Pay in 3 parts (50% + 25% + 25%)</p>
+        
+        {/* Payment breakdown */}
+        <div className="grid grid-cols-3 gap-2 text-xs">
+          <div className="bg-purple-50 rounded p-2 text-center">
+            <div className="font-medium">First Payment</div>
+            <div className="font-bold">50%</div>
+            <div className="text-purple-600">₹{Math.ceil(course.price * 0.5).toLocaleString()}</div>
+          </div>
+          <div className="bg-gray-50 rounded p-2 text-center">
+            <div className="font-medium">Second</div>
+            <div className="font-bold">25%</div>
+            <div className="text-gray-600">₹{Math.ceil(course.price * 0.25).toLocaleString()}</div>
+          </div>
+          <div className="bg-gray-50 rounded p-2 text-center">
+            <div className="font-medium">Third</div>
+            <div className="font-bold">25%</div>
+            <div className="text-gray-600">₹{Math.ceil(course.price * 0.25).toLocaleString()}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div className="text-right">
+      <div className="text-2xl font-bold text-gray-900">
+        ₹{Math.ceil(course.price * 0.5).toLocaleString()}
+      </div>
+      <div className="text-sm text-gray-600">first payment</div>
+      <div className="text-xs text-gray-500 mt-1">
+        then ₹{Math.ceil(course.price * 0.25).toLocaleString()} x 2
+      </div>
+    </div>
+  </div>
+</div>
 
                       {/* Monthly Payment */}
                       <div
@@ -280,12 +386,12 @@ export default function EnrollPage({ params }: EnrollPageProps) {
                             />
                             <div>
                               <h4 className="font-semibold text-gray-900">Monthly EMI</h4>
-                              <p className="text-sm text-gray-600">Pay monthly for 6 months</p>
+                              <p className="text-sm text-gray-600">Pay monthly for {course.duration.split(" ")[0]} months</p>
                             </div>
                           </div>
                           <div className="text-right">
                             <div className="text-2xl font-bold text-gray-900">
-                              ₹{Math.ceil(course.price / 6).toLocaleString()}
+                              ₹{Math.ceil(course.price / parseInt(course.duration.split(" ")[0])).toLocaleString()}
                             </div>
                             <div className="text-sm text-gray-600">per month</div>
                           </div>
@@ -309,14 +415,15 @@ export default function EnrollPage({ params }: EnrollPageProps) {
                     </div>
                   </div>
 
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white h-14 text-lg"
-                  >
-                    <CreditCard className="w-5 h-5 mr-2" />
-                    Proceed to Payment - ₹{getPaymentAmount().toLocaleString()}
-                  </Button>
+               <Button
+  type="submit"
+  size="lg"
+  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white h-14 text-lg"
+  disabled={isSubmitting}
+>
+  <CreditCard className="w-5 h-5 mr-2" />
+  {isSubmitting ? "Processing..." : `Proceed to Payment - ₹${getPaymentAmount().toLocaleString()}`}
+</Button>
                 </form>
               </CardContent>
             </Card>

@@ -169,7 +169,7 @@ export default function PaidInternshipPage() {
             <div className="relative">
               <div className="relative w-full h-96 lg:h-[500px]">
                 <img
-                  src="/assets/images/internship-hero.png"
+                  src="/assets/images/internship_hero_main.png"
                   alt="Students working on tech projects"
                   className="w-full h-full object-cover rounded-3xl"
                 />

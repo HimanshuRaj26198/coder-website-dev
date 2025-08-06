@@ -62,28 +62,19 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span className="text-gray-300">+91 86048 46317</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span className="text-gray-300">+91 89203 19125</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span className="text-gray-300">+91 91319 58847</span>
+                <span className="text-gray-300">+91 86048 46317, +91 89203 19125, +91 91319 58847</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span className="text-gray-300">info@codercrafter.in</span>
+                <span className="text-gray-300">info@codercrafter.in, nayansigupta29@gmail.com</span>
               </div>
               <div className="flex98765 items-center space-x-3">
                 <MapPin className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span className="text-gray-300">Bangalore, India</span>
+                <span className="text-gray-300">- Bangalore, India</span>
+                <br></br>
+                <span className="text-gray-300" >- A-1, Housing Colony, Lohiya Nagar, Kankarbagh, Patna, Bihar, India</span>
               </div>
-              <div className="flex98765 items-center space-x-3">
-                <MapPin className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span className="text-gray-300">A-1, Housing Colony, Lohiya Nagar, Kankarbagh, Patna, Bihar, India</span>
-              </div>
+              
             </div>
           </div>
 

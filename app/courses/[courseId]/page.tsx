@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
+import BookDemoPopup from "@/components/popups/BookDemoPopup"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
   Clock,
@@ -34,6 +35,7 @@ export default function CoursePage({ params }: CoursePageProps) {
   const [courseId, setCourseId] = useState<string>("")
   const [showEmiPopup, setShowEmiPopup] = useState(false)
   const [showPartPaymentPopup, setShowPartPaymentPopup] = useState(false)
+  const [showDemoPopup, setShowDemoPopup] = useState(true)
 
   // Get courseId from params
   React.useEffect(() => {
@@ -122,6 +124,13 @@ export default function CoursePage({ params }: CoursePageProps) {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
+      <BookDemoPopup
+  isOpen={showDemoPopup}
+  onClose={() => setShowDemoPopup(false)}
+  courseName={course.title}
+  coursePrice={course.price}
+  courseId={courseId}
+/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Back Button */}
         <Link href="/courses" className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-700 mb-8">
