@@ -1,5 +1,5 @@
 import User from "@/models/User";
-import Enquiry from "@/models/enquiries";
+import Enquiry from "@/models/Enquiry";
 
 // PUT /api/users/[id]
 export async function PUT(request, { params }) {
