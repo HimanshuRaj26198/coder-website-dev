@@ -1,6 +1,5 @@
 "use client"
 
-import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, Clock, MessageCircle, HeadphonesIcon, CreditCard, Calendar } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, MessageCircle, HeadphonesIcon, CreditCard, Calendar, CheckCircle } from "lucide-react"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -21,37 +20,108 @@ export default function ContactPage() {
     message: "",
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Contact form submitted:", formData)
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 5000)
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.phone || !formData.subject || !formData.message) {
+      setError("Please fill in all required fields")
+      return
+    };
+
+    const nameParts = formData.name.trim().split(/\s+/)
+    let firstName = ''
+    let lastName = ''
+    
+    if (nameParts.length === 1) {
+      firstName = nameParts[0]
+    } else if (nameParts.length > 1) {
+      firstName = nameParts.slice(0, -1).join(' ')
+      lastName = nameParts[nameParts.length - 1]
+    }
+
+    setIsSubmitting(true)
+    setError("")
+
+    try {
+      const response = await fetch("/api/enquiries", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: "ContactPage",
+          enquiryType: formData.inquiryType || "general",
+          fullName: formData.name
+        })
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to submit enquiry')
+      }
+
+      // Success case
+      setIsSubmitted(true)
+      
+      // Reset form after success
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        inquiryType: "",
+        preferredContact: "",
+        message: "",
+      })
+
+    } catch (err) {
+      console.error("Error submitting enquiry:", err)
+      setError("Failed to submit your message. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
+    if (error) setError("") // Clear error when user starts typing
   }
 
   if (isSubmitted) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 flex items-center justify-center">
+      <main className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 flex items-center justify-center p-4">
         <Card className="w-full max-w-md border-0 shadow-2xl">
           <CardContent className="p-8 text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <MessageCircle className="w-8 h-8 text-green-600" />
+            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-10 h-10 text-green-600" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Message Sent Successfully!</h2>
-            <p className="text-gray-600 mb-4">
-              Thank you for contacting CoderCrafter. Our team will get back to you within 24 hours.
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h2>
+            <p className="text-xl text-gray-600 mb-6">
+              Your message has been received successfully.
             </p>
-            <Button
-              onClick={() => setIsSubmitted(false)}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
-            >
-              Send Another Message
-            </Button>
+            <p className="text-lg text-gray-600 mb-8">
+              Our team will respond to your inquiry within 24 hours. We appreciate your interest in CoderCrafter!
+            </p>
+            <div className="space-y-3">
+              <Button
+                onClick={() => setIsSubmitted(false)}
+                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
+              >
+                Send Another Message
+              </Button>
+              <Button
+                variant="outline"
+                className="w-full"
+                onClick={() => window.location.href = "/"}
+              >
+                Return to Homepage
+              </Button>
+            </div>
           </CardContent>
         </Card>
       </main>
@@ -222,6 +292,21 @@ export default function ContactPage() {
                 <p className="text-purple-100">Fill out the form below and we'll get back to you soon</p>
               </CardHeader>
               <CardContent className="p-8">
+                {error && (
+                  <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded">
+                    <div className="flex">
+                      <div className="flex-shrink-0">
+                        <svg className="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm text-red-700">{error}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Personal Information */}
                   <div className="grid md:grid-cols-2 gap-6">
@@ -336,9 +421,22 @@ export default function ContactPage() {
                     type="submit"
                     size="lg"
                     className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white h-14 text-lg"
+                    disabled={isSubmitting}
                   >
-                    <Mail className="w-5 h-5 mr-2" />
-                    Send Message
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </span>
+                    ) : (
+                      <>
+                        <Mail className="w-5 h-5 mr-2" />
+                        Send Message
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>

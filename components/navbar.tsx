@@ -1,14 +1,29 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import Image from "next/image"
 import logo from '../public/icon_blue_logo.png'
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+    const [openSections, setOpenSections] = useState<Record<string, boolean>>({
+    home: false,
+    courses: false,
+    internship: false,
+    more: false
+  })
+  const toggleSection = (section: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }))
+  }
+
+  const closeMenu = () => setIsOpen(false)
 
   return (
     <nav className="bg-white/95 backdrop-blur-sm border-b border-purple-100 sticky top-0 z-50 shadow-sm">
@@ -16,7 +31,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center gap-2 group">
+            <Link href="/" className="flex items-center gap-3 group">
               <Image
                 src={logo}
                 alt="CoderCrafter Logo"
@@ -28,7 +43,7 @@ export function Navbar() {
               <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 CoderCrafter
               </h2>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -39,17 +54,17 @@ export function Navbar() {
                 <ChevronDown className="w-4 h-4 transition-transform group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[180px] rounded-lg shadow-lg border border-gray-100 mt-2">
-                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
-                  <a href="/" className="w-full px-3 py-2 block">Main Landing</a>
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/" className="w-full px-3 py-2">Main Landing</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
-                  <a href="/freshers" className="w-full px-3 py-2 block">For Freshers</a>
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/freshers" className="w-full px-3 py-2">For Freshers</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
-                  <a href="/professionals" className="w-full px-3 py-2 block">For Professionals</a>
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/professionals" className="w-full px-3 py-2">For Professionals</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
-                  <a href="/non-it" className="w-full px-3 py-2 block">For Non-IT</a>
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/non-it" className="w-full px-3 py-2">For Non-IT</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -60,20 +75,20 @@ export function Navbar() {
                 <ChevronDown className="w-4 h-4 transition-transform group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[220px] rounded-lg shadow-lg border border-gray-100 mt-2">
-                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
-                  <a href="/courses" className="w-full px-3 py-2 block">All Courses</a>
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/courses" className="w-full px-3 py-2">All Courses</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
-                  <a href="/courses?category=Web Development" className="w-full px-3 py-2 block">Web Development</a>
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/courses?category=Web Development" className="w-full px-3 py-2">Web Development</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
-                  <a href="/courses?category=Mobile Development" className="w-full px-3 py-2 block">Mobile Development</a>
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/courses?category=Mobile Development" className="w-full px-3 py-2">Mobile Development</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
-                  <a href="/courses?category=DevOps" className="w-full px-3 py-2 block">DevOps</a>
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/courses?category=DevOps" className="w-full px-3 py-2">DevOps</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
-                  <a href="/courses?category=Data Science" className="w-full px-3 py-2 block">Data Science</a>
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/courses?category=Data Science" className="w-full px-3 py-2">Data Science</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -84,27 +99,28 @@ export function Navbar() {
                 <ChevronDown className="w-4 h-4 transition-transform group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[220px] rounded-lg shadow-lg border border-gray-100 mt-2">
-                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
-                  <a href="/paid-internship" className="w-full px-3 py-2 block">Paid Internship</a>
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/paid-internship" className="w-full px-3 py-2">Paid Internship</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-purple-50 focus:bg-purple-50">
-                  <a href="/courses?category=Web Development" className="w-full px-3 py-2 block">Internship</a>
+                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <Link href="/courses?category=Web Development" className="w-full px-3 py-2">Internship</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <a href="/docs" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+
+            <Link href="/docs" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               Resources
-            </a>
-            <a href="/about" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+            </Link>
+            <Link href="/about" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               About
-            </a>
-            <a href="/blog" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+            </Link>
+            <Link href="/blog" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               Blog
-            </a>
-            <a href="/contact" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+            </Link>
+            <Link href="/contact" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* CTA Button */}
@@ -113,7 +129,7 @@ export function Navbar() {
               asChild
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
             >
-              <a href="/book-demo">Book a Demo</a>
+              <Link href="/book-demo">Book a Demo</Link>
             </Button>
           </div>
 
@@ -135,66 +151,212 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-purple-100 animate-in fade-in slide-in-from-top">
-            <div className="flex flex-col space-y-4 px-2">
-              <div className="space-y-2">
-                <h3 className="text-sm font-medium text-gray-500 px-3">Home</h3>
-                <a href="/" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                  Main Landing
-                </a>
-                <a href="/freshers" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                  For Freshers
-                </a>
-                <a href="/professionals" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                  For Professionals
-                </a>
-                <a href="/non-it" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                  For Non-IT
-                </a>
-              </div>
+        <div className="md:hidden fixed inset-0 bg-white z-[99999] mt-16 overflow-y-auto pb-[100px]" style={{height: "100vh"}} >
+          <div className="px-4 py-6 space-y-2">
+            {/* Home Section */}
+            <div className="space-y-1">
+              <button 
+                onClick={() => toggleSection('home')}
+                className="w-full flex justify-between items-center px-3 py-3 text-gray-700 hover:bg-purple-50 rounded-md transition-all"
+              >
+                <span className="font-medium uppercase tracking-wider">Home</span>
+                {openSections.home ? (
+                  <ChevronDown className="w-5 h-5 text-purple-600" />
+                ) : (
+                  <ChevronRight className="w-5 h-5 text-gray-500" />
+                )}
+              </button>
+              {openSections.home && (
+                <div className="pl-6 space-y-1">
+                  <NavLink href="/" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></span>
+                      Main Landing
+                    </span>
+                  </NavLink>
+                  <NavLink href="/freshers" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span>
+                      For Freshers
+                    </span>
+                  </NavLink>
+                  <NavLink href="/professionals" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3"></span>
+                      For Professionals
+                    </span>
+                  </NavLink>
+                  <NavLink href="/non-it" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-pink-500 rounded-full mr-3"></span>
+                      For Non-IT
+                    </span>
+                  </NavLink>
+                </div>
+              )}
+            </div>
 
-              <div className="space-y-2">
-                <h3 className="text-sm font-medium text-gray-500 px-3">Courses</h3>
-                <a href="/courses" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                  All Courses
-                </a>
-                <a href="/courses?category=Web Development" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                  Web Development
-                </a>
-                <a href="/courses?category=Mobile Development" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                  Mobile Development
-                </a>
-                <a href="/courses?category=DevOps" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                  DevOps
-                </a>
-                <a href="/courses?category=Data Science" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                  Data Science
-                </a>
-              </div>
+            {/* Courses Section */}
+            <div className="space-y-1">
+              <button 
+                onClick={() => toggleSection('courses')}
+                className="w-full flex justify-between items-center px-3 py-3 text-gray-700 hover:bg-purple-50 rounded-md transition-all"
+              >
+                <span className="font-medium uppercase tracking-wider">Courses</span>
+                {openSections.courses ? (
+                  <ChevronDown className="w-5 h-5 text-purple-600" />
+                ) : (
+                  <ChevronRight className="w-5 h-5 text-gray-500" />
+                )}
+              </button>
+              {openSections.courses && (
+                <div className="pl-6 space-y-1">
+                  <NavLink href="/courses" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></span>
+                      All Courses
+                    </span>
+                  </NavLink>
+                  <NavLink href="/courses?category=Web Development" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span>
+                      Web Development
+                    </span>
+                  </NavLink>
+                  <NavLink href="/courses?category=Mobile Development" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3"></span>
+                      Mobile Development
+                    </span>
+                  </NavLink>
+                  <NavLink href="/courses?category=DevOps" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-pink-500 rounded-full mr-3"></span>
+                      DevOps
+                    </span>
+                  </NavLink>
+                  <NavLink href="/courses?category=Data Science" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></span>
+                      Data Science
+                    </span>
+                  </NavLink>
+                </div>
+              )}
+            </div>
 
-              <a href="/about" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                About
-              </a>
-              <a href="/docs" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                Resources
-              </a>
-              <a href="/blog" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                Blog
-              </a>
-              <a href="/contact" className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md">
-                Contact
-              </a>
+            {/* Internship Section */}
+            <div className="space-y-1">
+              <button 
+                onClick={() => toggleSection('internship')}
+                className="w-full flex justify-between items-center px-3 py-3 text-gray-700 hover:bg-purple-50 rounded-md transition-all"
+              >
+                <span className="font-medium uppercase tracking-wider">Internship</span>
+                {openSections.internship ? (
+                  <ChevronDown className="w-5 h-5 text-purple-600" />
+                ) : (
+                  <ChevronRight className="w-5 h-5 text-gray-500" />
+                )}
+              </button>
+              {openSections.internship && (
+                <div className="pl-6 space-y-1">
+                  <NavLink href="/paid-internship" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span>
+                      Paid Internship
+                    </span>
+                  </NavLink>
+                  <NavLink href="/internship-with-job" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3"></span>
+                      Internship with Job
+                    </span>
+                  </NavLink>
+                  <NavLink href="/international-internship" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-pink-500 rounded-full mr-3"></span>
+                      International Internship
+                    </span>
+                  </NavLink>
+                </div>
+              )}
+            </div>
 
+            {/* More Section */}
+            <div className="space-y-1">
+              <button 
+                onClick={() => toggleSection('more')}
+                className="w-full flex justify-between items-center px-3 py-3 text-gray-700 hover:bg-purple-50 rounded-md transition-all"
+              >
+                <span className="font-medium uppercase tracking-wider">More</span>
+                {openSections.more ? (
+                  <ChevronDown className="w-5 h-5 text-purple-600" />
+                ) : (
+                  <ChevronRight className="w-5 h-5 text-gray-500" />
+                )}
+              </button>
+              {openSections.more && (
+                <div className="pl-6 space-y-1">
+                  <NavLink href="/about" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></span>
+                      About
+                    </span>
+                  </NavLink>
+                  <NavLink href="/docs" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span>
+                      Resources
+                    </span>
+                  </NavLink>
+                  <NavLink href="/blog" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3"></span>
+                      Blog
+                    </span>
+                  </NavLink>
+                  <NavLink href="/contact" onClick={closeMenu}>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-pink-500 rounded-full mr-3"></span>
+                      Contact
+                    </span>
+                  </NavLink>
+                </div>
+              )}
+            </div>
+
+            {/* CTA Buttons - Always visible */}
+            <div className="pt-4 space-y-3">
               <Button
                 asChild
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-md hover:shadow-lg transition-all mt-4"
+                variant="outline"
+                className="w-full border-purple-600 text-purple-600 hover:text-purple-700 hover:border-purple-700"
               >
-                <a href="/book-demo" className="w-full block text-center">Book a Demo</a>
+                <a href="/login" onClick={closeMenu}>Login</a>
+              </Button>
+              <Button
+                asChild
+                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-md hover:shadow-lg transition-all"
+              >
+                <a href="/book-demo" onClick={closeMenu}>Book a Demo</a>
               </Button>
             </div>
           </div>
-        )}
+        </div>
+      )}
       </div>
     </nav>
+  )
+}
+
+function NavLink({ href, onClick, children }: { href: string; onClick: () => void; children: React.ReactNode }) {
+  return (
+    <a 
+      href={href} 
+      onClick={onClick}
+      className="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md transition-colors"
+    >
+      {children}
+    </a>
   )
 }

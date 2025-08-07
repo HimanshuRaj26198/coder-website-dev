@@ -25,7 +25,7 @@ export function HeroSection() {
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <span className="text-gray-600">18900+ Trust Customer</span>
+                <span className="text-gray-600">100+ Trusted Students</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Award className="w-4 h-4 text-purple-600" />
@@ -113,8 +113,8 @@ export function HeroSection() {
                   </div>
                   {/* COmment */}
                   <div>
-                    <div className="text-xs text-gray-500">University</div>
-                    <div className="text-sm font-semibold">50K+ Students</div>
+                    <div className="text-xs text-gray-500">Training</div>
+                    <div className="text-sm font-semibold">Real-time Projects</div>
                   </div>
                 </div>
               </div>
@@ -125,7 +125,7 @@ export function HeroSection() {
                     <Award className="w-4 h-4 text-blue-600" />
                   </div>
                   <div>
-                    <div className="text-xs text-gray-500">Kindergarten</div>
+                    <div className="text-xs text-gray-500">Industry</div>
                     <div className="text-sm font-semibold">Expert Training</div>
                   </div>
                 </div>
@@ -137,8 +137,8 @@ export function HeroSection() {
                     <Star className="w-4 h-4 text-purple-600" />
                   </div>
                   <div>
-                    <div className="text-xs text-gray-500">Instructor</div>
-                    <div className="text-sm font-semibold">Industry Experts</div>
+                    <div className="text-xs text-gray-500">Real Experience</div>
+                    <div className="text-sm font-semibold">Paid Internship</div>
                   </div>
                 </div>
               </div>
