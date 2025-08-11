@@ -52,7 +52,6 @@ export async function POST(req) {
 
     const key = process.env.PAYU_MERCHANT_KEY;
     const salt = process.env.PAYU_MERCHANT_SALT;
-    const baseUrl = "http://localhost:3001";
 
 
 
@@ -68,10 +67,10 @@ export async function POST(req) {
     }
 
     const tempId = data.udf1 || data.txnid;
-    const successUrl = new URL('/payment/success', baseUrl);
+    const successUrl = new URL('/payment/success', process.env.NEXT_PUBLIC_BASE_URL);
     successUrl.searchParams.set('tempId', tempId);
     console.log(successUrl, "Success URL Created")
-    console.log("Creating URL with path:", '/payment/success', "and base:", baseUrl);
+    console.log("Creating URL with path:", '/payment/success', "and base:", process.env.NEXT_PUBLIC_BASE_URL);
     console.log("TempId:", tempId);
 
 
@@ -80,6 +79,6 @@ export async function POST(req) {
   } catch (error) {
     console.error('Error processing payment callback:', error);
     const baseUrl = getBaseUrl();
-    return NextResponse.redirect(new URL('/payment/failure', baseUrl));
+    return NextResponse.redirect(new URL('/payment/failure', process.env.NEXT_PUBLIC_BASE_URL));
   }
 }
