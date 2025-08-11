@@ -1,0 +1,28 @@
+stages:
+  - mirror
+
+mirror_to_github:
+  stage: mirror
+  only:
+    - master
+  tags:
+    - gitmirrorer
+  script:
+    # Set Git identity
+    - git config --global user.email "himanshu26198@gmail.com"
+    - git config --global user.name "HimanshuRaj26198"
+    - git config --global --add safe.directory $(pwd)
+
+    # Fetch all history for proper push (no shallow)
+    - git fetch --unshallow || true
+
+    # Checkout master explicitly (not detached HEAD)
+    - git checkout master
+
+
+    # Add GitHub remote (force clean)
+    - git remote remove github || true
+    - git remote add github https://HimanshuRaj26198:${GITHUB_TOKEN}@github.com/HimanshuRaj26198/coder-website-dev.git
+
+    # Push master with force
+    - git push github master:master --force
