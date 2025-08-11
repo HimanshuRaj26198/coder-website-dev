@@ -5,17 +5,16 @@ import logo from '../public/icon_blue_logo.png'
 
 const footerLinks = {
   courses: [
-    { name: "Full Stack Development", href: "/courses/full-stack-web-dev" },
-    { name: "DevOps Engineering", href: "/courses/devops-mastery" },
-    { name: "Data Science & AI", href: "/courses/python-data-science" },
+    { name: "Full Stack Development", href: "/courses?category=Full Stack Development" },
+    { name: "DevOps Engineering", href: "/courses?category=DevOps Engineering" },
+    { name: "Data Science & AI", href: "/courses?category=Data Science & AI" },
     { name: "Mobile Development", href: "/courses?category=Mobile Development" },
-    { name: "Frontend Development", href: "/courses/frontend-mastery" },
+    { name: "Frontend Development", href: "/courses?category=Frontend Development" },
     { name: "All Courses", href: "/courses" },
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Our Instructors", href: "/instructors" },
-    { name: "Success Stories", href: "/success-stories" },
+    { name: "Resources", href: "/docs" },
     { name: "Blog", href: "/blog" },
     { name: "Careers", href: "/careers" },
     { name: "Contact Us", href: "/contact" },
@@ -23,7 +22,6 @@ const footerLinks = {
   support: [
     { name: "Help Center", href: "/help" },
     { name: "Student Portal", href: "/student-portal" },
-    { name: "Course Catalog", href: "/catalog" },
     { name: "Placement Assistance", href: "/placement" },
     { name: "Technical Support", href: "/support" },
     { name: "FAQ", href: "/faq" },
@@ -44,7 +42,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <Link href="/" className="flex items-center gap-3 group">
+              <Link href="/" className="flex items-center gap-2 group">
                 <Image
                   src={logo}
                   alt="CoderCrafter Logo"
@@ -64,16 +62,17 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span className="text-gray-300">+91 98765 43210</span>
+                <span className="text-gray-300">+91 89203 19125, +91 91319 58847</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span className="text-gray-300">hello@codercrafter.com</span>
+                <span className="text-gray-300">info@codercrafter.in</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span className="text-gray-300">Bangalore, India</span>
-              </div>
+                <span className="text-gray-300">- Bangalore, India</span>
+                 </div>
+              
             </div>
           </div>
 

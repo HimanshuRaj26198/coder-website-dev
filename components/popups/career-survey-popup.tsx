@@ -3,7 +3,8 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { X, BarChart3, TrendingUp } from "lucide-react"
+import { X, BarChart3, TrendingUp, CheckCircle, Mail } from "lucide-react"
+import { motion } from "framer-motion"
 
 interface CareerSurveyPopupProps {
   isOpen: boolean
@@ -15,6 +16,7 @@ export default function CareerSurveyPopup({ isOpen, onClose }: CareerSurveyPopup
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     currentRole: "",
     experience: "",
     interest: "",
@@ -24,13 +26,62 @@ export default function CareerSurveyPopup({ isOpen, onClose }: CareerSurveyPopup
 
   if (!isOpen) return null
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (currentStep < 3) {
       setCurrentStep(currentStep + 1)
     } else {
-      console.log("Career survey:", formData)
-      setSubmitted(true)
-      setTimeout(() => onClose(), 3000)
+      try {
+        // Split name into parts
+        const nameParts = formData.name.trim().split(/\s+/)
+        let firstName = ''
+        let lastName = ''
+        
+        if (nameParts.length === 1) {
+          firstName = nameParts[0]
+        } else if (nameParts.length > 1) {
+          firstName = nameParts.slice(0, -1).join(' ')
+          lastName = nameParts[nameParts.length - 1]
+        }
+
+        const payload = {
+          ...formData,
+          firstName,
+          lastName,
+          source: "CareerSurvey",
+          fullName: formData.name
+        }
+
+        const response = await fetch("/api/enquiries", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload)
+        })
+
+        if (!response.ok) throw new Error('Failed to submit survey')
+
+        console.log("Survey submitted successfully!")
+        setSubmitted(true)
+        
+        // Auto-close after 3 seconds
+        setTimeout(() => {
+          onClose()
+          setSubmitted(false)
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            currentRole: "",
+            experience: "",
+            interest: "",
+            timeline: "",
+          })
+          setCurrentStep(1)
+        }, 3000)
+      } catch (err) {
+        console.error("Error submitting career survey:", err)
+      }
     }
   }
 
@@ -41,24 +92,50 @@ export default function CareerSurveyPopup({ isOpen, onClose }: CareerSurveyPopup
   if (submitted) {
     return (
       <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-2xl p-8 max-w-md w-full text-center">
-          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <TrendingUp className="w-8 h-8 text-blue-600" />
+        <motion.div 
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="bg-white rounded-2xl p-8 max-w-md w-full text-center shadow-xl"
+        >
+          <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Mail className="w-10 h-10 text-blue-600" />
           </div>
-          <h3 className="text-xl font-bold text-gray-900 mb-2">Survey Complete!</h3>
-          <p className="text-gray-600 mb-4">Thank you! We're preparing your personalized career report.</p>
-          <div className="bg-blue-50 rounded-lg p-4">
-            <p className="text-sm text-blue-700">📧 Your detailed career analysis will be emailed within 24 hours!</p>
+          
+          <h3 className="text-2xl font-bold text-gray-900 mb-3">Thank You!</h3>
+          
+          <div className="space-y-4 mb-6">
+            <p className="text-gray-700">
+              Your career assessment has been successfully submitted.
+            </p>
+            
+            <div className="flex items-center justify-center space-x-2 bg-blue-50 rounded-lg p-3">
+              <TrendingUp className="w-5 h-5 text-blue-600" />
+              <p className="text-blue-700 font-medium">
+                Your personalized career report is being prepared.
+              </p>
+            </div>
           </div>
-        </div>
+          
+          <div className="bg-gradient-to-r from-blue-100 to-indigo-100 rounded-lg p-4 border border-blue-200">
+            <p className="text-sm text-blue-800">
+              <span className="font-semibold">Note:</span> You'll receive your detailed analysis via email within 24 hours.
+            </p>
+          </div>
+        </motion.div>
       </div>
     )
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl p-8 max-w-lg w-full relative">
-        <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+    <div className="fixed inset-0 bg-black/50 flex items-start justify-center z-50 p-4 ">
+      <div className="bg-white rounded-2xl">
+      <div className=" p-6 sm:p-8 max-w-lg w-full relative my-3 mx-auto h-[90vh] overflow-y-auto">
+        <button 
+          onClick={onClose} 
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10 bg-white rounded-full p-1 shadow-sm"
+          aria-label="Close"
+        >
           <X className="w-6 h-6" />
         </button>
 
@@ -85,24 +162,37 @@ export default function CareerSurveyPopup({ isOpen, onClose }: CareerSurveyPopup
               <h3 className="text-lg font-semibold text-gray-900">Let's start with basics</h3>
               <Input
                 type="text"
-                placeholder="Your Name"
+                placeholder="Your Name *"
                 value={formData.name}
                 onChange={(e) => handleChange("name", e.target.value)}
                 className="h-12"
+                required
               />
               <Input
                 type="email"
-                placeholder="Email Address"
+                placeholder="Email Address *"
                 value={formData.email}
                 onChange={(e) => handleChange("email", e.target.value)}
                 className="h-12"
+                required
+              />
+              <Input
+                type="tel"
+                placeholder="Phone Number *"
+                value={formData.phone}
+                onChange={(e) => handleChange("phone", e.target.value)}
+                className="h-12"
+                required
+                pattern="[0-9]{10}"
+                title="Please enter a 10-digit phone number"
               />
               <Input
                 type="text"
-                placeholder="Current Role/Status (e.g., Student, Marketing Manager)"
+                placeholder="Current Role/Status (e.g., Student, Marketing Manager) *"
                 value={formData.currentRole}
                 onChange={(e) => handleChange("currentRole", e.target.value)}
                 className="h-12"
+                required
               />
             </div>
           )}
@@ -114,6 +204,7 @@ export default function CareerSurveyPopup({ isOpen, onClose }: CareerSurveyPopup
                 {["0-1 years", "1-3 years", "3-5 years", "5+ years"].map((exp) => (
                   <button
                     key={exp}
+                    type="button"
                     onClick={() => handleChange("experience", exp)}
                     className={`p-3 rounded-lg border-2 transition-colors ${
                       formData.experience === exp
@@ -127,12 +218,13 @@ export default function CareerSurveyPopup({ isOpen, onClose }: CareerSurveyPopup
               </div>
 
               <div className="space-y-3">
-                <p className="font-medium text-gray-900">Which tech field interests you most?</p>
+                <p className="font-medium text-gray-900">Which tech field interests you most? *</p>
                 <div className="grid grid-cols-2 gap-3">
                   {["Web Development", "Data Science", "Mobile Apps", "DevOps", "AI/ML", "Cybersecurity"].map(
                     (field) => (
                       <button
                         key={field}
+                        type="button"
                         onClick={() => handleChange("interest", field)}
                         className={`p-3 rounded-lg border-2 transition-colors text-sm ${
                           formData.interest === field
@@ -151,11 +243,12 @@ export default function CareerSurveyPopup({ isOpen, onClose }: CareerSurveyPopup
 
           {currentStep === 3 && (
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">When do you want to start?</h3>
+              <h3 className="text-lg font-semibold text-gray-900">When do you want to start? *</h3>
               <div className="space-y-3">
                 {["Immediately", "Within 1 month", "Within 3 months", "Just exploring options"].map((timeline) => (
                   <button
                     key={timeline}
+                    type="button"
                     onClick={() => handleChange("timeline", timeline)}
                     className={`w-full p-4 rounded-lg border-2 transition-colors text-left ${
                       formData.timeline === timeline
@@ -173,7 +266,7 @@ export default function CareerSurveyPopup({ isOpen, onClose }: CareerSurveyPopup
           <Button
             onClick={handleNext}
             disabled={
-              (currentStep === 1 && (!formData.name || !formData.email || !formData.currentRole)) ||
+              (currentStep === 1 && (!formData.name || !formData.email || !formData.phone || !formData.currentRole)) ||
               (currentStep === 2 && (!formData.experience || !formData.interest)) ||
               (currentStep === 3 && !formData.timeline)
             }
@@ -182,6 +275,7 @@ export default function CareerSurveyPopup({ isOpen, onClose }: CareerSurveyPopup
             {currentStep === 3 ? "Get My Career Report" : "Next Step"}
           </Button>
         </div>
+      </div>
       </div>
     </div>
   )

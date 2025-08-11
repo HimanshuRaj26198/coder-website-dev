@@ -69,20 +69,20 @@ export function CTASection() {
           {/* Right Content - Stats */}
           <div className="grid grid-cols-2 gap-6">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
-              <div className="text-3xl font-bold text-white mb-2">50K+</div>
+              <div className="text-3xl font-bold text-white mb-2">100+</div>
               <div className="text-purple-100">Students Trained</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
               <div className="text-3xl font-bold text-white mb-2">95%</div>
-              <div className="text-purple-100">Job Placement</div>
+              <div className="text-purple-100">Job Placement Support</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
-              <div className="text-3xl font-bold text-white mb-2">500+</div>
+              <div className="text-3xl font-bold text-white mb-2">50+</div>
               <div className="text-purple-100">Partner Companies</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
               <div className="text-3xl font-bold text-white mb-2">4.8/5</div>
-              <div className="text-purple-100">Average Rating</div>
+              <div className="text-purple-100">Excellent Rating</div>
             </div>
           </div>
         </div>

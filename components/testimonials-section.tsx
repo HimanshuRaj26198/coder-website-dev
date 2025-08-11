@@ -4,7 +4,7 @@ import { Star, Quote } from "lucide-react"
 const testimonials = [
   {
     name: "Rahul Sharma",
-    role: "Full Stack Developer at Google",
+    role: "Full Stack Developer at Nokia",
     image: "/placeholder.svg?height=60&width=60",
     content:
       "CoderCrafter transformed my career completely. From a non-IT background to landing a job at Google - the journey was incredible with their expert guidance.",
@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     name: "Priya Patel",
-    role: "DevOps Engineer at Microsoft",
+    role: "DevOps Engineer at HCL",
     image: "/placeholder.svg?height=60&width=60",
     content:
       "The DevOps course at CoderCrafter is outstanding. Real-world projects and industry mentorship helped me secure my dream job at Microsoft.",
@@ -22,12 +22,11 @@ const testimonials = [
   },
   {
     name: "Amit Kumar",
-    role: "Data Scientist at Netflix",
+    role: "Mern Stack Developer at Wipro",
     image: "/placeholder.svg?height=60&width=60",
-    content:
-      "Best investment I made for my career. The Python Data Science course is comprehensive and the job assistance program is phenomenal.",
+    content:"Best investment I made for my career. The MERN Stack Developer course is comprehensive, and the job assistance program is phenomenal.",
     rating: 5,
-    course: "Python for Data Science & AI",
+    course: "Mern Stack Development",
   },
 ]
 

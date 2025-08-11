@@ -90,7 +90,7 @@ export function CoursesSection() {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-2 mb-4">
+                {/* <div className="flex items-center space-x-2 mb-4">
                   <img
                     src={course.instructor.image || "/placeholder.svg"}
                     alt={course.instructor.name}
@@ -100,10 +100,10 @@ export function CoursesSection() {
                     <p className="text-sm font-medium text-gray-900">By {course.instructor.name}</p>
                     <p className="text-xs text-gray-500">{course.instructor.expertise}</p>
                   </div>
-                </div>
+                </div> */}
               </CardContent>
 
-              <CardFooter className="p-6 pt-0 flex flex-col gap-4">
+              <CardFooter className="px-6 pt-0 flex flex-col gap-4">
                 <div className="flex items-center justify-between w-full">
                   <div className="flex flex-col">
                     <span className="text-xs text-gray-500">Starting at</span>
@@ -127,9 +127,9 @@ export function CoursesSection() {
                     variant="outline"
                     className="border-purple-600 text-purple-600 hover:bg-purple-50 hover:text-purple-700 flex-1"
                   >
-                    <Link href={`/courses/${course.id}`} className="flex items-center gap-1">
+                    <a href={`/courses/${course.id}`} className="flex items-center gap-1">
                       Details <ArrowRight className="w-4 h-4" />
-                    </Link>
+                    </a>
                   </Button>
                   <Button
                     asChild

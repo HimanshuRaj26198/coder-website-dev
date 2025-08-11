@@ -1,52 +1,52 @@
-import { Users, Award, BookOpen, Building } from "lucide-react"
+import { Clock, Zap, ShieldCheck, Globe, Rocket } from "lucide-react"
 
-const stats = [
+const valueProps = [
   {
-    icon: Users,
-    number: "50,000+",
-    label: "Students Trained",
-    description: "Across all our programs",
+    icon: Clock,
+    number: "4-6 Months",
+    label: "To Job Readiness",
+    description: "Focused, industry-aligned training",
   },
   {
-    icon: Award,
-    number: "95%",
-    label: "Job Placement Rate",
-    description: "Within 6 months of completion",
+    icon: Zap,
+    number: "10:1",
+    label: "Practical to Theory Ratio",
+    description: "Learn by building real projects",
   },
   {
-    icon: BookOpen,
-    number: "25+",
-    label: "Industry-Ready Courses",
-    description: "Updated with latest technologies",
+    icon: ShieldCheck,
+    number: "1:1",
+    label: "Mentorship Sessions",
+    description: "Personalized career guidance",
   },
   {
-    icon: Building,
-    number: "500+",
-    label: "Partner Companies",
-    description: "Hiring our graduates",
+    icon: Rocket,
+    number: "100%",
+    label: "Career Transformation",
+    description: "From any background to tech pro",
   },
 ]
 
 export function StatsSection() {
   return (
-    <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
+    <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Trusted by Thousands of Students</h2>
-          <p className="text-xl text-purple-100 max-w-3xl mx-auto">
-            Join the community of successful developers who transformed their careers with CoderCrafter
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Your Tech Journey Starts Here</h2>
+          <p className="text-xl text-blue-700 max-w-3xl mx-auto">
+            Why CoderCrafter stands out for career changers and beginners
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
+          {valueProps.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <stat.icon className="w-8 h-8 text-gray-800" />
               </div>
-              <div className="text-4xl lg:text-5xl font-bold text-white mb-2">{stat.number}</div>
-              <div className="text-xl font-semibold text-white mb-2">{stat.label}</div>
-              <div className="text-purple-100">{stat.description}</div>
+              <div className="text-4xl lg:text-5xl font-bold text-gray-800 mb-2">{stat.number}</div>
+              <div className="text-xl font-semibold text-gray-700 mb-2">{stat.label}</div>
+              <div className="text-gray-600">{stat.description}</div>
             </div>
           ))}
         </div>

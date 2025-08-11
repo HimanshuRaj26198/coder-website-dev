@@ -214,7 +214,7 @@ export default function CoursesPage() {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-2 mb-4">
+              {/* <div className="flex items-center space-x-2 mb-4">
                 <img
                   src={course.instructor.image || "/placeholder.svg"}
                   alt={course.instructor.name}
@@ -224,7 +224,7 @@ export default function CoursesPage() {
                   <p className="text-sm font-medium text-gray-900">By {course.instructor.name}</p>
                   <p className="text-xs text-gray-500">{course.instructor.expertise}</p>
                 </div>
-              </div>
+              </div> */}
 
               {/* Skills Tags */}
               <div className="flex flex-wrap gap-1 mb-4">

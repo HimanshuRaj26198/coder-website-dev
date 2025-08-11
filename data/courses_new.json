@@ -1,0 +1,801 @@
+{
+    "courses" : [
+  {
+    "id": "frontend-dev-crash",
+    "title": "Frontend Developer - Crash Course",
+    "subtitle": "Fast-track your frontend development skills",
+    "description": "Intensive course covering essential frontend technologies including HTML, CSS, JavaScript, Bootstrap, ReactJS and Material UI",
+    "duration": "2-3 months",
+    "level": "Beginner to Intermediate",
+    "price": 20000,
+    "originalPrice": 25000,
+    "usPrice": 399,
+    "originalUsPrice": 499,
+    "discount": 20,
+    "rating": 4.6,
+    "reviews": 980,
+    "students": 3200,
+    "lessons": 60,
+    "instructor": [
+      {
+        "name": "Rahul Verma",
+        "expertise": "Frontend Development",
+        "experience": "6+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "Web Development",
+    "skills": ["HTML", "CSS", "JavaScript", "Bootstrap", "ReactJS", "Material UI"],
+    "jobRoles": ["Frontend Developer", "UI Developer", "Web Developer"],
+    "topCompanies": ["Infosys", "TCS", "Wipro", "HCL", "Accenture"],
+    "syllabus": [
+      "HTML5 Fundamentals",
+      "CSS3 & Responsive Design",
+      "JavaScript Basics to Advanced",
+      "Bootstrap Framework",
+      "ReactJS Core Concepts",
+      "Material UI Components",
+      "Building Responsive Web Apps"
+    ],
+    "highlights": [
+      "Build 3 portfolio projects",
+      "Hands-on coding exercises",
+      "Weekly live Q&A sessions",
+      "Certificate of completion",
+      "Interview preparation guide"
+    ],
+    "faq": [
+      {
+        "question": "Do I need any prior coding experience?",
+        "answer": "Basic understanding of programming concepts is helpful but not required."
+      },
+      {
+        "question": "What kind of projects will I build?",
+        "answer": "You'll build a personal portfolio, e-commerce product page, and a weather app."
+      }
+    ]
+  },
+  {
+    "id": "frontend-dev-advanced",
+    "title": "Frontend Developer - Advanced",
+    "subtitle": "Master modern frontend technologies",
+    "description": "Comprehensive frontend development program covering HTML, CSS, SCSS, TailwindCSS, JavaScript, ReactJS and advanced concepts",
+    "duration": "4-6 months",
+    "level": "Beginner to Advanced",
+    "price": 30000,
+    "originalPrice": 40000,
+    "usPrice": 599,
+    "originalUsPrice": 799,
+    "discount": 25,
+    "rating": 4.8,
+    "reviews": 1500,
+    "students": 4500,
+    "lessons": 120,
+    "instructor": [
+      {
+        "name": "Neha Patel",
+        "expertise": "Advanced Frontend Development",
+        "experience": "8+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "Web Development",
+    "skills": ["HTML", "CSS", "SCSS", "TailwindCSS", "JavaScript", "ReactJS", "Material UI"],
+    "jobRoles": ["Senior Frontend Developer", "UI/UX Developer", "Frontend Architect"],
+    "topCompanies": ["Google", "Microsoft", "Amazon", "Flipkart", "Swiggy"],
+    "syllabus": [
+      "Advanced HTML5 Semantics",
+      "CSS Preprocessors (SCSS)",
+      "TailwindCSS Framework",
+      "JavaScript ES6+ Features",
+      "React Hooks & Context API",
+      "State Management",
+      "Performance Optimization",
+      "Testing Frontend Applications"
+    ],
+    "highlights": [
+      "Build 5+ production-ready projects",
+      "Advanced React patterns",
+      "Code review sessions",
+      "Career mentorship program",
+      "Access to premium developer community"
+    ],
+    "faq": [
+      {
+        "question": "How is this different from the crash course?",
+        "answer": "This covers more advanced topics, includes additional frameworks, and has more in-depth projects."
+      },
+      {
+        "question": "Is there any job guarantee?",
+        "answer": "We offer 100% placement assistance with our hiring partners."
+      }
+    ]
+  },
+  {
+    "id": "node-backend-crash",
+    "title": "Node Backend Developer - Crash Course",
+    "subtitle": "Become backend-ready in 2-4 months",
+    "description": "Fast-paced program covering JavaScript, NodeJS and ExpressJS to build scalable backend systems",
+    "duration": "2-4 months",
+    "level": "Intermediate",
+    "price": 25000,
+    "originalPrice": 32000,
+    "usPrice": 449,
+    "originalUsPrice": 599,
+    "discount": 22,
+    "rating": 4.5,
+    "reviews": 850,
+    "students": 2800,
+    "lessons": 70,
+    "instructor": [
+      {
+        "name": "Arjun Singh",
+        "expertise": "Node.js Development",
+        "experience": "7+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "Web Development",
+    "skills": ["JavaScript", "NodeJS", "ExpressJS", "REST APIs", "Authentication"],
+    "jobRoles": ["Backend Developer", "API Developer", "Node.js Developer"],
+    "topCompanies": ["Paytm", "Razorpay", "Zomato", "Ola", "ShareChat"],
+    "syllabus": [
+      "Node.js Fundamentals",
+      "Express Framework",
+      "Building RESTful APIs",
+      "Middleware Concepts",
+      "Authentication (JWT)",
+      "Error Handling",
+      "Database Integration",
+      "API Documentation"
+    ],
+    "highlights": [
+      "Build 3 backend services",
+      "Deploy to cloud platforms",
+      "API security best practices",
+      "Performance optimization techniques",
+      "Mock interviews"
+    ],
+    "faq": [
+      {
+        "question": "What should I know before taking this course?",
+        "answer": "Basic JavaScript knowledge is required. Familiarity with programming concepts is recommended."
+      },
+      {
+        "question": "Will we work with databases?",
+        "answer": "Yes, we'll cover MongoDB integration and basic database concepts."
+      }
+    ]
+  },
+  {
+    "id": "node-backend-advanced",
+    "title": "Node Backend Developer - Advanced",
+    "subtitle": "Master production-grade backend development",
+    "description": "Comprehensive Node.js program covering advanced concepts for building scalable backend systems",
+    "duration": "4-6 months",
+    "level": "Intermediate to Advanced",
+    "price": 30000,
+    "originalPrice": 40000,
+    "usPrice": 599,
+    "originalUsPrice": 799,
+    "discount": 25,
+    "rating": 4.7,
+    "reviews": 1200,
+    "students": 3800,
+    "lessons": 100,
+    "instructor": [
+      {
+        "name": "Vikram Joshi",
+        "expertise": "Scalable Systems",
+        "experience": "10+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "Web Development",
+    "skills": ["NodeJS", "ExpressJS", "Microservices", "WebSockets", "Caching"],
+    "jobRoles": ["Senior Backend Developer", "Node.js Architect", "DevOps Engineer"],
+    "topCompanies": ["Uber", "Netflix", "LinkedIn", "Twitter", "Reddit"],
+    "syllabus": [
+      "Advanced Node.js Patterns",
+      "Microservices Architecture",
+      "WebSockets & Real-time Apps",
+      "Advanced Authentication",
+      "API Rate Limiting",
+      "Caching Strategies",
+      "Load Testing",
+      "Containerization"
+    ],
+    "highlights": [
+      "Build a complete backend system",
+      "Implement CI/CD pipeline",
+      "Performance monitoring",
+      "Security best practices",
+      "Resume and LinkedIn profile review"
+    ],
+    "faq": [
+      {
+        "question": "Is this suitable for beginners?",
+        "answer": "No, this is an advanced course requiring prior Node.js experience."
+      },
+      {
+        "question": "Will we cover deployment?",
+        "answer": "Yes, we cover deployment to AWS, Docker containers, and Kubernetes basics."
+      }
+    ]
+  },
+  {
+    "id": "python-backend-crash",
+    "title": "Python Backend Developer - Crash Course",
+    "subtitle": "Build backend systems with Python",
+    "description": "Rapid Python backend development course covering Flask/Django frameworks",
+    "duration": "2-3 months",
+    "level": "Beginner to Intermediate",
+    "price": 25000,
+    "originalPrice": 30000,
+    "usPrice": 449,
+    "originalUsPrice": 599,
+    "discount": 17,
+    "rating": 4.4,
+    "reviews": 720,
+    "students": 2100,
+    "lessons": 65,
+    "instructor": [
+      {
+        "name": "Ananya Gupta",
+        "expertise": "Python Development",
+        "experience": "6+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "Web Development",
+    "skills": ["Python", "Flask", "Django", "REST APIs", "ORM"],
+    "jobRoles": ["Python Developer", "Backend Engineer", "API Developer"],
+    "topCompanies": ["Hotstar", "Zee5", "SonyLiv", "Byju's", "Unacademy"],
+    "syllabus": [
+      "Python for Web",
+      "Flask Framework",
+      "Django Basics",
+      "Database Models",
+      "Authentication",
+      "API Development",
+      "Testing",
+      "Deployment"
+    ],
+    "highlights": [
+      "Build 2 complete backend projects",
+      "Choose Flask or Django path",
+      "Database integration",
+      "Hands-on exercises",
+      "Certificate of completion"
+    ],
+    "faq": [
+      {
+        "question": "Which framework is better?",
+        "answer": "Flask is lighter for small projects, Django has more built-in features for larger applications."
+      },
+      {
+        "question": "Do I need Python experience?",
+        "answer": "Basic Python knowledge is required. We offer a Python refresher module."
+      }
+    ]
+  },
+  {
+    "id": "fullstack-mean",
+    "title": "Full Stack Developer - MEAN Stack",
+    "subtitle": "Master Angular, Node.js, MongoDB and Express",
+    "description": "End-to-end MEAN stack development program for building modern web applications",
+    "duration": "6 months",
+    "level": "Beginner to Advanced",
+    "price": 35000,
+    "originalPrice": 45000,
+    "usPrice": 699,
+    "originalUsPrice": 899,
+    "discount": 22,
+    "rating": 4.7,
+    "reviews": 1350,
+    "students": 4200,
+    "lessons": 150,
+    "instructor": [
+      {
+        "name": "Rajiv Malhotra",
+        "expertise": "MEAN Stack",
+        "experience": "9+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "Web Development",
+    "skills": ["Angular", "NodeJS", "MongoDB", "ExpressJS", "TypeScript"],
+    "jobRoles": ["Full Stack Developer", "Angular Developer", "MEAN Stack Engineer"],
+    "topCompanies": ["IBM", "Cisco", "Oracle", "Adobe", "SAP"],
+    "syllabus": [
+      "TypeScript Fundamentals",
+      "Angular Framework",
+      "Node.js & Express",
+      "MongoDB & Mongoose",
+      "Authentication",
+      "State Management",
+      "Testing",
+      "Deployment"
+    ],
+    "highlights": [
+      "Build 4 full-stack applications",
+      "Angular best practices",
+      "MongoDB optimization",
+      "Career coaching sessions",
+      "Access to alumni network"
+    ],
+    "faq": [
+      {
+        "question": "Why choose MEAN over MERN?",
+        "answer": "MEAN is preferred for enterprise applications with strong typing via TypeScript."
+      },
+      {
+        "question": "Is MongoDB difficult to learn?",
+        "answer": "No, we start with basics and gradually cover advanced concepts."
+      }
+    ]
+  },
+  {
+    "id": "fullstack-mern-basic",
+    "title": "Full Stack Developer - MERN Basic",
+    "subtitle": "Become job-ready with MERN stack",
+    "description": "Comprehensive MERN stack program covering React, Node.js, MongoDB and Express for full stack development",
+    "duration": "6 months",
+    "level": "Beginner to Intermediate",
+    "price": 35000,
+    "originalPrice": 45000,
+    "usPrice": 699,
+    "originalUsPrice": 899,
+    "discount": 22,
+    "rating": 4.8,
+    "reviews": 1800,
+    "students": 5600,
+    "lessons": 140,
+    "instructor": [
+      {
+        "name": "Priya Sharma",
+        "expertise": "MERN Stack",
+        "experience": "8+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "Web Development",
+    "skills": ["React", "NodeJS", "MongoDB", "ExpressJS", "JavaScript"],
+    "jobRoles": ["Full Stack Developer", "React Developer", "JavaScript Engineer"],
+    "topCompanies": ["Google", "Microsoft", "Amazon", "Flipkart", "Paytm"],
+    "syllabus": [
+      "JavaScript ES6+",
+      "React Fundamentals",
+      "Node.js Basics",
+      "Express Framework",
+      "MongoDB CRUD",
+      "Authentication",
+      "Context API",
+      "Deployment"
+    ],
+    "highlights": [
+      "Build 5 full-stack projects",
+      "Modern JavaScript practices",
+      "Interview preparation",
+      "Git best practices",
+      "1:1 mentorship"
+    ],
+    "faq": [
+      {
+        "question": "Is this course beginner-friendly?",
+        "answer": "Yes, we start from basics and gradually progress to advanced topics."
+      },
+      {
+        "question": "What kind of support is available?",
+        "answer": "You get access to TA support, discussion forums, and weekly live Q&A."
+      }
+    ]
+  },
+  {
+    "id": "fullstack-mern-advanced",
+    "title": "Full Stack Developer - MERN Advanced",
+    "subtitle": "Master production-grade MERN applications",
+    "description": "Advanced MERN stack program covering React, Node.js, MongoDB, Express plus cloud deployment, caching and Firebase",
+    "duration": "6-8 months",
+    "level": "Intermediate to Advanced",
+    "price": 50000,
+    "originalPrice": 65000,
+    "usPrice": 999,
+    "originalUsPrice": 1299,
+    "discount": 23,
+    "rating": 4.9,
+    "reviews": 950,
+    "students": 2800,
+    "lessons": 180,
+    "instructor": [
+      {
+        "name": "Amit Patel",
+        "expertise": "Advanced MERN",
+        "experience": "12+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "Web Development",
+    "skills": ["React", "NodeJS", "MongoDB", "ExpressJS", "Cloudflare", "Firebase"],
+    "jobRoles": ["Senior Full Stack Developer", "Tech Lead", "Solution Architect"],
+    "topCompanies": ["Netflix", "Airbnb", "Uber", "LinkedIn", "Twitter"],
+    "syllabus": [
+      "Advanced React Patterns",
+      "Server-side Rendering",
+      "Microservices",
+      "Advanced MongoDB",
+      "Redis Caching",
+      "Cloudflare Optimization",
+      "Firebase Integration",
+      "CI/CD Pipelines"
+    ],
+    "highlights": [
+      "Build enterprise-grade applications",
+      "Performance optimization",
+      "Security best practices",
+      "System design concepts",
+      "Career acceleration program"
+    ],
+    "faq": [
+      {
+        "question": "Who should take this course?",
+        "answer": "Developers with 1+ years experience or graduates of our MERN Basic course."
+      },
+      {
+        "question": "Will we cover DevOps?",
+        "answer": "Yes, we cover essential DevOps practices for MERN applications."
+      }
+    ]
+  },
+  {
+    "id": "ai-ml-foundations",
+    "title": "AI/ML Foundations",
+    "subtitle": "Start your AI/ML journey",
+    "description": "Comprehensive introduction to Artificial Intelligence and Machine Learning with Python",
+    "duration": "4-6 months",
+    "level": "Beginner to Intermediate",
+    "price": 45000,
+    "originalPrice": 55000,
+    "usPrice": 899,
+    "originalUsPrice": 1099,
+    "discount": 18,
+    "rating": 4.7,
+    "reviews": 1250,
+    "students": 3800,
+    "lessons": 120,
+    "instructor": [
+      {
+        "name": "Dr. Sanjay Rao",
+        "expertise": "AI/ML Research",
+        "experience": "15+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "AI/ML",
+    "skills": ["Python", "NumPy", "Pandas", "Scikit-learn", "TensorFlow"],
+    "jobRoles": ["AI Engineer", "ML Engineer", "Data Scientist"],
+    "topCompanies": ["NVIDIA", "Intel", "AMD", "Qualcomm", "Samsung"],
+    "syllabus": [
+      "Python for Data Science",
+      "Linear Algebra Basics",
+      "Probability & Statistics",
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Neural Networks",
+      "Model Evaluation",
+      "AI Ethics"
+    ],
+    "highlights": [
+      "Hands-on ML projects",
+      "Real-world datasets",
+      "Math refresher modules",
+      "Kaggle competition guidance",
+      "Industry expert sessions"
+    ],
+    "faq": [
+      {
+        "question": "What math is required?",
+        "answer": "Basic linear algebra and statistics. We include refresher modules."
+      },
+      {
+        "question": "Will we cover Deep Learning?",
+        "answer": "Yes, we introduce neural networks and TensorFlow basics."
+      }
+    ]
+  },
+  {
+    "id": "deep-learning-advanced",
+    "title": "Deep Learning Specialization",
+    "subtitle": "Master Neural Networks and Deep Learning",
+    "description": "Advanced program covering convolutional networks, RNNs, LSTM, transformers and more",
+    "duration": "6-8 months",
+    "level": "Intermediate to Advanced",
+    "price": 60000,
+    "originalPrice": 75000,
+    "usPrice": 1199,
+    "originalUsPrice": 1499,
+    "discount": 20,
+    "rating": 4.9,
+    "reviews": 850,
+    "students": 2200,
+    "lessons": 160,
+    "instructor": [
+      {
+        "name": "Dr. Anjali Verma",
+        "expertise": "Deep Learning",
+        "experience": "12+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "AI/ML",
+    "skills": ["TensorFlow", "Keras", "PyTorch", "CNN", "RNN", "Transformers"],
+    "jobRoles": ["Deep Learning Engineer", "AI Researcher", "Computer Vision Engineer"],
+    "topCompanies": ["OpenAI", "DeepMind", "Tesla", "Waymo", "Cruise"],
+    "syllabus": [
+      "Neural Network Architectures",
+      "Convolutional Networks",
+      "Recurrent Networks",
+      "Attention Mechanisms",
+      "Transfer Learning",
+      "Generative Models",
+      "Model Optimization",
+      "Deployment"
+    ],
+    "highlights": [
+      "State-of-the-art architectures",
+      "Research paper implementation",
+      "GPU-accelerated training",
+      "Capstone project",
+      "Industry mentorship"
+    ],
+    "faq": [
+      {
+        "question": "Prerequisites for this course?",
+        "answer": "Strong Python, linear algebra, and basic ML knowledge required."
+      },
+      {
+        "question": "Which framework is used?",
+        "answer": "We cover both TensorFlow and PyTorch."
+      }
+    ]
+  },
+  {
+    "id": "data-science-bootcamp",
+    "title": "Data Science Bootcamp",
+    "subtitle": "Become a job-ready Data Scientist",
+    "description": "End-to-end data science program covering statistics, machine learning, and data visualization",
+    "duration": "5-7 months",
+    "level": "Beginner to Advanced",
+    "price": 40000,
+    "originalPrice": 50000,
+    "usPrice": 799,
+    "originalUsPrice": 999,
+    "discount": 20,
+    "rating": 4.8,
+    "reviews": 1500,
+    "students": 4500,
+    "lessons": 140,
+    "instructor": [
+      {
+        "name": "Rahul Deshpande",
+        "expertise": "Data Science",
+        "experience": "10+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "Data Science",
+    "skills": ["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn", "SQL"],
+    "jobRoles": ["Data Scientist", "Data Analyst", "Business Analyst"],
+    "topCompanies": ["JPMorgan", "American Express", "Walmart", "Target", "Bloomberg"],
+    "syllabus": [
+      "Python for Data Analysis",
+      "Statistics Fundamentals",
+      "Data Visualization",
+      "Machine Learning",
+      "Feature Engineering",
+      "Model Deployment",
+      "Big Data Basics",
+      "Case Studies"
+    ],
+    "highlights": [
+      "5+ real-world projects",
+      "SQL and NoSQL databases",
+      "Tableau and Power BI",
+      "Resume and portfolio review",
+      "Hiring partner network"
+    ],
+    "faq": [
+      {
+        "question": "Is this course math-heavy?",
+        "answer": "We focus on practical applications but include necessary statistical concepts."
+      },
+      {
+        "question": "Job placement support?",
+        "answer": "Yes, we offer career services including interview prep and referrals."
+      }
+    ]
+  },
+  {
+    "id": "android-dev-kotlin",
+    "title": "Android Development with Kotlin",
+    "subtitle": "Build modern Android apps",
+    "description": "Comprehensive Android app development program using Kotlin and Jetpack components",
+    "duration": "4-6 months",
+    "level": "Beginner to Advanced",
+    "price": 35000,
+    "originalPrice": 45000,
+    "usPrice": 699,
+    "originalUsPrice": 899,
+    "discount": 22,
+    "rating": 4.7,
+    "reviews": 1100,
+    "students": 3200,
+    "lessons": 120,
+    "instructor": [
+      {
+        "name": "Neha Kapoor",
+        "expertise": "Android Development",
+        "experience": "7+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "Mobile Development",
+    "skills": ["Kotlin", "Android SDK", "Jetpack", "Room", "Coroutines"],
+    "jobRoles": ["Android Developer", "Mobile Developer", "Kotlin Engineer"],
+    "topCompanies": ["Google", "Microsoft", "Uber", "Swiggy", "Zomato"],
+    "syllabus": [
+      "Kotlin Fundamentals",
+      "Android Studio",
+      "UI/UX Principles",
+      "Jetpack Components",
+      "Database with Room",
+      "Networking",
+      "Testing",
+      "Play Store Deployment"
+    ],
+    "highlights": [
+      "Build 4 complete apps",
+      "Material Design guidelines",
+      "Google Play submission",
+      "Monetization strategies",
+      "Career guidance"
+    ],
+    "faq": [
+      {
+        "question": "Java or Kotlin?",
+        "answer": "We teach Kotlin as it's now Google's preferred language for Android."
+      },
+      {
+        "question": "Need Mac for development?",
+        "answer": "No, Android Studio runs on Windows, Mac and Linux."
+      }
+    ]
+  },
+  {
+    "id": "aws-cloud-practitioner",
+    "title": "AWS Cloud Practitioner",
+    "subtitle": "Master AWS cloud technologies",
+    "description": "Comprehensive AWS certification preparation with hands-on labs",
+    "duration": "3-5 months",
+    "level": "Beginner to Intermediate",
+    "price": 30000,
+    "originalPrice": 40000,
+    "usPrice": 599,
+    "originalUsPrice": 799,
+    "discount": 25,
+    "rating": 4.6,
+    "reviews": 950,
+    "students": 2800,
+    "lessons": 80,
+    "instructor": [
+      {
+        "name": "Arun Kumar",
+        "expertise": "Cloud Architect",
+        "experience": "9+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "Cloud Computing",
+    "skills": ["AWS EC2", "S3", "Lambda", "RDS", "CloudFormation"],
+    "jobRoles": ["Cloud Engineer", "DevOps Engineer", "Solutions Architect"],
+    "topCompanies": ["Amazon", "VMware", "Accenture", "Capgemini", "TCS"],
+    "syllabus": [
+      "Cloud Concepts",
+      "AWS Core Services",
+      "Security & Compliance",
+      "Database Services",
+      "Networking",
+      "Deployment",
+      "Monitoring",
+      "Cost Optimization"
+    ],
+    "highlights": [
+      "50+ hands-on labs",
+      "Practice exams",
+      "Real-world scenarios",
+      "Certification voucher",
+      "Study group access"
+    ],
+    "faq": [
+      {
+        "question": "Is certification included?",
+        "answer": "Course includes one AWS certification exam voucher."
+      },
+      {
+        "question": "Prior experience needed?",
+        "answer": "No, we start from cloud fundamentals."
+      }
+    ]
+  },
+  {
+    "id": "cybersecurity-essentials",
+    "title": "Cybersecurity Essentials",
+    "subtitle": "Launch your cybersecurity career",
+    "description": "Comprehensive program covering network security, ethical hacking, and defense strategies",
+    "duration": "5-7 months",
+    "level": "Beginner to Intermediate",
+    "price": 45000,
+    "originalPrice": 55000,
+    "usPrice": 899,
+    "originalUsPrice": 1099,
+    "discount": 18,
+    "rating": 4.7,
+    "reviews": 680,
+    "students": 1900,
+    "lessons": 110,
+    "instructor": [
+      {
+        "name": "Vishal Mehta",
+        "expertise": "Cybersecurity",
+        "experience": "12+ years",
+        "image": "/placeholder.svg?height=60&width=60"
+      }
+    ],
+    "image": "/placeholder.svg?height=300&width=400",
+    "category": "Cybersecurity",
+    "skills": ["Network Security", "Ethical Hacking", "Pen Testing", "Cryptography", "SIEM"],
+    "jobRoles": ["Security Analyst", "Ethical Hacker", "Security Engineer"],
+    "topCompanies": ["Palo Alto", "Cisco", "IBM Security", "McAfee", "Symantec"],
+    "syllabus": [
+      "Security Fundamentals",
+      "Network Protocols",
+      "Vulnerability Assessment",
+      "Penetration Testing",
+      "Cryptography",
+      "Incident Response",
+      "Security Tools",
+      "Compliance"
+    ],
+    "highlights": [
+      "Hands-on hacking labs",
+      "Capture The Flag exercises",
+      "Industry certifications prep",
+      "Career mentorship",
+      "Virtual lab environment"
+    ],
+    "faq": [
+      {
+        "question": "Is this ethical hacking?",
+        "answer": "Yes, we teach offensive security techniques for defensive purposes."
+      },
+      {
+        "question": "Need special hardware?",
+        "answer": "No, we provide cloud-based lab environment."
+      }
+    ]
+  }
+]
+}

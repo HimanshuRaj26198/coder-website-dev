@@ -25,7 +25,7 @@ export function HeroSection() {
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <span className="text-gray-600">18900+ Trust Customer</span>
+                <span className="text-gray-600">100+ Trusted Students</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Award className="w-4 h-4 text-purple-600" />
@@ -79,19 +79,19 @@ export function HeroSection() {
             {/* Stats */}
             <div className="flex items-center space-x-8 pt-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">50K+</div>
+                <div className="text-2xl font-bold text-gray-900">100+</div>
                 <div className="text-sm text-gray-600">Students Trained</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-gray-900">95%</div>
-                <div className="text-sm text-gray-600">Job Placement</div>
+                <div className="text-sm text-gray-600">Job Placement Support</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-gray-900">0% EMI</div>
                 <div className="text-sm text-gray-600">Available</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">500+</div>
+                <div className="text-2xl font-bold text-gray-900">50+</div>
                 <div className="text-sm text-gray-600">Partner Companies</div>
               </div>
             </div>
@@ -102,7 +102,7 @@ export function HeroSection() {
             <div className="relative w-full h-96 lg:h-[500px]">
               {/* Central logo */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                <span className="text-white font-bold text-4xl">V</span>
+                <span className="text-white font-bold text-4xl">CC</span>
               </div>
 
               {/* Floating elements */}
@@ -111,9 +111,10 @@ export function HeroSection() {
                   <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
                     <Users className="w-4 h-4 text-green-600" />
                   </div>
+                  {/* COmment */}
                   <div>
-                    <div className="text-xs text-gray-500">University</div>
-                    <div className="text-sm font-semibold">50K+ Students</div>
+                    <div className="text-xs text-gray-500">Training</div>
+                    <div className="text-sm font-semibold">Real-time Projects</div>
                   </div>
                 </div>
               </div>
@@ -124,7 +125,7 @@ export function HeroSection() {
                     <Award className="w-4 h-4 text-blue-600" />
                   </div>
                   <div>
-                    <div className="text-xs text-gray-500">Kindergarten</div>
+                    <div className="text-xs text-gray-500">Industry</div>
                     <div className="text-sm font-semibold">Expert Training</div>
                   </div>
                 </div>
@@ -136,8 +137,8 @@ export function HeroSection() {
                     <Star className="w-4 h-4 text-purple-600" />
                   </div>
                   <div>
-                    <div className="text-xs text-gray-500">Instructor</div>
-                    <div className="text-sm font-semibold">Industry Experts</div>
+                    <div className="text-xs text-gray-500">Real Experience</div>
+                    <div className="text-sm font-semibold">Paid Internship</div>
                   </div>
                 </div>
               </div>
