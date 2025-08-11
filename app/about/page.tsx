@@ -34,13 +34,20 @@ const values = [
   },
 ]
 
-const founder = {
+const founder = [
+  {
+  name: "Harsh Jaiswal",
+  role: "Founder & Lead Instructor",
+  experience: "5+ years in DevOps",
+  image: "/assets/images/harsh_founder.jpg",
+  description: "Tech enthusiast and DevOps expert, founder of CoderCrafter. Dedicated to empowering learners with hands-on IT training and industry-relevant skills for the digital age."
+},{
   name: "Nayansi",
   role: "Founder & Lead Instructor",
   experience: "5+ years in Full Stack Development",
   image: "/assets/images/founder.jpg",
   description: "Passionate educator with experience building scalable web applications. Committed to making quality tech education accessible to everyone.",
-}
+} ]
 
 const milestones = [
   {
@@ -193,19 +200,21 @@ export default function AboutPage() {
           </div>
 
           <div className="flex justify-center">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-md">
+            { founder.map(fo=>{
+              return <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-md">
               <CardContent className="p-8 text-center">
                 <img
-                  src={founder.image || "/placeholder.svg"}
-                  alt={founder.name}
+                  src={fo.image || "/placeholder.svg"}
+                  alt={fo.name}
                   className="w-32 h-32 rounded-full object-cover mx-auto mb-6"
                 />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{founder.name}</h3>
-                <p className="text-purple-600 font-semibold mb-2">{founder.role}</p>
-                <Badge className="bg-gray-100 text-gray-600 mb-4">{founder.experience}</Badge>
-                <p className="text-gray-600 leading-relaxed">{founder.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{fo.name}</h3>
+                <p className="text-purple-600 font-semibold mb-2">{fo.role}</p>
+                <Badge className="bg-gray-100 text-gray-600 mb-4">{fo.experience}</Badge>
+                <p className="text-gray-600 leading-relaxed">{fo.description}</p>
               </CardContent>
             </Card>
+            }) }
           </div>
         </div>
       </section>

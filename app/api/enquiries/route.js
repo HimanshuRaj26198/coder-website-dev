@@ -3,7 +3,7 @@ import clientPromise from '@/lib/db';
 import connectToDB from '@/lib/mongoose';
 import { NextResponse } from 'next/server';
 import { sendEmail } from '@/lib/email';
-import User from '@/models/User';
+import Leads from '../../../models/Leads';
 import Enquiry from '@/models/Enquiry';
 
 export async function POST(request) {
@@ -13,7 +13,7 @@ export async function POST(request) {
     const enquiryData = await request.json();
     
     // Check if user exists
-    const user = await User.findOne({
+    const user = await Leads.findOne({
       $or: [
         { email: enquiryData.email },
         { phone: enquiryData.phone }
@@ -23,7 +23,7 @@ export async function POST(request) {
     let userId;
     if (!user) {
       // Create new user using Mongoose
-      const newUser = new User({
+      const newUser = new Leads({
         firstName: enquiryData.firstName,
         lastName: enquiryData.lastName,
         email: enquiryData.email,

@@ -128,8 +128,9 @@ export default function CareerSurveyPopup({ isOpen, onClose }: CareerSurveyPopup
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-start justify-center z-50 p-4 overflow-y-auto">
-      <div className="bg-white rounded-2xl p-6 sm:p-8 max-w-lg w-full relative my-8 mx-auto max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black/50 flex items-start justify-center z-50 p-4 ">
+      <div className="bg-white rounded-2xl">
+      <div className=" p-6 sm:p-8 max-w-lg w-full relative my-3 mx-auto h-[90vh] overflow-y-auto">
         <button 
           onClick={onClose} 
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10 bg-white rounded-full p-1 shadow-sm"
@@ -274,6 +275,7 @@ export default function CareerSurveyPopup({ isOpen, onClose }: CareerSurveyPopup
             {currentStep === 3 ? "Get My Career Report" : "Next Step"}
           </Button>
         </div>
+      </div>
       </div>
     </div>
   )

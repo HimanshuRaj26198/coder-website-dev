@@ -1,11 +1,11 @@
-import EnrolledUsers from "@/models/EnrolledUsers";
+import Users from "@/models/Users";
 import connectToDB from "@/lib/mongoose";
 
 // GET single user by ID
 export async function GET(request, { params }) {
   try {
     await connectToDB();
-    const user = await EnrolledUsers.findById(params.id);
+    const user = await Users.findById(params.id);
     
     if (!user) {
       return Response.json({ error: "User not found" }, { status: 404 });
@@ -26,7 +26,7 @@ export async function PATCH(request, { params }) {
     await connectToDB();
     
     const { firstName, lastName, email, phone } = await request.json();
-    const user = await EnrolledUsers.findById(params.id);
+    const user = await Users.findById(params.id);
     
     if (!user) {
       return Response.json({ error: "User not found" }, { status: 404 });
@@ -34,7 +34,7 @@ export async function PATCH(request, { params }) {
 
     // Check for duplicate email or phone
     if (email || phone) {
-      const existingUser = await EnrolledUsers.findOne({
+      const existingUser = await Users.findOne({
         $and: [
           { _id: { $ne: params.id } }, // Exclude current user
           { $or: [] }
@@ -76,7 +76,7 @@ export async function DELETE(request, { params }) {
   try {
     await connectToDB();
     
-    const user = await EnrolledUsers.findByIdAndDelete(params.id);
+    const user = await Users.findByIdAndDelete(params.id);
     
     if (!user) {
       return Response.json({ error: "User not found" }, { status: 404 });

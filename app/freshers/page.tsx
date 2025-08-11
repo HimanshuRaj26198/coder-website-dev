@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GraduationCap, Users, TrendingUp, Award, BookOpen, Clock, Star } from "lucide-react"
+import { GraduationCap, Users, TrendingUp, Award, BookOpen, Clock, Star, ArrowRight, Zap } from "lucide-react"
 import Link from "next/link"
 import { LeadForm } from "@/components/lead-form"
+import coursesData from "@/data/courses.json"
 
 const fresherBenefits = [
   {
@@ -34,37 +35,38 @@ const successStories = [
   {
     name: "Ankit Sharma",
     college: "Delhi University",
-    role: "Software Engineer at Flipkart",
-    salary: "₹12 LPA",
+    role: "Software Engineer at Zensar Tech",
+    salary: "12 LPA",
     image: "/placeholder.svg?height=80&width=80",
     story:
-      "From a mechanical engineering student to a software engineer at Flipkart. CoderCrafter made my career transition seamless.",
+      "From a mechanical engineering student to a software engineer at Zensar Technologies. CoderCrafter made my career transition seamless.",
   },
   {
     name: "Sneha Patel",
     college: "Mumbai University",
-    role: "Frontend Developer at Zomato",
-    salary: "₹10 LPA",
+    role: "Frontend Developer at Simform",
+    salary: "10 LPA",
     image: "/placeholder.svg?height=80&width=80",
     story: "As a commerce student, I never thought I could code. Now I'm building apps used by millions!",
   },
   {
     name: "Rohit Kumar",
     college: "IIT Delhi",
-    role: "Data Scientist at Microsoft",
-    salary: "₹18 LPA",
+    role: "Data Scientist at GeekyAnts",
+    salary: "18 LPA",
     image: "/placeholder.svg?height=80&width=80",
-    story: "CoderCrafter helped me specialize in Data Science and land my dream job at Microsoft right after graduation.",
+    story: "CoderCrafter helped me specialize in Data Science and land my dream job at GeekyAnts right after graduation.",
   },
 ]
 
 export default function FreshersPage() {
+   const featuredCourses = coursesData.courses.slice(0, 6)
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-green-200 rounded-full opacity-50 animate-pulse"></div>
+          <div className="absolute top-20 left-6 w-20 h-20 bg-green-200 rounded-full opacity-50 animate-pulse"></div>
           <div className="absolute top-40 right-20 w-16 h-16 bg-blue-200 rounded-full opacity-50 animate-pulse delay-1000"></div>
           <div className="absolute bottom-40 left-20 w-24 h-24 bg-purple-200 rounded-full opacity-50 animate-pulse delay-2000"></div>
         </div>
@@ -81,13 +83,12 @@ export default function FreshersPage() {
                 <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                   <span className="text-gray-900">From</span>
                   <br />
-                  <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                  <span className=" text-gray-900">
                     Student
-                  </span>
-                  <br />
+                  </span>{" "}
                   <span className="text-gray-900">to</span>
                   <br />
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
                     Software Engineer
                   </span>
                 </h1>
@@ -117,7 +118,7 @@ export default function FreshersPage() {
 
               <div className="flex items-center space-x-8 pt-8">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">25K+</div>
+                  <div className="text-2xl font-bold text-gray-900">100+</div>
                   <div className="text-sm text-gray-600">Students Placed</div>
                 </div>
                 <div className="text-center">
@@ -125,7 +126,7 @@ export default function FreshersPage() {
                   <div className="text-sm text-gray-600">Average Package</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">300+</div>
+                  <div className="text-2xl font-bold text-gray-900">50+</div>
                   <div className="text-sm text-gray-600">Partner Companies</div>
                 </div>
               </div>
@@ -215,7 +216,7 @@ export default function FreshersPage() {
                     <div>
                       <h3 className="font-bold text-gray-900">{story.name}</h3>
                       <p className="text-sm text-gray-600">{story.college}</p>
-                      <Badge className="bg-green-100 text-green-600 mt-1">{story.salary}</Badge>
+                      <div className="bg-green-100 rounded-2xl pl-2 w-20 text-green-600 mt-1">{story.salary}</div>
                     </div>
                   </div>
 
@@ -245,114 +246,133 @@ export default function FreshersPage() {
               Start with these carefully curated courses designed for students with no prior experience
             </p>
           </div>
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {featuredCourses.map((course) => (
+            <Card
+              key={course.id}
+              className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden relative"
+            >
+              {/* Discount Ribbon */}
+              {course.discount > 0 && (
+                <div className="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xs font-bold px-3 py-1 transform rotate-45 translate-x-8 translate-y-4 w-32 text-center z-10">
+                  {course.discount}% OFF
+                </div>
+              )}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Course cards would be mapped here from JSON data, filtered for beginner level */}
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <Badge className="bg-green-100 text-green-600">Beginner Friendly</Badge>
-                  <div className="flex items-center space-x-1">
-                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    <span className="text-sm">4.8</span>
+              <CardHeader className="p-0">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={course.image || "/placeholder.svg"}
+                    alt={course.title}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-medium">View Course Details</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Full Stack Web Development</h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Perfect first course for students. Learn HTML, CSS, JavaScript, React, and Node.js from scratch.
-                </p>
+              </CardHeader>
+
+              <CardContent className="p-6">
+                <div className="flex items-center space-x-1 mb-2">
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-4 h-4 ${i < Math.floor(course.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}`}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-sm text-gray-600">({course.reviews} Reviews)</span>
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                  {course.title}
+                </h3>
+
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">{course.description}</p>
+
                 <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                   <div className="flex items-center space-x-1">
-                    <Clock className="w-4 h-4" />
-                    <span>6 months</span>
+                    <BookOpen className="w-4 h-4" />
+                    <span>{course.lessons} Lessons</span>
                   </div>
                   <div className="flex items-center space-x-1">
-                    <BookOpen className="w-4 h-4" />
-                    <span>120 lessons</span>
+                    <Users className="w-4 h-4" />
+                    <span>{course.students.toLocaleString()} Students</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <Clock className="w-4 h-4" />
+                    <span>{course.duration}</span>
                   </div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-2xl font-bold text-gray-900">₹15,999</span>
-                    <span className="text-lg text-gray-500 line-through ml-2">₹25,999</span>
-                  </div>
-                  <Button className="bg-gradient-to-r from-green-600 to-blue-600 text-white" asChild>
-                    <Link href="/courses/full-stack-web-dev">Enroll Now</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <Badge className="bg-green-100 text-green-600">Beginner Friendly</Badge>
-                  <div className="flex items-center space-x-1">
-                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    <span className="text-sm">4.7</span>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Python for Data Science</h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Start your data science journey with Python. No math background required - we cover everything!
-                </p>
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <div className="flex items-center space-x-1">
-                    <Clock className="w-4 h-4" />
-                    <span>4 months</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <BookOpen className="w-4 h-4" />
-                    <span>85 lessons</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
+                {/* <div className="flex items-center space-x-2 mb-4">
+                  <img
+                    src={course.instructor.image || "/placeholder.svg"}
+                    alt={course.instructor.name}
+                    className="w-8 h-8 rounded-full object-cover"
+                  />
                   <div>
-                    <span className="text-2xl font-bold text-gray-900">₹12,999</span>
-                    <span className="text-lg text-gray-500 line-through ml-2">₹19,999</span>
+                    <p className="text-sm font-medium text-gray-900">By {course.instructor.name}</p>
+                    <p className="text-xs text-gray-500">{course.instructor.expertise}</p>
                   </div>
-                  <Button className="bg-gradient-to-r from-green-600 to-blue-600 text-white" asChild>
-                    <Link href="/courses/python-data-science">Enroll Now</Link>
-                  </Button>
-                </div>
+                </div> */}
               </CardContent>
-            </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <Badge className="bg-green-100 text-green-600">Beginner Friendly</Badge>
-                  <div className="flex items-center space-x-1">
-                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    <span className="text-sm">4.6</span>
+              <CardFooter className="px-6 pt-0 flex flex-col gap-4">
+                <div className="flex items-center justify-between w-full">
+                  <div className="flex flex-col">
+                    <span className="text-xs text-gray-500">Starting at</span>
+                    <div className="flex items-end gap-2">
+                      <span className="text-2xl font-bold text-gray-900">₹{course.price.toLocaleString()}</span>
+                      {course.discount > 0 && (
+                        <span className="text-sm text-gray-500 line-through mb-0.5">
+                          ₹{course.originalPrice.toLocaleString()}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                    EMI available
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Android App Development</h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Build your first mobile app with Kotlin. Perfect for students interested in mobile development.
-                </p>
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <div className="flex items-center space-x-1">
-                    <Clock className="w-4 h-4" />
-                    <span>4 months</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <BookOpen className="w-4 h-4" />
-                    <span>100 lessons</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-2xl font-bold text-gray-900">₹13,999</span>
-                    <span className="text-lg text-gray-500 line-through ml-2">₹21,999</span>
-                  </div>
-                  <Button className="bg-gradient-to-r from-green-600 to-blue-600 text-white" asChild>
-                    <Link href="/courses/android-development">Enroll Now</Link>
+
+                <div className="flex gap-2 w-full">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="border-purple-600 text-purple-600 hover:bg-purple-50 hover:text-purple-700 flex-1"
+                  >
+                    <Link href={`/courses/${course.id}`} className="flex items-center gap-1">
+                      Details <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-purple-500/30 flex-1"
+                  >
+                    <Link href={`/enroll/${course.id}`} className="flex items-center gap-1">
+                      <Zap className="w-4 h-4 fill-white" /> Enroll
+                    </Link>
                   </Button>
                 </div>
-              </CardContent>
+              </CardFooter>
             </Card>
-          </div>
+          ))}
+        </div>
+
+        {/* View All Courses Button */}
+        <div className="text-center">
+          <Button
+            size="lg"
+            asChild
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all"
+          >
+            <Link href="/courses" className="flex items-center gap-2">
+              Browse All Courses <ArrowRight className="w-5 h-5" />
+            </Link>
+          </Button>
+        </div>
         </div>
       </section>
 

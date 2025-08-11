@@ -121,15 +121,17 @@ export default function CourseRecommendationPopup({ isOpen, onClose }: CourseRec
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-start justify-center z-50 p-4 overflow-hidden">
-      <div className="bg-white rounded-2xl max-w-lg w-full relative my-8 mx-4 p-6 max-h-[calc(100vh-4rem)] overflow-y-auto">
-        <button 
+      <div className="bg-white rounded-2xl ">
+         <div className=" p-6 sm:p-8 max-w-lg w-full h-[90vh] relative my-3 overflow-y-auto rounded-2xl">
+
+          <button 
           onClick={onClose} 
-          className="sticky top-0 ml-auto block text-gray-400 hover:text-gray-600 mb-2"
+          className="absolute right-5 top-0 ml-auto block text-gray-400 hover:text-gray-600 mb-2"
           style={{ zIndex: 10 }}
         >
           <X className="w-6 h-6" />
         </button>
-
+         
         <div className="text-center mb-4">
           <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
             <BookOpen className="w-6 h-6 text-white" />
@@ -225,11 +227,12 @@ export default function CourseRecommendationPopup({ isOpen, onClose }: CourseRec
           <Button
             type="submit"
             disabled={!formData.name || !formData.email || !formData.phone || !formData.experience || !formData.interest}
-            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white h-11 text-base sticky bottom-0"
+            className="w-full py-6 bg-gradient-to-r from-blue-800 to-purple-800 hover:from-blue-700 hover:to-purple-700 text-white h-11 text-base "
           >
             Get My Course Recommendations
           </Button>
         </form>
+        </div>
       </div>
     </div>
   )

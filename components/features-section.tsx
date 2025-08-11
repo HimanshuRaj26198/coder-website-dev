@@ -49,7 +49,9 @@ export function FeaturesSection() {
               } shadow-lg hover:shadow-xl transition-shadow duration-300`}
             >
               <div
-                className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} flex items-center justify-center mb-6`}
+                className={`w-16 h-16 rounded-2xl  ${
+                feature.dark ? "bg-gray-800 text-white" : "bg-gradient-to-r from-purple-600 to-blue-600 text-white"
+              } flex items-center justify-center mb-6`}
               >
                 <feature.icon className="w-8 h-8 text-white" />
               </div>

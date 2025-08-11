@@ -125,8 +125,9 @@ export default function NewsletterPopup({ isOpen, onClose }: NewsletterPopupProp
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 overflow-y-auto">
-      <div className="bg-white rounded-2xl p-8 max-w-lg w-full relative max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 ">
+      <div className="bg-white rounded-2xl">
+      <div className=" p-8 max-w-lg w-full relative h-[90vh] my-3 overflow-y-auto">
         <button 
           onClick={onClose} 
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10 bg-white rounded-full p-1 shadow-sm"
@@ -211,7 +212,7 @@ export default function NewsletterPopup({ isOpen, onClose }: NewsletterPopupProp
           <Button
             type="submit"
             disabled={!formData.name || !formData.email || !formData.phone}
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white h-12 text-lg"
+            className="w-full bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-700 text-white h-12 text-lg"
           >
             Join the Community
           </Button>
@@ -220,6 +221,7 @@ export default function NewsletterPopup({ isOpen, onClose }: NewsletterPopupProp
         <p className="text-xs text-gray-500 text-center mt-4">
           Weekly newsletter • No spam • Unsubscribe anytime
         </p>
+      </div>
       </div>
     </div>
   )

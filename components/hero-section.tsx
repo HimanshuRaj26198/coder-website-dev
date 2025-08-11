@@ -79,19 +79,19 @@ export function HeroSection() {
             {/* Stats */}
             <div className="flex items-center space-x-8 pt-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">50K+</div>
+                <div className="text-2xl font-bold text-gray-900">100+</div>
                 <div className="text-sm text-gray-600">Students Trained</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-gray-900">95%</div>
-                <div className="text-sm text-gray-600">Job Placement</div>
+                <div className="text-sm text-gray-600">Job Placement Support</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-gray-900">0% EMI</div>
                 <div className="text-sm text-gray-600">Available</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">500+</div>
+                <div className="text-2xl font-bold text-gray-900">50+</div>
                 <div className="text-sm text-gray-600">Partner Companies</div>
               </div>
             </div>

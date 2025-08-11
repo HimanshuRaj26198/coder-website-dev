@@ -186,11 +186,12 @@ export default function DiscountPopup({ isOpen, onClose, courseName, coursePrice
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 overflow-y-auto">
-      <div className="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full mx-4 relative my-auto max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 ">
+      <div className="bg-white rounded-2xl">
+      <div className=" p-6 sm:p-8 max-w-md w-full relative my-3 h-[90vh] overflow-y-auto">
         <button 
           onClick={onClose} 
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 sticky top-0 z-10"
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10"
         >
           <X className="w-6 h-6" />
         </button>
@@ -272,6 +273,7 @@ export default function DiscountPopup({ isOpen, onClose, courseName, coursePrice
         <p className="text-xs text-gray-500 text-center mt-4">
           Valid for new enrollments only. Cannot be combined with other offers.
         </p>
+      </div>
       </div>
     </div>
   )

@@ -14,6 +14,8 @@ import Link from "next/link"
 import coursesData from "@/data/courses.json"
 import EmiPopup from "@/components/popups/emi-popup"
 import PartPaymentPopup from "@/components/popups/part-payment-popup"
+import { toast } from "sonner"
+
 
 interface EnrollPageProps {
   params: Promise<{ courseId: string }>
@@ -46,14 +48,18 @@ export default function EnrollPage({ params }: EnrollPageProps) {
     return <div>Loading...</div>
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+// import crypto from "crypto";
+
+const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   setIsSubmitting(true);
   setSubmitError(null);
 
   try {
-    // Calculate payment amounts based on selected method
+    // 1️⃣ Calculate payment plan
     let paymentPlan = [];
+    let firstPaymentAmount = course.price;
+
     if (paymentMethod === "full") {
       paymentPlan.push({
         amount: course.price,
@@ -61,35 +67,48 @@ export default function EnrollPage({ params }: EnrollPageProps) {
         status: "pending"
       });
     } else if (paymentMethod === "part-payment") {
+      firstPaymentAmount = Math.ceil(course.price * 0.5);
       paymentPlan = [
-        {
-          amount: Math.ceil(course.price * 0.5),
-          dueDate: new Date().toISOString(),
-          status: "pending"
-        },
-        {
-          amount: Math.ceil(course.price * 0.25),
-          dueDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(), // 30 days from now
-          status: "pending"
-        },
-        {
-          amount: Math.ceil(course.price * 0.25),
-          dueDate: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000).toISOString(), // 60 days from now
-          status: "pending"
-        }
+        { amount: firstPaymentAmount, dueDate: new Date().toISOString(), status: "pending" },
+        { amount: Math.ceil(course.price * 0.25), dueDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(), status: "pending" },
+        { amount: Math.ceil(course.price * 0.25), dueDate: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000).toISOString(), status: "pending" }
       ];
     } else if (paymentMethod === "monthly") {
-      const monthlyAmount = Math.ceil(course.price / parseInt(course.duration.split(" ")[0]));
+      firstPaymentAmount = Math.ceil(course.price / parseInt(course.duration.split(" ")[0]));
       for (let i = 0; i < parseInt(course.duration.split(" ")[0]); i++) {
         paymentPlan.push({
-          amount: monthlyAmount,
-          dueDate: new Date(Date.now() + i * 30 * 24 * 60 * 60 * 1000).toISOString(), // Each month
+          amount: firstPaymentAmount,
+          dueDate: new Date(Date.now() + i * 30 * 24 * 60 * 60 * 1000).toISOString(),
           status: "pending"
         });
       }
     }
 
-    // Prepare enrollment data
+    // 2️⃣ Generate IDs
+    const tempEnrollmentId = `temp-${Date.now()}`;
+      const txnid = `codercrafter-${Date.now()}`;
+
+    // 3️⃣ Merchant credentials
+    const merchantKey = process.env.PAYU_MERCHANT_KEY;
+
+    // 4️⃣ Format amount
+   
+    const amount = parseFloat(firstPaymentAmount.toString()).toFixed(2); // *** important ***
+
+    // 5️⃣ Prepare UDFs (ALL must exist)
+    const udf1 = tempEnrollmentId;
+    const udf2 = '';
+    const udf3 = '';
+    const udf4 = '';
+    const udf5 = '';
+    const udf6 = '';
+    const udf7 = '';
+    const udf8 = '';
+    const udf9 = '';
+    const udf10 = '';
+
+
+    // 7️⃣ Save enrollment data locally
     const enrollmentData = {
       firstName: formData.name.split(' ')[0],
       lastName: formData.name.split(' ').slice(1).join(' ') || '',
@@ -97,41 +116,75 @@ export default function EnrollPage({ params }: EnrollPageProps) {
       phone: formData.phone,
       courseId: course.id,
       price: course.price,
-      paidAmount: paymentPlan[0].amount, // First payment amount
+      paidAmount: firstPaymentAmount,
       paymentMethod,
       paymentPlan,
       experience: formData.experience,
       preferredSchedule: formData.preferredSchedule,
-      motivation: formData.motivation
+      motivation: formData.motivation,
+      status: 'pending_verification'
     };
 
-    // Call the API
-    const response = await fetch('/api/enrollments', {
-      method: 'POST',
+    sessionStorage.setItem('pendingEnrollment', JSON.stringify(enrollmentData));
+    sessionStorage.setItem('tempEnrollmentId', tempEnrollmentId);
+
+    // 8️⃣ Payment request (include ALL udf fields)
+
+
+    const paymentData = {
+      txnid,
+      amount,
+      productinfo: course.title.trim().replace(/[^a-zA-Z0-9 ]/g, ''), // keep it safe
+      firstname: formData.name.split(' ')[0],
+      email: formData.email,
+      phone: formData.phone,
+      udf1: tempEnrollmentId,
+      udf2: '', udf3: '', udf4: '', udf5: '', udf6: '', udf7: '', udf8: '', udf9: '', udf10: ''
+    };
+
+    // Storing Enrollment as Pending
+    const storePendingRes = await fetch("/api/pending-enrollments", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type' : 'application/json'
       },
-      body: JSON.stringify(enrollmentData),
+      body: JSON.stringify({tempId: tempEnrollmentId, enrollmentData: {...enrollmentData, txnid: txnid}})
     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error || 'Failed to submit enrollment');
+    if(!storePendingRes.ok){
+        let res = await storePendingRes.json();
+        console.log(res)
+        toast.error(res.error)
+        return;
     }
 
-    const result = await response.json();
-    
-    // Redirect to success page or show success message
-    alert("Enrollment submitted successfully! We will contact you shortly.");
-    console.log("Enrollment created:", result);
+    // 9️⃣ Call backend to generate auto-submit form
+    const res = await fetch('/api/payments/initiate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ paymentData, enrollmentData })
+    });
 
-  } catch (err:any) {
-    console.error("Enrollment error:", err);
-    setSubmitError(err.message || "Failed to submit enrollment. Please try again.");
-  } finally {
+    if (!res.ok) throw new Error('Failed to initiate payment');
+
+    const data = await res.json();
+
+    if (data.formHtml) {
+      const div = document.createElement('div');
+      div.innerHTML = data.formHtml;
+      document.body.appendChild(div);
+      const form = div.querySelector('form');
+      form?.submit();
+    } else {
+      throw new Error('Payment form not received from PayU');
+    }
+
+  } catch (err: any) {
+    setSubmitError(err.message || "Failed to initiate payment. Please try again.");
     setIsSubmitting(false);
   }
 };
+
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))

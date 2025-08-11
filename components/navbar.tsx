@@ -26,12 +26,12 @@ export function Navbar() {
   const closeMenu = () => setIsOpen(false)
 
   return (
-    <nav className="bg-white/95 backdrop-blur-sm border-b border-purple-100 sticky top-0 z-50 shadow-sm">
+    <nav className="bg-white/95 backdrop-blur-sm border-b border-purple-100 sticky top-0 z-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-3 group">
+            <a href="/" className="flex items-center gap-1 group">
               <Image
                 src={logo}
                 alt="CoderCrafter Logo"
@@ -40,31 +40,31 @@ export function Navbar() {
                 className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
                 priority
               />
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <h2 className="text-2xl font-bold bg-blue-600 bg-clip-text text-transparent">
                 CoderCrafter
               </h2>
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700 hover:text-purple-600 transition-colors focus:outline-none group">
                 <span className="font-medium">Home</span>
                 <ChevronDown className="w-4 h-4 transition-transform group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[180px] rounded-lg shadow-lg border border-gray-100 mt-2">
+                {/* <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
+                  <a href="/" className="w-full px-3 py-2">Main Landing</a>
+                </DropdownMenuItem> */}
                 <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/" className="w-full px-3 py-2">Main Landing</Link>
+                  <a href="/freshers" className="w-full px-3 py-2">For Freshers</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/freshers" className="w-full px-3 py-2">For Freshers</Link>
+                  <a href="/professionals" className="w-full px-3 py-2">For Professionals</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/professionals" className="w-full px-3 py-2">For Professionals</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/non-it" className="w-full px-3 py-2">For Non-IT</Link>
+                  <a href="/non-it" className="w-full px-3 py-2">For Non-IT</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -76,19 +76,19 @@ export function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[220px] rounded-lg shadow-lg border border-gray-100 mt-2">
                 <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/courses" className="w-full px-3 py-2">All Courses</Link>
+                  <a href="/courses" className="w-full px-3 py-2">All Courses</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/courses?category=Web Development" className="w-full px-3 py-2">Web Development</Link>
+                  <a href="/courses?category=Web Development" className="w-full px-3 py-2">Web Development</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/courses?category=Mobile Development" className="w-full px-3 py-2">Mobile Development</Link>
+                  <a href="/courses?category=Mobile Development" className="w-full px-3 py-2">Mobile Development</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/courses?category=DevOps" className="w-full px-3 py-2">DevOps</Link>
+                  <a href="/courses?category=DevOps" className="w-full px-3 py-2">DevOps</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/courses?category=Data Science" className="w-full px-3 py-2">Data Science</Link>
+                  <a href="/courses?category=Data Science" className="w-full px-3 py-2">Data Science</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -100,27 +100,27 @@ export function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="min-w-[220px] rounded-lg shadow-lg border border-gray-100 mt-2">
                 <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/paid-internship" className="w-full px-3 py-2">Paid Internship</Link>
+                  <a href="/paid-internship" className="w-full px-3 py-2">Paid Internship</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="hover:bg-purple-50 focus:bg-purple-50">
-                  <Link href="/courses?category=Web Development" className="w-full px-3 py-2">Internship</Link>
+                  <a href="/courses?category=Web Development" className="w-full px-3 py-2">Internship</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
 
-            <Link href="/docs" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+            <a href="/docs" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               Resources
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+            </a>
+            <a href="/about" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               About
-            </Link>
-            <Link href="/blog" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+            </a>
+            {/* <a href="/blog" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               Blog
-            </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+            </a> */}
+            <a href="/contact" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
               Contact
-            </Link>
+            </a>
           </div>
 
           {/* CTA Button */}
@@ -129,7 +129,7 @@ export function Navbar() {
               asChild
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
             >
-              <Link href="/book-demo">Book a Demo</Link>
+              <a href="/book-demo">Book a free Demo</a>
             </Button>
           </div>
 

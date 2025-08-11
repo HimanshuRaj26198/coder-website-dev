@@ -37,7 +37,6 @@ export default function FreeResourcePopup({ isOpen, onClose, courseCategory = ""
   const resources = [
     { id: "ebook", name: "Complete Programming Guide", icon: FileText, description: "200+ page comprehensive guide" },
     { id: "videos", name: "Video Tutorial Series", icon: Video, description: "10 hours of premium content" },
-    { id: "templates", name: "Project Templates", icon: Code, description: "Ready-to-use code templates" },
     { id: "roadmap", name: "Career Roadmap", icon: Download, description: "Step-by-step career planning" },
   ]
 
@@ -59,8 +58,9 @@ export default function FreeResourcePopup({ isOpen, onClose, courseCategory = ""
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-start justify-center z-50 p-4 overflow-y-auto">
-      <div className="bg-white rounded-2xl p-6 sm:p-8 max-w-lg w-full relative my-8">
+    <div className="fixed inset-0 bg-black/50 flex items-start justify-center z-50 p-4">
+      <div className="bg-white rounded-2xl">
+      <div className=" p-6 sm:p-8 max-w-lg w-full h-[90vh] relative my-3 overflow-y-auto">
         <button 
           onClick={onClose} 
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
@@ -143,6 +143,7 @@ export default function FreeResourcePopup({ isOpen, onClose, courseCategory = ""
         </form>
 
         <p className="text-xs text-gray-500 text-center mt-4">No spam, just valuable content. Unsubscribe anytime.</p>
+      </div>
       </div>
     </div>
   )

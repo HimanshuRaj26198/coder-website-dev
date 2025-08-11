@@ -14,6 +14,6 @@ const UserSchema = new Schema(
 );
 
 // Check if model already exists to avoid redefining it
-const EnrolledUsers = models.User || model("Users", UserSchema);
+const Users = models.Users || model("Users", UserSchema);
 
-export default EnrolledUsers;
+export default Users;

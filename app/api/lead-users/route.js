@@ -2,14 +2,14 @@
 
 import clientPromise from '@/lib/db';
 import { NextResponse } from 'next/server';
-import User from "@/models/User";
+import Leads from "@/models/Leads";
 
 export async function POST(request) {
   try {
     const userData = await request.json();
     
     // Check if user exists
-    const existingUser = await User.findOne({
+    const existingUser = await Leads.findOne({
       $or: [
         { email: userData.email },
         { phone: userData.phone }
@@ -24,7 +24,7 @@ export async function POST(request) {
     }
     
     // Create new user using Mongoose model
-    const newUser = new User({
+    const newUser = new Leads({
       ...userData,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -46,7 +46,7 @@ export async function POST(request) {
 
 export async function GET() {
   try {
-    const users = await User.find({}); // No need for toArray() in Mongoose
+    const users = await Leads.find({}); // No need for toArray() in Mongoose
     return NextResponse.json(users);
   } catch (error) {
     return NextResponse.json(

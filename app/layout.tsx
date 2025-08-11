@@ -5,6 +5,8 @@ import "./globals.css"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import PopupManager from "@/components/popup-manager"
+import { Toaster } from "@/components/ui/toaster"
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -59,11 +61,31 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* <!-- Start of Rocket.Chat Livechat Script --> */}
+	<script type="text/javascript" dangerouslySetInnerHTML={{__html: ``}} ></script>
+      </head>
       <body className={inter.className}>
         <Navbar />
         {children}
+        <Toaster />
         <Footer />
         <PopupManager />
+        
+        {/* Rocket.Chat Script */}
+        <Script id="rocketchat-widget" strategy="afterInteractive">
+          {`
+            (function(w, d, s, u) {
+              w.RocketChat = function(c) { w.RocketChat._.push(c) };
+              w.RocketChat._ = [];
+              w.RocketChat.url = u;
+              var h = d.getElementsByTagName(s)[0], j = d.createElement(s);
+              j.async = true;
+              j.src = 'https://chat.codercrafter.in/livechat/rocketchat-livechat.min.js?_=201903270000';
+              h.parentNode.insertBefore(j, h);
+            })(window, document, 'script', 'https://chat.codercrafter.in/livechat');
+          `}
+        </Script>
       </body>
     </html>
   )

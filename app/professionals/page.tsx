@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Briefcase, TrendingUp, Clock, DollarSign, Users, Award } from "lucide-react"
+import { Briefcase, TrendingUp, Clock, DollarSign, Users, Award, ArrowRight, Zap, BookOpen, Star } from "lucide-react"
 import Link from "next/link"
 import { LeadForm } from "@/components/lead-form"
+import coursesData from "@/data/courses.json"
 
 const professionalBenefits = [
   {
@@ -36,7 +37,7 @@ const transitionStories = [
   {
     name: "Rajesh Gupta",
     previousRole: "Mechanical Engineer",
-    currentRole: "DevOps Engineer at Amazon",
+    currentRole: "DevOps Engineer at Tata 1mg",
     salaryIncrease: "250%",
     experience: "5 years",
     image: "/placeholder.svg?height=80&width=80",
@@ -46,7 +47,7 @@ const transitionStories = [
   {
     name: "Priya Sharma",
     previousRole: "Marketing Manager",
-    currentRole: "Product Manager at Google",
+    currentRole: "Product Manager at Groww",
     salaryIncrease: "180%",
     experience: "7 years",
     image: "/placeholder.svg?height=80&width=80",
@@ -55,7 +56,7 @@ const transitionStories = [
   {
     name: "Amit Patel",
     previousRole: "Finance Analyst",
-    currentRole: "Data Scientist at Microsoft",
+    currentRole: "Data Scientist at Upstox",
     salaryIncrease: "200%",
     experience: "6 years",
     image: "/placeholder.svg?height=80&width=80",
@@ -64,6 +65,7 @@ const transitionStories = [
 ]
 
 export default function ProfessionalsPage() {
+   const featuredCourses = coursesData.courses.slice(0, 6)
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -83,14 +85,14 @@ export default function ProfessionalsPage() {
               </div>
 
               <div className="space-y-4">
-                <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                  <span className="text-gray-900">Switch to</span>
-                  <br />
+                <h1 className="text-5xl lg:text-6xl font-bold leading-relaxed">
+                  <span className="text-gray-900">Switch to  High Paying</span>{" "}
+                  
                   <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                    High-Paying
+                   
                   </span>
-                  <br />
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                
+                  <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
                     Tech Career
                   </span>
                   <br />
@@ -122,7 +124,7 @@ export default function ProfessionalsPage() {
 
               <div className="flex items-center space-x-8 pt-8">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">15K+</div>
+                  <div className="text-2xl font-bold text-gray-900">100+</div>
                   <div className="text-sm text-gray-600">Professionals Transitioned</div>
                 </div>
                 <div className="text-center">
@@ -131,7 +133,7 @@ export default function ProfessionalsPage() {
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-900">6 Months</div>
-                  <div className="text-sm text-gray-600">Average Transition Time</div>
+                  <div className="text-sm text-gray-600">Avg Transition Time</div>
                 </div>
               </div>
             </div>
@@ -165,11 +167,11 @@ export default function ProfessionalsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Why{" "}
+              Why Professionals Choose{" "} 
               <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                Professionals Choose
-              </span>{" "}
-              CoderCrafter?
+              CoderCrafter
+              </span>
+              ?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We understand the challenges of career transition while managing professional responsibilities
@@ -259,6 +261,135 @@ export default function ProfessionalsPage() {
             </p>
           </div>
 
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {featuredCourses.map((course) => (
+            <Card
+              key={course.id}
+              className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden relative"
+            >
+              {/* Discount Ribbon */}
+              {course.discount > 0 && (
+                <div className="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xs font-bold px-3 py-1 transform rotate-45 translate-x-8 translate-y-4 w-32 text-center z-10">
+                  {course.discount}% OFF
+                </div>
+              )}
+
+              <CardHeader className="p-0">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={course.image || "/placeholder.svg"}
+                    alt={course.title}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-medium">View Course Details</span>
+                  </div>
+                </div>
+              </CardHeader>
+
+              <CardContent className="p-6">
+                <div className="flex items-center space-x-1 mb-2">
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-4 h-4 ${i < Math.floor(course.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}`}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-sm text-gray-600">({course.reviews} Reviews)</span>
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                  {course.title}
+                </h3>
+
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">{course.description}</p>
+
+                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                  <div className="flex items-center space-x-1">
+                    <BookOpen className="w-4 h-4" />
+                    <span>{course.lessons} Lessons</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <Users className="w-4 h-4" />
+                    <span>{course.students.toLocaleString()} Students</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <Clock className="w-4 h-4" />
+                    <span>{course.duration}</span>
+                  </div>
+                </div>
+
+                {/* <div className="flex items-center space-x-2 mb-4">
+                  <img
+                    src={course.instructor.image || "/placeholder.svg"}
+                    alt={course.instructor.name}
+                    className="w-8 h-8 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="text-sm font-medium text-gray-900">By {course.instructor.name}</p>
+                    <p className="text-xs text-gray-500">{course.instructor.expertise}</p>
+                  </div>
+                </div> */}
+              </CardContent>
+
+              <CardFooter className="px-6 pt-0 flex flex-col gap-4">
+                <div className="flex items-center justify-between w-full">
+                  <div className="flex flex-col">
+                    <span className="text-xs text-gray-500">Starting at</span>
+                    <div className="flex items-end gap-2">
+                      <span className="text-2xl font-bold text-gray-900">₹{course.price.toLocaleString()}</span>
+                      {course.discount > 0 && (
+                        <span className="text-sm text-gray-500 line-through mb-0.5">
+                          ₹{course.originalPrice.toLocaleString()}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                    EMI available
+                  </div>
+                </div>
+
+                <div className="flex gap-2 w-full">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="border-purple-600 text-purple-600 hover:bg-purple-50 hover:text-purple-700 flex-1"
+                  >
+                    <Link href={`/courses/${course.id}`} className="flex items-center gap-1">
+                      Details <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-purple-500/30 flex-1"
+                  >
+                    <Link href={`/enroll/${course.id}`} className="flex items-center gap-1">
+                      <Zap className="w-4 h-4 fill-white" /> Enroll
+                    </Link>
+                  </Button>
+                </div>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+
+        {/* View All Courses Button */}
+        <div className="text-center">
+          <Button
+            size="lg"
+            asChild
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all"
+          >
+            <Link href="/courses" className="flex items-center gap-2">
+              Browse All Courses <ArrowRight className="w-5 h-5" />
+            </Link>
+          </Button>
+        </div>
+
+{/* 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-6">
@@ -355,7 +486,7 @@ export default function ProfessionalsPage() {
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </div> */}
         </div>
       </section>
 

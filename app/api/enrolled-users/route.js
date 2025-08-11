@@ -1,11 +1,12 @@
-import EnrolledUsers from "@/models/EnrolledUsers";
+import Users from "@/models/Users";
 import  connectToDB  from "@/lib/mongoose";
+import { Users2 } from "lucide-react";
 
 // GET all users
 export async function GET() {
   try {
     await connectToDB();
-    const users = await EnrolledUsers.find({});
+    const users = await Users.find({});
     return Response.json(users, { status: 200 });
   } catch (error) {
     return Response.json(
@@ -31,7 +32,7 @@ export async function POST(request) {
     }
 
     // Check if user already exists
-    const existingUser = await EnrolledUsers.findOne({
+    const existingUser = await Users.findOne({
       $or: [{ email }, { phone }]
     });
 
@@ -43,7 +44,7 @@ export async function POST(request) {
     }
 
     // Create new user
-    const newUser = new EnrolledUsers({
+    const newUser = new Users({
       firstName,
       lastName,
       email,

@@ -13,6 +13,6 @@ const UserSchema = new Schema(
 );
 
 // Check if model already exists to avoid redefining it
-const User = models.Leads || model("Leads", UserSchema);
+const Leads = models.Leads || model("Leads", UserSchema);
 
-export default User;
+export default Leads;

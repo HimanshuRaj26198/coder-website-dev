@@ -1,5 +1,6 @@
 import User from "@/models/User";
 import Enquiry from "@/models/Enquiry";
+import Leads from "../../../../models/User";
 
 // PUT /api/users/[id]
 export async function PUT(request, { params }) {
@@ -7,7 +8,7 @@ export async function PUT(request, { params }) {
     const { id } = params;
     const userData = await request.json();
     // comment
-    const updatedUser = await User.findByIdAndUpdate(
+    const updatedUser = await Leads.findByIdAndUpdate(
       id,
       { ...userData, updatedAt: new Date() },
       { new: true } // Returns the updated document

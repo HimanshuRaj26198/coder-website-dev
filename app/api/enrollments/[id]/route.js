@@ -1,6 +1,6 @@
-import Enrollments from "@/models/Enrollments";
-import EnrolledUsers from "@/models/EnrolledUsers";
-import connectToDB from "@/lib/mongoose";
+import Enrollments from "../../../../models/Enrollments";
+import Users from "../../../../models/Users";
+import connectToDB from "../../../../lib/mongoose";
 
 // GET single enrollment
 export async function GET(request, { params }) {
@@ -53,7 +53,7 @@ export async function DELETE(request, { params }) {
     }
 
     // Remove enrollment reference from user
-    const user = await EnrolledUsers.findById(enrollment.userId);
+    const user = await Users.findById(enrollment.userId);
     if (user) {
       user.enrollments = user.enrollments.filter(
         id => id.toString() !== enrollment._id.toString()

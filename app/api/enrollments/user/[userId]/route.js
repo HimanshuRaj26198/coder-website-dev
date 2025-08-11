@@ -1,6 +1,6 @@
-import Enrollments from "@/models/Enrollments";
-import EnrolledUsers from "@/models/EnrolledUsers";
-import  connectToDB  from "@/lib/mongoose";
+import Enrollments from "../../../../../models/Enrollments";
+import Users from "../../../../../models/Users";
+import  connectToDB  from "../../../../../lib/mongoose";
 
 // GET all enrollments for a specific user
 export async function GET(request, { params }) {
@@ -8,7 +8,7 @@ export async function GET(request, { params }) {
     await connectToDB();
     
     // Check if user exists
-    const user = await EnrolledUsers.findById(params.userId);
+    const user = await Users.findById(params.userId);
     if (!user) {
       return Response.json({ error: "User not found" }, { status: 404 });
     }

@@ -117,8 +117,8 @@ export default function ExitIntentPopup({ isOpen, onClose, courseCategory = "" }
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 overflow-y-auto">
-      <div className="bg-white rounded-2xl p-8 max-w-md w-full relative max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-2xl px-8 py-4 max-w-md w-full relative max-h-[95vh] ">
         <button 
           onClick={onClose} 
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10 bg-white rounded-full p-1 shadow-sm"
@@ -127,7 +127,7 @@ export default function ExitIntentPopup({ isOpen, onClose, courseCategory = "" }
           <X className="w-6 h-6" />
         </button>
 
-        <div className="text-center mb-6">
+        <div className="text-center mb-3">
           <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
             <Gift className="w-8 h-8 text-white" />
           </div>
@@ -146,7 +146,7 @@ export default function ExitIntentPopup({ isOpen, onClose, courseCategory = "" }
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-2 scroll overflow-y-auto">
           <Input
             type="text"
             placeholder="Your Name *"

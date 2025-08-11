@@ -29,11 +29,11 @@ const valueProps = [
 
 export function StatsSection() {
   return (
-    <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
+    <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Your Tech Journey Starts Here</h2>
-          <p className="text-xl text-purple-100 max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Your Tech Journey Starts Here</h2>
+          <p className="text-xl text-blue-700 max-w-3xl mx-auto">
             Why CoderCrafter stands out for career changers and beginners
           </p>
         </div>
@@ -41,12 +41,12 @@ export function StatsSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {valueProps.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <stat.icon className="w-8 h-8 text-gray-800" />
               </div>
-              <div className="text-4xl lg:text-5xl font-bold text-white mb-2">{stat.number}</div>
-              <div className="text-xl font-semibold text-white mb-2">{stat.label}</div>
-              <div className="text-purple-100">{stat.description}</div>
+              <div className="text-4xl lg:text-5xl font-bold text-gray-800 mb-2">{stat.number}</div>
+              <div className="text-xl font-semibold text-gray-700 mb-2">{stat.label}</div>
+              <div className="text-gray-600">{stat.description}</div>
             </div>
           ))}
         </div>

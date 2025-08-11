@@ -1,6 +1,6 @@
-import Enrollments from "@/models/Enrollments";
-import EnrolledUsers from "@/models/EnrolledUsers";
-import connectToDB from "@/lib/mongoose";
+import Enrollments from "../../../models/Enrollments";
+import Users from "../../../models/Users";
+import connectToDB from "../../../lib/mongoose";
 
 // GET all enrollments
 export async function GET() {
@@ -42,7 +42,7 @@ export async function POST(request) {
     // Find or create user
     let user;
     if (email || phone) {
-      user = await EnrolledUsers.findOne({ 
+      user = await Users.findOne({ 
         $or: [{ email }, { phone }] 
       }).populate('enrollments');
 
@@ -51,7 +51,7 @@ export async function POST(request) {
           return Response.json({ error: "First name and last name are required for new users" }, { status: 400 });
         }
 
-        user = new EnrolledUsers({
+        user = new Users({
           firstName,
           lastName,
           email,
