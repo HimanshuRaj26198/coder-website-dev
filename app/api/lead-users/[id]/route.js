@@ -1,6 +1,6 @@
-import User from "@/models/User";
-import Enquiry from "@/models/Enquiry";
-import Leads from "../../../../models/User";
+import User from "../../../../models/Users";
+import Enquiry from "../../../../models/Enquiry";
+import Leads from "../../../../models/Leads";
 
 // PUT /api/users/[id]
 export async function PUT(request, { params }) {

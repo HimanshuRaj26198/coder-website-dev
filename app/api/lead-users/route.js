@@ -1,8 +1,7 @@
 //  api/users/route.js
 
-import clientPromise from '@/lib/db';
 import { NextResponse } from 'next/server';
-import Leads from "@/models/Leads";
+import Leads from "../../../models/Leads";
 
 export async function POST(request) {
   try {
