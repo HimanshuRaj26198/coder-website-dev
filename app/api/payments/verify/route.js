@@ -5,7 +5,7 @@ import { savePayment } from "../../../../utils/payment-actions";
 
 function generateReverseHash(key, salt, data) {
   const amount = (data.amount != null) ? parseFloat(data.amount).toFixed(2) : '';
-
+// comment
   let hashString = [
     salt,
     data.status || '',
@@ -47,7 +47,6 @@ export async function POST(req) {
   // Verify hash
     const key = process.env.PAYU_MERCHANT_KEY;
     const salt = process.env.PAYU_MERCHANT_SALT;
-    const baseUrl = "http://localhost:3001";
 
 
 
@@ -71,3 +70,9 @@ export async function POST(req) {
   // Failure redirect
   return Response.redirect(`${process.env.NEXT_PUBLIC_BASE_URL}/payment/failure`, 302);
 }
+
+
+export async function GET() {
+  return new Response("This endpoint only accepts POST from PayU", { status: 200 });
+}
+// 
